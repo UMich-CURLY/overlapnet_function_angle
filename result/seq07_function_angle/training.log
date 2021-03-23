@@ -1,0 +1,11 @@
+07:24:06 Created neural net SiameseNetworkTemplate with 1769137 parameters.
+07:24:06   Used net for legs: 360OutputkLegs
+07:24:06 compiled model with learning_rate=0.001000, lr_alpha=0.990000, momentum=0.500000
+07:24:06 Load old weights from data/model_geo.weight
+07:24:06 load training data ...
+07:24:06 load validation data ...
+07:24:06 Training loop, saving weights to /home/cel/code/OverlapNet/result/seq07_function_angle/SiameseNetworkTemplate_seq07_function_angle.weight
+07:24:06   batch size is           : 16
+07:24:06   number of training pairs: 16869
+07:24:06   number of test pairs    : 1874
+07:24:06   NO rotation of training data

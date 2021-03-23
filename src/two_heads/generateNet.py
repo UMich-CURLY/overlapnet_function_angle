@@ -42,9 +42,9 @@ def DeltaLayer(encoded_l, encoded_r, negateDiffs=False):
   Returns:
       difference tensor, has size (batchsize, w*h, w*h, channels)
   """
-  w = encoded_l.shape[1].value
-  h = encoded_l.shape[2].value
-  chan = encoded_l.shape[3].value
+  w = encoded_l.shape[1] #.value
+  h = encoded_l.shape[2] #.value
+  chan = encoded_l.shape[3] #.value
   reshapel = Reshape((w * h, 1, chan))
   reshaped_l = reshapel(encoded_l)
   reshaper = Reshape((1, w * h, chan))
@@ -114,6 +114,63 @@ def generateDeltaLayerConv1NetworkHead(encoded_l, encoded_r, config={}):
   prediction = Dense(1, activation='sigmoid', name='overlap_output')(flattened)
 
   return prediction
+
+# def generateDeltaLayerConv1NetworkHeadBoth(encoded_l, encoded_r, config={}):
+#   """
+#   Generate Head of DeltaLayerConv1Network.
+#   Args:
+#     encoded_l, encoded_r: the feature volumes of the two images,
+#                           thus the last tensor of the leg
+#     config: dictionary of configuration parameters, usually from a yaml file
+#             All keys have default arguments, so they need not to be present
+#             Current parameters:
+#                 conv1NetworkHead_conv1size: The size s of the 1xs and
+#                                             sx1 convolutions directly done
+#                                             for the DeltaLayer (which computes
+#                                             all possible differences of the
+#                                             feature volumnes). Default:
+#                                             15 (to be consistent with old
+#                                             versions of this code).
+#                                             This size should be actually the
+#                                             number of columns of the feature
+#                                             volume.
+#   Returns:
+#     the final tensor of the head which is 1x1, the overlap percentage
+#     0.0-1.0
+#   """
+#   # default parameters
+#   if not 'conv1NetworkHead_conv1size' in config:
+#     config['conv1NetworkHead_conv1size'] = 15
+
+#   # combine the two legs
+#   diff = DeltaLayer(encoded_l, encoded_r)
+
+#   # densify the information across feature maps
+#   kernel_regularizer = None
+#   combinedconv1 = Conv2D(64, (1, config['conv1NetworkHead_conv1size']),
+#                          strides=(1, config['conv1NetworkHead_conv1size']),
+#                          activation='linear',
+#                          kernel_regularizer=kernel_regularizer, name="c_conv1")
+#   combined2 = combinedconv1(diff)
+
+#   combinedconv2 = Conv2D(128, (config['conv1NetworkHead_conv1size'], 1),
+#                          strides=(config['conv1NetworkHead_conv1size'], 1),
+#                          activation='relu',
+#                          kernel_regularizer=kernel_regularizer, name="c_conv2")
+#   combined3 = combinedconv2(combined2)
+
+#   combinedconv3 = Conv2D(256, (3, 3), activation='relu',
+#                          kernel_regularizer=kernel_regularizer, name="c_conv3")
+#   combined4 = combinedconv3(combined3)
+
+#   flattened = Flatten()(combined4)
+
+#   prediction = Dense(1, activation='sigmoid', name='overlap_output')(flattened)
+  
+#   prediction2 = Dense(1, activation='sigmoid', name='function_angle_output')(flattened)
+
+#   return prediction
+
 
 
 def generate360OutputkLegs(left_input, right_input, input_shape=(50, 50, 1), config={},
@@ -394,6 +451,47 @@ def generateSiameseNetworkTemplate(input_shape=(50, 50, 1), config={}, smallNet=
   # Generate a keras model out of the input and output tensors
   siamese_net = Model(inputs=[left_input, right_input], outputs=[prediction_overlap, prediction_orientation])
   return siamese_net
+
+
+# def generateSiameseNetworkBoth(input_shape=(50, 50, 1), config={}, smallNet=False):
+#   """
+#   Generate a siamese network for overlap detection. Which legs and which
+#   head is used will be given in the config parameter.
+  
+#   Args:
+#     input_shape: A tupel with three elements which is the size of the input images.
+#     config: dictionary of configuration parameters, usually from a yaml file
+#             Current parameters used here:
+#             legsType: name of the function (without "generate") for the legs
+#             headType: name of the function (without "generate") for the heads
+#             The config is given to the head and legs, so additional parameters can
+#             be given.
+
+#   Returns:
+#     the neural net as a keras.model
+#   """
+  
+#   # Define the input
+#   left_input = Input(input_shape)
+#   right_input = Input(input_shape)
+  
+#   # The two legs
+#   leg_method = getattr(sys.modules[__name__], 'generate' + config['legsType'])
+#   (encoded_l, encoded_r) = leg_method(
+#     left_input, right_input, input_shape,
+#     config, smallNet)
+  
+#   # The overlap head
+#   head_method = getattr(sys.modules[__name__], 'generate' + config['overlap_head'])
+#   prediction_overlap = head_method(encoded_l, encoded_r, config)
+  
+#   # The orientation head
+#   head_method = getattr(sys.modules[__name__], 'generate' + config['orientation_head'])
+#   prediction_orientation = head_method(encoded_l, encoded_r, config)
+  
+#   # Generate a keras model out of the input and output tensors
+#   siamese_net = Model(inputs=[left_input, right_input], outputs=[prediction_overlap, prediction_overlap, prediction_orientation])
+#   return siamese_net
 
 
 def generateSiameseNetworkTemplateLegs(left_input, right_input, input_shape=(50, 50, 1), config={},

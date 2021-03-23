@@ -83,9 +83,9 @@ if __name__ == '__main__':
   train_data, validation_data = split_train_val(dist_norm_data)
   
   # add sequence label to the data and save them as npz files
-  seq_idx = '07'
+  seq_idx = config['Demo4']['seq']
   # specify the goal folder
-  dst_folder = os.path.join(dst_folder, 'ground_truth')
+  dst_folder = os.path.join(dst_folder, 'ground_truth_overlap')
   try:
     os.stat(dst_folder)
     print('generating depth data in: ', dst_folder)

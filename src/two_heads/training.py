@@ -125,9 +125,10 @@ if 'training_seqs' in config:
   logger.info('Using multiple npz files for train/validation data ...')
   training_seqs = config['training_seqs']
   training_seqs = training_seqs.split()
+  ground_truth_folder = config['ground_truth_folder']
   
-  traindata_npzfiles = [os.path.join(data_root_folder, seq, 'ground_truth/train_set.npz') for seq in training_seqs]
-  validationdata_npzfiles = [os.path.join(data_root_folder, seq, 'ground_truth/validation_set.npz') for seq in training_seqs]
+  traindata_npzfiles = [os.path.join(data_root_folder, seq, ground_truth_folder, 'train_set.npz') for seq in training_seqs]
+  validationdata_npzfiles = [os.path.join(data_root_folder, seq, ground_truth_folder, 'validation_set.npz') for seq in training_seqs]
 else:
   logger.info('Using a single npz file for train/validation data ...')
   traindata_npzfiles = [config['traindata_npzfile']]
@@ -372,6 +373,17 @@ for epoch in range(0, no_epochs):
   logger.info("           Evaluation: mean overlap difference:   %f" % mean_diff)
   logger.info("           Evaluation: max  overlap difference:   %f" % max_error)
   logger.info("           Evaluation: RMS  overlap error        : %f" % rms_error)   
+
+  # metrics for orientation estimation
+  diffs3 = abs(np.squeeze(model_outputs[1])-validation_orientation)
+  mean_diff3 = np.mean(diffs3)
+  mean_square_error3 = np.mean(diffs3*diffs3)
+  rms_error3 = np.sqrt(mean_square_error3)
+  max_error3 = np.max(diffs3)
+  logger.info("  Evaluation on test data results: ")  
+  logger.info("           Evaluation: mean orientation difference:   %f" % mean_diff3)
+  logger.info("           Evaluation: max  orientation difference:   %f" % max_error3)
+  logger.info("           Evaluation: RMS  orientation error     :   %f" % rms_error3)  
 
   summary = tf.Summary(value=[tf.Summary.Value(tag=losstag14,
                                                simple_value=max_error)])

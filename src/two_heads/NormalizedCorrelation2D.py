@@ -44,9 +44,9 @@ class NormalizedCorrelation2D(Layer):
     """ The actual processing in the layer: Normalize, padd, then convolution.
     """
     input_1, input_2 = x
-    input_shape = input_1._keras_shape
+    input_shape = input_1.shape
     
-    assert input_shape == input_2._keras_shape
+    assert input_shape[1:] == input_2.shape[1:]
     
     self.H = input_shape[1]
     self.W = input_shape[2]

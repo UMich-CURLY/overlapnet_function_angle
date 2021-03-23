@@ -6,10 +6,10 @@
 
 # Path where all experiments are stored. Data of current experiment
 # will be in experiments_path/testname
-experiments_path: "/tmp"
+experiments_path: "/home/cel/code/OverlapNet/result/"
 
 # String which defines experiment
-testname: "experiment_test1"
+testname: "seq07_function_angle"
 
 # weights from older training. Not used if empty
 pretrained_weightsfilename: "data/model_geo.weight"
@@ -27,13 +27,13 @@ use_intensity: False               # default: False if parameter not there
 # Train and test data
 #
 # the folder of dataset
-data_root_folder: "data/"
-
+data_root_folder: "/home/cel/data/kitti/sequences/"
+ground_truth_folder: "ground_truth_function_angle"
 # use multiple seqs for training, for testing phase please disable it
 training_seqs: "07"   
 
 # use multiple seqs for testing, for training phase please disable it
-testing_seqs: "07"
+# testing_seqs: "07"
 
 # seq label for inferring
 infer_seqs: "07"

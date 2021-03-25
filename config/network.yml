@@ -6,10 +6,10 @@
 
 # Path where all experiments are stored. Data of current experiment
 # will be in experiments_path/testname
-experiments_path: "/home/cel/code/OverlapNet/result/"
+experiments_path: "result/"
 
 # String which defines experiment
-testname: "seq07_function_angle"
+testname: "test"
 
 # weights from older training. Not used if empty
 pretrained_weightsfilename: "data/model_geo.weight"

@@ -12,8 +12,7 @@ docker run -it --net=host --gpus all  \
   -v "/tmp/.X11-unix:/tmp/.X11-unix:rw" \
   -v "/etc/passwd:/etc/passwd:rw" \
   -e "TERM=xterm-256color" \
-  -v "/home/$USER/DockerFolder:/home/$USER/" \
-  -v "/media/sde1/$USER/data:/home/$USER/data/" \
+  -v "/home/$USER/CURLY/code/DockerFolder:/home/$USER/" \
   --device=/dev/dri:/dev/dri \
   --name=${container_name} \
   umrobotics/overlap:latest

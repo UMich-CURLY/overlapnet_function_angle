@@ -37,6 +37,10 @@ import generateNet
 from ImagePairOverlapOrientationSequence import ImagePairOverlapOrientationSequence
 from overlap_orientation_npz_file2string_string_nparray import overlap_orientation_npz_file2string_string_nparray
 
+# to prevent "Could not create cudnn handle: CUDNN_STATUS_INTERNAL_ERROR"
+config = tf.ConfigProto()
+config.gpu_options.allow_growth = True
+sess = tf.Session(config=config)
 
 # ============ file global variables (used in functions) ======================
 network_output_size = 0 

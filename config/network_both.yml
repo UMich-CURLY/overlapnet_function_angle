@@ -6,7 +6,7 @@
 
 # Path where all experiments are stored. Data of current experiment
 # will be in experiments_path/testname
-experiments_path: "/home/cel/code/OverlapNet/result/"
+experiments_path: "result/"
 
 # String which defines experiment
 testname: "seq07_train_both"
@@ -39,7 +39,7 @@ training_seqs: "07"
 # seq label for inferring
 infer_seqs: "07"
 
-batch_size :  16
+batch_size :  4
 # No of batches per epoch, thus the actual used train data is 
 # batch_size*no_batches_in_epoch. 
 # If bigger than train/test data, all train/test data will be used.

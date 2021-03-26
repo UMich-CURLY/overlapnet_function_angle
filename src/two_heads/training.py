@@ -379,15 +379,21 @@ for epoch in range(0, no_epochs):
   logger.info("           Evaluation: RMS  overlap error        : %f" % rms_error)   
 
   # metrics for orientation estimation
-  diffs3 = abs(np.squeeze(model_outputs[1])-validation_orientation)
-  mean_diff3 = np.mean(diffs3)
-  mean_square_error3 = np.mean(diffs3*diffs3)
-  rms_error3 = np.sqrt(mean_square_error3)
-  max_error3 = np.max(diffs3)
-  logger.info("  Evaluation on test data results: ")  
-  logger.info("           Evaluation: mean orientation difference:   %f" % mean_diff3)
-  logger.info("           Evaluation: max  orientation difference:   %f" % max_error3)
-  logger.info("           Evaluation: RMS  orientation error     :   %f" % rms_error3)  
+  network_orientation_output=np.squeeze(np.argmax(model_outputs[1], axis=1))
+  # The following takes the circular behaviour of angles into account !
+  diffs_orientation=np.minimum(abs(network_orientation_output-validation_orientation),
+        network_output_size - abs(network_orientation_output-validation_orientation))
+  diffs_orientation=diffs_orientation[validation_orientation>0.7]
+  mean_diff3=np.mean(diffs_orientation)
+  mean_square_error3=np.mean(diffs_orientation*diffs_orientation)
+  rms_error3=np.sqrt(mean_square_error3)
+  max_error3=np.max(diffs_orientation)
+
+  logger.info(" ")
+  logger.info("  Evaluation yaw orientation (overlap>0.7) on test data:")
+  logger.info("           Evaluation: mean difference:   %f" % mean_diff3)
+  logger.info("           Evaluation: max  difference:   %f" % max_error3)
+  logger.info("           Evaluation: RMS error        : %f" % rms_error3)   
 
   summary = tf.Summary(value=[tf.Summary.Value(tag=losstag14,
                                                simple_value=max_error)])

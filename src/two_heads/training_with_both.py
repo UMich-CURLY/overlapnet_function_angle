@@ -110,7 +110,7 @@ def sigmoid_loss_for_both(y_true, y_pred):
   sigmoidx_function_angle = (diff_function_angle + 0.25) * 24 - 12
   loss_function_angle = K.mean(1 / (1 + K.exp(-sigmoidx_function_angle)))
   
-  return loss_overlap + loss_function_angle
+  return 0.5*loss_overlap + 0.5*loss_function_angle
 
   
 def my_entropy(y_true, y_pred):

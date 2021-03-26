@@ -148,7 +148,7 @@ def read_function_angle_com_yaw(scan_paths, poses, funcangle_file, leg_output_wi
       frmae_idx_2.append(int(idx_2))
       function_angles.append(float(function_angle))
 
-  for idx in range(len(function_angles)):
+  for idx in tqdm(range(len(function_angles))):
     frame_idx = frame_idx_1[idx]
     refrence_idx = frmae_idx_2[idx]
     

@@ -57,6 +57,6 @@ Demo4:
   # the folder to store the generated data
   # dst_folder: "data/preprocess_data_demo"
   dst_folder: "/home/cel/data/kitti/sequences/07"
-
+  function_angle_file: "/home/cel/data/kitti/sequences/07/function_angle/07_all.csv"
 
 

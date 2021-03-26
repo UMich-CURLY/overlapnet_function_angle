@@ -4,11 +4,11 @@
 # Brief: Generate a neural net for overlap detection.
 import sys
 
-import keras.backend as backend
-import keras.optimizers
-from keras.layers import Input, Conv2D, Dense, Flatten, Reshape, Lambda
-from keras.models import Model
-from keras.regularizers import l2
+import tensorflow.keras.backend as backend
+import tensorflow.keras.optimizers
+from tensorflow.keras.layers import Input, Conv2D, Dense, Flatten, Reshape, Lambda
+from tensorflow.keras.models import Model
+from tensorflow.keras.regularizers import l2
 from NormalizedCorrelation2D import NormalizedCorrelation2D
 
 
@@ -42,9 +42,9 @@ def DeltaLayer(encoded_l, encoded_r, negateDiffs=False):
   Returns:
       difference tensor, has size (batchsize, w*h, w*h, channels)
   """
-  w = encoded_l.shape[1].value
-  h = encoded_l.shape[2].value
-  chan = encoded_l.shape[3].value
+  w = encoded_l.shape[1]
+  h = encoded_l.shape[2]
+  chan = encoded_l.shape[3]
   reshapel = Reshape((w * h, 1, chan))
   reshaped_l = reshapel(encoded_l)
   reshaper = Reshape((1, w * h, chan))

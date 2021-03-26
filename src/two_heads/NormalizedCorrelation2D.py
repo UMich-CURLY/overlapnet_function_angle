@@ -6,10 +6,10 @@
 #        it convolves data with other data. For this reason, it has no trainable weights.
 import numpy as np
 import tensorflow as tf
-from keras import backend as K
+from tensorflow.keras import backend as K
 from keras.engine import Layer
-from keras.layers import Input
-from keras.models import Model
+from tensorflow.keras.layers import Input
+from tensorflow.keras.models import Model
 
 from RangePadding2D import RangePadding2D
 

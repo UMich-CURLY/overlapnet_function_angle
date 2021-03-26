@@ -111,7 +111,7 @@ if __name__ == '__main__':
   print('Finish saving the ground truth data for training and testing at: ', dst_folder)
   
   # visualize the raw ground truth mapping
-  vis_gt(poses[:, :2, 3], ground_truth_mapping)
+  # vis_gt(poses[:, :2, 3], ground_truth_mapping)
   
   
 

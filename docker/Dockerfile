@@ -1,4 +1,4 @@
-FROM tensorflow/tensorflow:1.15.4-gpu-py3
+FROM nvcr.io/nvidia/tensorflow:21.02-tf2-py3
 
 USER root
 
@@ -17,18 +17,14 @@ RUN apt-get update \
 
 RUN pip install --upgrade pip
 
-RUN pip install setuptools==41.0.0
+RUN pip install setuptools==54.2.0
 
-RUN pip install keras==2.1.5
+RUN pip install keras==2.4.0
 
 RUN pip install sklearn
 
-RUN pip install matplotlib==3.0.3
+RUN pip install matplotlib==3.3.4
 
 RUN pip install tqdm
 
-USER tensorflow
-
-
-
-
+USER nvidia.io

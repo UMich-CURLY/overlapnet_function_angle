@@ -38,7 +38,7 @@ training_seqs: "07"
 # seq label for inferring
 infer_seqs: "07"
 
-batch_size :  4
+batch_size :  16
 # No of batches per epoch, thus the actual used train data is 
 # batch_size*no_batches_in_epoch. 
 # If bigger than train/test data, all train/test data will be used.

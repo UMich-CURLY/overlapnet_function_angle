@@ -4,9 +4,9 @@
 # Brief: A custom keras padding layer.
 #        pad([1 2 3 4], 2) -> [3, 4, 1, 2, 3, 4, 1]
 import numpy as np
-from keras.layers import Layer
-from keras.models import Sequential
-import keras.backend as K
+from tensorflow.keras.layers import Layer
+from tensorflow.keras.models import Sequential
+import tensorflow.keras.backend as K
 
 
 class RangePadding2D(Layer):

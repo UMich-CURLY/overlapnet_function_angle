@@ -24,12 +24,17 @@ import logging
 import os
 import sys
 
-import keras.optimizers
+import tensorflow.keras.optimizers
 import numpy as np
-import tensorflow as tf
+# import tensorflow as tf
+# to run in Tensorflow 2 environment
+import tensorflow.compat.v1 as tf
+tf.disable_v2_behavior()
+from tensorflow import keras
+
 import yaml
-from keras import backend as K
-from keras.callbacks import LearningRateScheduler
+from tensorflow.keras import backend as K
+from tensorflow.keras.callbacks import LearningRateScheduler
 
 importlib.reload(logging)  # needed for ipython console
 
@@ -37,10 +42,6 @@ import generateNet
 from ImagePairOverlapOrientationSequence import ImagePairOverlapOrientationSequence
 from overlap_orientation_npz_file2string_string_nparray import overlap_orientation_npz_file2string_string_nparray
 
-# to prevent "Could not create cudnn handle: CUDNN_STATUS_INTERNAL_ERROR"
-config = tf.ConfigProto()
-config.gpu_options.allow_growth = True
-sess = tf.Session(config=config)
 
 # ============ file global variables (used in functions) ======================
 network_output_size = 0 
@@ -351,7 +352,7 @@ for epoch in range(0, no_epochs):
   # Saving weights
   if len(weights_filename) > 0:
     logger.info("                  saving model weights ...")
-    model.save(weights_filename)
+    model.save_weights(weights_filename)
   
   # Evaluation on test data
   logger.info("  Evaluation on test data ...")
@@ -379,15 +380,21 @@ for epoch in range(0, no_epochs):
   logger.info("           Evaluation: RMS  overlap error        : %f" % rms_error)   
 
   # metrics for orientation estimation
-  diffs3 = abs(np.squeeze(model_outputs[1])-validation_orientation)
-  mean_diff3 = np.mean(diffs3)
-  mean_square_error3 = np.mean(diffs3*diffs3)
-  rms_error3 = np.sqrt(mean_square_error3)
-  max_error3 = np.max(diffs3)
-  logger.info("  Evaluation on test data results: ")  
-  logger.info("           Evaluation: mean orientation difference:   %f" % mean_diff3)
-  logger.info("           Evaluation: max  orientation difference:   %f" % max_error3)
-  logger.info("           Evaluation: RMS  orientation error     :   %f" % rms_error3)  
+  network_orientation_output=np.squeeze(np.argmax(model_outputs[1], axis=1))
+  # The following takes the circular behaviour of angles into account !
+  diffs_orientation=np.minimum(abs(network_orientation_output-validation_orientation),
+        network_output_size - abs(network_orientation_output-validation_orientation))
+  diffs_orientation=diffs_orientation[validation_orientation>0.7]
+  mean_diff3=np.mean(diffs_orientation)
+  mean_square_error3=np.mean(diffs_orientation*diffs_orientation)
+  rms_error3=np.sqrt(mean_square_error3)
+  max_error3=np.max(diffs_orientation)
+
+  logger.info(" ")
+  logger.info("  Evaluation yaw orientation (overlap>0.7) on test data:")
+  logger.info("           Evaluation: mean difference:   %f" % mean_diff3)
+  logger.info("           Evaluation: max  difference:   %f" % max_error3)
+  logger.info("           Evaluation: RMS error        : %f" % rms_error3)  
 
   summary = tf.Summary(value=[tf.Summary.Value(tag=losstag14,
                                                simple_value=max_error)])

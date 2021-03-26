@@ -27,7 +27,8 @@ import os
 import numpy as np
 import matplotlib.pyplot as plt
 import yaml
-import keras
+# import keras
+from tensorflow import keras
 
 # To get a log file
 import importlib

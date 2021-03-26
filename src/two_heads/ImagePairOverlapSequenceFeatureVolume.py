@@ -2,7 +2,7 @@
 # Developed by Xieyuanli Chen and Thomas Läbe
 # This file is covered by the LICENSE file in the root of this project.
 # Brief: A keras generator which generates batches out of given feature volumes
-from keras.utils import Sequence
+from tensorflow.keras.utils import Sequence
 import numpy as np
 
 

@@ -24,12 +24,17 @@ import logging
 import os
 import sys
 
-import keras.optimizers
+import tensorflow.keras.optimizers
 import numpy as np
-import tensorflow as tf
+# import tensorflow as tf
+# to run in Tensorflow 2 environment
+import tensorflow.compat.v1 as tf
+tf.disable_v2_behavior()
+from tensorflow import keras
+
 import yaml
-from keras import backend as K
-from keras.callbacks import LearningRateScheduler
+from tensorflow.keras import backend as K
+from tensorflow.keras.callbacks import LearningRateScheduler
 
 importlib.reload(logging)  # needed for ipython console
 
@@ -38,9 +43,9 @@ from ImagePairOverlapFunctionAngleOrientationSequence import ImagePairOverlapFun
 from overlap_function_angle_orientation_npz import overlap_function_angle_orientation_npz
 
 # to prevent "Could not create cudnn handle: CUDNN_STATUS_INTERNAL_ERROR"
-config = tf.ConfigProto()
-config.gpu_options.allow_growth = True
-sess = tf.Session(config=config)
+# config = tf.ConfigProto()
+# config.gpu_options.allow_growth = True
+# sess = tf.Session(config=config)
 
 # ============ file global variables (used in functions) ======================
 network_output_size = 0 
@@ -379,7 +384,7 @@ for epoch in range(0, no_epochs):
   # Saving weights
   if len(weights_filename) > 0:
     logger.info("                  saving model weights ...")
-    model.save(weights_filename)
+    model.save_weights(weights_filename)
   
   # Evaluation on test data
   logger.info("  Evaluation on test data ...")

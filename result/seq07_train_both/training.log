@@ -1,11 +1,27 @@
-06:43:04 Created neural net SiameseNetworkTemplate with 1769137 parameters.
-06:43:04   Used net for legs: 360OutputkLegs
-06:43:04 compiled model with learning_rate=0.001000, lr_alpha=0.990000, momentum=0.500000
-06:43:04 Load old weights from data/model_geo.weight
-06:43:04 load training data ...
-06:43:05 load validation data ...
-06:43:05 Training loop, saving weights to /home/cel/code/OverlapNet/result/seq07_train_both/SiameseNetworkTemplate_seq07_train_both.weight
-06:43:05   batch size is           : 16
-06:43:05   number of training pairs: 39834
-06:43:05   number of test pairs    : 4426
-06:43:05   NO rotation of training data
+03:31:12 Created neural net SiameseNetworkTemplate with 1769137 parameters.
+03:31:12   Used net for legs: 360OutputkLegs
+03:31:13 compiled model with learning_rate=0.001000, lr_alpha=0.990000, momentum=0.500000
+03:31:13 Load old weights from data/model_geo.weight
+03:31:14 load training data ...
+03:31:14 load validation data ...
+03:31:14 Training loop, saving weights to result/seq07_train_both/SiameseNetworkTemplate_seq07_train_both.weight
+03:31:14   batch size is           : 16
+03:31:14   number of training pairs: 39834
+03:31:14   number of test pairs    : 4426
+03:31:14   NO rotation of training data
+03:36:26                   saving model weights ...
+03:36:26   Evaluation on test data ...
+03:36:45   Evaluation on test data results: 
+03:36:45            Evaluation: mean overlap difference:   189.397172
+03:36:45            Evaluation: max  overlap difference:   358.808768
+03:36:45            Evaluation: RMS  overlap error        : 195.483538
+03:36:45   Evaluation on test data results: 
+03:36:45            Evaluation: mean function angle difference:   0.173467
+03:36:45            Evaluation: max  function angle difference:   0.778284
+03:36:45            Evaluation: RMS  function angle error     :   0.227557
+03:36:45  
+03:36:45   Evaluation yaw orientation (overlap>0.7) on test data:
+03:36:45            Evaluation: mean difference:   32.279828
+03:36:45            Evaluation: max  difference:   180.000000
+03:36:45            Evaluation: RMS error        : 55.726555
+03:36:46 iteration 1, batch/epoch loss: 4.487135887  /  4.206270547

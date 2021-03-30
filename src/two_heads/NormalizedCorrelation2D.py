@@ -39,7 +39,16 @@ class NormalizedCorrelation2D(Layer):
     """ Just return the output shape.
     """
     return (input_shape[0][0], input_shape[0][1], input_shape[0][2], self.output_dim)
-  
+
+  def get_config(self):
+
+    config = super().get_config().copy()
+    config.update({
+        'output_dim': self.output_dim,
+        'use_norm': self.use_norm
+      })
+    return config
+
   def call(self, x, mask=None):
     """ The actual processing in the layer: Normalize, padd, then convolution.
     """

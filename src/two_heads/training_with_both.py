@@ -115,7 +115,7 @@ def sigmoid_loss_for_both(y_true, y_pred):
   sigmoidx_function_angle = (diff_function_angle + 0.25) * 24 - 12
   loss_function_angle = K.mean(1 / (1 + K.exp(-sigmoidx_function_angle)))
   
-  return loss_overlap + loss_function_angle
+  return 0.0*loss_overlap + 1.0*loss_function_angle
 
   
 def my_entropy(y_true, y_pred):
@@ -384,7 +384,7 @@ for epoch in range(0, no_epochs):
   # Saving weights
   if len(weights_filename) > 0:
     logger.info("                  saving model weights ...")
-    model.save_weights(weights_filename)
+    model.save(weights_filename)
   
   # Evaluation on test data
   logger.info("  Evaluation on test data ...")
@@ -401,7 +401,7 @@ for epoch in range(0, no_epochs):
   losstag15 = "Validation overlap/RMS error"
 
   # metrics for overlap estimation
-  diffs = abs(np.squeeze(model_outputs[0])-validation_orientation)
+  diffs = abs(np.squeeze(model_outputs[0])-validation_overlap)
   mean_diff = np.mean(diffs)
   mean_square_error = np.mean(diffs*diffs)
   rms_error = np.sqrt(mean_square_error)

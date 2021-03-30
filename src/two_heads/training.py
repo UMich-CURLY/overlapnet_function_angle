@@ -260,7 +260,7 @@ optimizer = keras.optimizers.Adagrad(lr=initial_lr)
 
 losses = {"overlap_output": my_sigmoid_loss, "orientation_output": my_entropy}
 
-lossWeights = {"overlap_output": 5.0, "orientation_output": 1.0}
+lossWeights = {"overlap_output": 1.0, "orientation_output": 1.0}
 
 model.compile(loss=losses, loss_weights=lossWeights, optimizer=optimizer)
 
@@ -352,7 +352,7 @@ for epoch in range(0, no_epochs):
   # Saving weights
   if len(weights_filename) > 0:
     logger.info("                  saving model weights ...")
-    model.save_weights(weights_filename)
+    model.save(weights_filename)
   
   # Evaluation on test data
   logger.info("  Evaluation on test data ...")

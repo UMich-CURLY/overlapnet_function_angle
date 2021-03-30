@@ -45,18 +45,18 @@ Demo3:
 Demo4:
   # sepecify paths
   # path of poses
-  seq: "07"
-  poses_file: "/home/cel/data/kitti/sequences/07/poses.txt"
+  seq: "04"
+  poses_file: "/home/cel/data/kitti/sequences/04/poses.txt"
   # poses_file: "/home/cel/CURLY/code/DockerFolder/data/kitti/sequences/00/poses.txt"
   # path of calibration file of the dataset
-  calib_file: "/home/cel/data/kitti/sequences/07/calib.txt"
+  calib_file: "/home/cel/data/kitti/sequences/04/calib.txt"
   # calib_file: "/home/cel/CURLY/code/DockerFolder/data/kitti/sequences/00/calib.txt"
   # path of raw LiDAR scan folder
-  scan_folder: "/home/cel/data/kitti/sequences/07/velodyne"
+  scan_folder: "/home/cel/data/kitti/sequences/04/velodyne"
   # scan_folder: "/home/cel/CURLY/code/DockerFolder/data/kitti/sequences/00/velodyne"
   # the folder to store the generated data
   # dst_folder: "data/preprocess_data_demo"
-  dst_folder: "/home/cel/data/kitti/sequences/07"
-  function_angle_file: "/home/cel/data/kitti/sequences/07/function_angle/07_all.csv"
+  dst_folder: "/home/cel/data/kitti/sequences/04"
+  function_angle_file: "/home/cel/data/kitti/sequences/04/function_angle/04_all.csv"
 
 

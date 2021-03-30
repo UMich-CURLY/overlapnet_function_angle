@@ -130,7 +130,38 @@ class ImagePairOverlapFunctionAngleOrientationSequence(Sequence):
       return ([x1, x2], [np.hstack((y_overlap.reshape(-1,1), y_function_angle.reshape(-1,1))), y])
     else:
       return ([x1], y)
-  
+ 
+  def get_config(self):
+      config = super().get_config().copy()
+      config.update({
+          'image_path': self.image_path,
+          'batch_size': self.batch_size,
+          'imgfilenames1': self.imgfilenames1,
+          'imgfilenames2': self.imgfilenames2,
+          'dir1': self.dir1,
+          'dir2': self.dir2,
+          'overlap': self.overlap,
+          'function_angle': self.function_angle,
+          'orientation': self.orientation,
+          'network_output_size': self.network_output_size,
+          'n': self.n,
+          'height': self.height,
+          'width': self.width,
+          'no_channels': self.no_channels,
+          'use_depth': self.use_depth,
+          'use_normals': self.use_normals,
+          'use_class_probabilities': self.use_class_probabilities,
+          'use_class_probabilities_pca': self.use_class_probabilities_pca,
+          'use_intensity': self.use_intensity,
+          'rotate_data': self.rotate_data,
+          'do_rotation': self.do_rotation
+          })
+      if self.rotate_data > 0:
+          config.update({
+              'randome_rotate': self.random_rotate
+              })
+      return config
+
   def prepareOneInput(self, x1, i, batch_f1, dir_f1, totalidx=0, rotate_data=False):
     """ Internal function to generate input for one set of images
         Args:

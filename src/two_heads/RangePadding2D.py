@@ -36,7 +36,14 @@ class RangePadding2D(Layer):
     else:
       raise Exception("Backend " + K.backend() + "not implemented")
     return out
-  
+    
+  def get_config(self):
+    config = super().get_config().copy()
+    config.update({
+      'padding': self.padding
+      })
+    return config
+
   def compute_output_shape(self, input_shape):
     return (input_shape[0], input_shape[1], input_shape[2] + input_shape[2] - 1 , input_shape[3])
 

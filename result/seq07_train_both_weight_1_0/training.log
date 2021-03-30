@@ -1,0 +1,1611 @@
+04:43:07 Created neural net SiameseNetworkTemplate with 1769137 parameters.
+04:43:07   Used net for legs: 360OutputkLegs
+04:43:07 compiled model with learning_rate=0.001000, lr_alpha=0.990000, momentum=0.500000
+04:43:07 Load old weights from data/model_geo.weight
+04:43:08 load training data ...
+04:43:08 load validation data ...
+04:43:08 Training loop, saving weights to result/seq07_train_both_weight_1_0/SiameseNetworkTemplate_seq07_train_both_weight_1_0.weight
+04:43:08   batch size is           : 32
+04:43:08   number of training pairs: 39834
+04:43:08   number of test pairs    : 4426
+04:43:08   NO rotation of training data
+04:48:18                   saving model weights ...
+04:48:18   Evaluation on test data ...
+04:48:40   Evaluation on test data results: 
+04:48:40            Evaluation: mean overlap difference:   188.456873
+04:48:40            Evaluation: max  overlap difference:   358.681997
+04:48:40            Evaluation: RMS  overlap error        : 193.939562
+04:48:40   Evaluation on test data results: 
+04:48:40            Evaluation: mean function angle difference:   0.233165
+04:48:40            Evaluation: max  function angle difference:   0.630632
+04:48:40            Evaluation: RMS  function angle error     :   0.265429
+04:48:40  
+04:48:40   Evaluation yaw orientation (overlap>0.7) on test data:
+04:48:40            Evaluation: mean difference:   32.941789
+04:48:40            Evaluation: max  difference:   180.000000
+04:48:40            Evaluation: RMS error        : 56.263460
+04:48:41 iteration 1, batch/epoch loss: 3.169568062  /  2.937481210
+04:54:00                   saving model weights ...
+04:54:00   Evaluation on test data ...
+04:54:22   Evaluation on test data results: 
+04:54:22            Evaluation: mean overlap difference:   188.450121
+04:54:22            Evaluation: max  overlap difference:   358.673347
+04:54:22            Evaluation: RMS  overlap error        : 193.933603
+04:54:22   Evaluation on test data results: 
+04:54:22            Evaluation: mean function angle difference:   0.238225
+04:54:22            Evaluation: max  function angle difference:   0.632668
+04:54:22            Evaluation: RMS  function angle error     :   0.269434
+04:54:22  
+04:54:22   Evaluation yaw orientation (overlap>0.7) on test data:
+04:54:22            Evaluation: mean difference:   35.884485
+04:54:22            Evaluation: max  difference:   180.000000
+04:54:22            Evaluation: RMS error        : 59.313525
+04:54:23 iteration 2, batch/epoch loss: 3.115612984  /  2.934006637
+04:59:45                   saving model weights ...
+04:59:45   Evaluation on test data ...
+05:00:08   Evaluation on test data results: 
+05:00:08            Evaluation: mean overlap difference:   188.465513
+05:00:08            Evaluation: max  overlap difference:   358.695389
+05:00:08            Evaluation: RMS  overlap error        : 193.948400
+05:00:08   Evaluation on test data results: 
+05:00:08            Evaluation: mean function angle difference:   0.229651
+05:00:08            Evaluation: max  function angle difference:   0.640450
+05:00:08            Evaluation: RMS  function angle error     :   0.262143
+05:00:08  
+05:00:08   Evaluation yaw orientation (overlap>0.7) on test data:
+05:00:08            Evaluation: mean difference:   40.315289
+05:00:08            Evaluation: max  difference:   180.000000
+05:00:08            Evaluation: RMS error        : 65.883679
+05:00:09 iteration 3, batch/epoch loss: 3.649816990  /  2.927869665
+05:05:31                   saving model weights ...
+05:05:31   Evaluation on test data ...
+05:05:53   Evaluation on test data results: 
+05:05:53            Evaluation: mean overlap difference:   188.486068
+05:05:53            Evaluation: max  overlap difference:   358.706261
+05:05:53            Evaluation: RMS  overlap error        : 193.968582
+05:05:53   Evaluation on test data results: 
+05:05:53            Evaluation: mean function angle difference:   0.220443
+05:05:53            Evaluation: max  function angle difference:   0.667573
+05:05:53            Evaluation: RMS  function angle error     :   0.255016
+05:05:53  
+05:05:53   Evaluation yaw orientation (overlap>0.7) on test data:
+05:05:53            Evaluation: mean difference:   40.706002
+05:05:53            Evaluation: max  difference:   180.000000
+05:05:53            Evaluation: RMS error        : 67.712916
+05:05:53 iteration 4, batch/epoch loss: 2.598406553  /  2.925727187
+05:11:16                   saving model weights ...
+05:11:16   Evaluation on test data ...
+05:11:38   Evaluation on test data results: 
+05:11:38            Evaluation: mean overlap difference:   188.455523
+05:11:38            Evaluation: max  overlap difference:   358.689075
+05:11:38            Evaluation: RMS  overlap error        : 193.938776
+05:11:38   Evaluation on test data results: 
+05:11:38            Evaluation: mean function angle difference:   0.235566
+05:11:38            Evaluation: max  function angle difference:   0.629268
+05:11:38            Evaluation: RMS  function angle error     :   0.266924
+05:11:38  
+05:11:38   Evaluation yaw orientation (overlap>0.7) on test data:
+05:11:38            Evaluation: mean difference:   37.197508
+05:11:38            Evaluation: max  difference:   180.000000
+05:11:38            Evaluation: RMS error        : 62.955065
+05:11:39 iteration 5, batch/epoch loss: 2.375154257  /  2.925267644
+05:16:33                   saving model weights ...
+05:16:33   Evaluation on test data ...
+05:16:56   Evaluation on test data results: 
+05:16:56            Evaluation: mean overlap difference:   188.463525
+05:16:56            Evaluation: max  overlap difference:   358.682922
+05:16:56            Evaluation: RMS  overlap error        : 193.946503
+05:16:56   Evaluation on test data results: 
+05:16:56            Evaluation: mean function angle difference:   0.232821
+05:16:56            Evaluation: max  function angle difference:   0.642521
+05:16:56            Evaluation: RMS  function angle error     :   0.265295
+05:16:56  
+05:16:56   Evaluation yaw orientation (overlap>0.7) on test data:
+05:16:56            Evaluation: mean difference:   37.753794
+05:16:56            Evaluation: max  difference:   180.000000
+05:16:56            Evaluation: RMS error        : 63.586531
+05:16:56 iteration 6, batch/epoch loss: 3.343834877  /  2.923148576
+05:22:18                   saving model weights ...
+05:22:18   Evaluation on test data ...
+05:22:40   Evaluation on test data results: 
+05:22:40            Evaluation: mean overlap difference:   188.453697
+05:22:40            Evaluation: max  overlap difference:   358.695770
+05:22:40            Evaluation: RMS  overlap error        : 193.936839
+05:22:40   Evaluation on test data results: 
+05:22:40            Evaluation: mean function angle difference:   0.236974
+05:22:40            Evaluation: max  function angle difference:   0.630721
+05:22:40            Evaluation: RMS  function angle error     :   0.267993
+05:22:40  
+05:22:40   Evaluation yaw orientation (overlap>0.7) on test data:
+05:22:40            Evaluation: mean difference:   40.358097
+05:22:40            Evaluation: max  difference:   180.000000
+05:22:40            Evaluation: RMS error        : 66.454683
+05:22:41 iteration 7, batch/epoch loss: 2.898682594  /  2.923684754
+05:28:04                   saving model weights ...
+05:28:04   Evaluation on test data ...
+05:28:26   Evaluation on test data results: 
+05:28:26            Evaluation: mean overlap difference:   188.459564
+05:28:26            Evaluation: max  overlap difference:   358.694517
+05:28:26            Evaluation: RMS  overlap error        : 193.942453
+05:28:26   Evaluation on test data results: 
+05:28:26            Evaluation: mean function angle difference:   0.234550
+05:28:26            Evaluation: max  function angle difference:   0.640439
+05:28:26            Evaluation: RMS  function angle error     :   0.266205
+05:28:26  
+05:28:26   Evaluation yaw orientation (overlap>0.7) on test data:
+05:28:26            Evaluation: mean difference:   38.964439
+05:28:26            Evaluation: max  difference:   180.000000
+05:28:26            Evaluation: RMS error        : 65.523165
+05:28:27 iteration 8, batch/epoch loss: 2.768448591  /  2.923479152
+05:33:50                   saving model weights ...
+05:33:51   Evaluation on test data ...
+05:34:13   Evaluation on test data results: 
+05:34:13            Evaluation: mean overlap difference:   188.442624
+05:34:13            Evaluation: max  overlap difference:   358.688001
+05:34:13            Evaluation: RMS  overlap error        : 193.926022
+05:34:13   Evaluation on test data results: 
+05:34:13            Evaluation: mean function angle difference:   0.243866
+05:34:13            Evaluation: max  function angle difference:   0.622318
+05:34:13            Evaluation: RMS  function angle error     :   0.273960
+05:34:13  
+05:34:13   Evaluation yaw orientation (overlap>0.7) on test data:
+05:34:13            Evaluation: mean difference:   39.289241
+05:34:13            Evaluation: max  difference:   180.000000
+05:34:13            Evaluation: RMS error        : 64.905601
+05:34:13 iteration 9, batch/epoch loss: 2.540559053  /  2.921850091
+05:39:37                   saving model weights ...
+05:39:37   Evaluation on test data ...
+05:39:55   Evaluation on test data results: 
+05:39:55            Evaluation: mean overlap difference:   188.469213
+05:39:55            Evaluation: max  overlap difference:   358.714882
+05:39:55            Evaluation: RMS  overlap error        : 193.952192
+05:39:55   Evaluation on test data results: 
+05:39:55            Evaluation: mean function angle difference:   0.226599
+05:39:55            Evaluation: max  function angle difference:   0.646359
+05:39:55            Evaluation: RMS  function angle error     :   0.258291
+05:39:55  
+05:39:55   Evaluation yaw orientation (overlap>0.7) on test data:
+05:39:55            Evaluation: mean difference:   38.395017
+05:39:55            Evaluation: max  difference:   180.000000
+05:39:55            Evaluation: RMS error        : 64.517184
+05:39:56 iteration 10, batch/epoch loss: 2.746941328  /  2.922253958
+05:44:28                   saving model weights ...
+05:44:28   Evaluation on test data ...
+05:44:46   Evaluation on test data results: 
+05:44:46            Evaluation: mean overlap difference:   188.461289
+05:44:46            Evaluation: max  overlap difference:   358.712141
+05:44:46            Evaluation: RMS  overlap error        : 193.944293
+05:44:46   Evaluation on test data results: 
+05:44:46            Evaluation: mean function angle difference:   0.232537
+05:44:46            Evaluation: max  function angle difference:   0.641467
+05:44:46            Evaluation: RMS  function angle error     :   0.263687
+05:44:46  
+05:44:46   Evaluation yaw orientation (overlap>0.7) on test data:
+05:44:46            Evaluation: mean difference:   41.087882
+05:44:46            Evaluation: max  difference:   180.000000
+05:44:46            Evaluation: RMS error        : 67.460526
+05:44:47 iteration 11, batch/epoch loss: 3.070896387  /  2.921768014
+05:49:19                   saving model weights ...
+05:49:19   Evaluation on test data ...
+05:49:37   Evaluation on test data results: 
+05:49:37            Evaluation: mean overlap difference:   188.471701
+05:49:37            Evaluation: max  overlap difference:   358.735085
+05:49:37            Evaluation: RMS  overlap error        : 193.954990
+05:49:37   Evaluation on test data results: 
+05:49:37            Evaluation: mean function angle difference:   0.222388
+05:49:37            Evaluation: max  function angle difference:   0.646372
+05:49:37            Evaluation: RMS  function angle error     :   0.253186
+05:49:37  
+05:49:37   Evaluation yaw orientation (overlap>0.7) on test data:
+05:49:37            Evaluation: mean difference:   41.128652
+05:49:37            Evaluation: max  difference:   180.000000
+05:49:37            Evaluation: RMS error        : 67.136772
+05:49:37 iteration 12, batch/epoch loss: 3.346448898  /  2.920535864
+05:54:10                   saving model weights ...
+05:54:10   Evaluation on test data ...
+05:54:28   Evaluation on test data results: 
+05:54:28            Evaluation: mean overlap difference:   188.463105
+05:54:28            Evaluation: max  overlap difference:   358.723962
+05:54:28            Evaluation: RMS  overlap error        : 193.946170
+05:54:28   Evaluation on test data results: 
+05:54:28            Evaluation: mean function angle difference:   0.230276
+05:54:28            Evaluation: max  function angle difference:   0.644062
+05:54:28            Evaluation: RMS  function angle error     :   0.261267
+05:54:28  
+05:54:28   Evaluation yaw orientation (overlap>0.7) on test data:
+05:54:28            Evaluation: mean difference:   39.290374
+05:54:28            Evaluation: max  difference:   180.000000
+05:54:28            Evaluation: RMS error        : 65.341977
+05:54:28 iteration 13, batch/epoch loss: 3.328463793  /  2.920752264
+05:58:49                   saving model weights ...
+05:58:49   Evaluation on test data ...
+05:59:07   Evaluation on test data results: 
+05:59:07            Evaluation: mean overlap difference:   188.461552
+05:59:07            Evaluation: max  overlap difference:   358.725130
+05:59:07            Evaluation: RMS  overlap error        : 193.944768
+05:59:07   Evaluation on test data results: 
+05:59:07            Evaluation: mean function angle difference:   0.229454
+05:59:07            Evaluation: max  function angle difference:   0.630548
+05:59:07            Evaluation: RMS  function angle error     :   0.259686
+05:59:07  
+05:59:07   Evaluation yaw orientation (overlap>0.7) on test data:
+05:59:07            Evaluation: mean difference:   40.297395
+05:59:07            Evaluation: max  difference:   180.000000
+05:59:07            Evaluation: RMS error        : 66.432580
+05:59:07 iteration 14, batch/epoch loss: 3.469351292  /  2.919819567
+06:03:29                   saving model weights ...
+06:03:29   Evaluation on test data ...
+06:03:46   Evaluation on test data results: 
+06:03:46            Evaluation: mean overlap difference:   188.456707
+06:03:46            Evaluation: max  overlap difference:   358.713247
+06:03:46            Evaluation: RMS  overlap error        : 193.939769
+06:03:46   Evaluation on test data results: 
+06:03:46            Evaluation: mean function angle difference:   0.235233
+06:03:46            Evaluation: max  function angle difference:   0.639319
+06:03:46            Evaluation: RMS  function angle error     :   0.265635
+06:03:46  
+06:03:46   Evaluation yaw orientation (overlap>0.7) on test data:
+06:03:46            Evaluation: mean difference:   38.063194
+06:03:46            Evaluation: max  difference:   180.000000
+06:03:46            Evaluation: RMS error        : 64.588074
+06:03:46 iteration 15, batch/epoch loss: 3.371452093  /  2.919126619
+06:08:19                   saving model weights ...
+06:08:19   Evaluation on test data ...
+06:08:36   Evaluation on test data results: 
+06:08:36            Evaluation: mean overlap difference:   188.470637
+06:08:36            Evaluation: max  overlap difference:   358.731493
+06:08:36            Evaluation: RMS  overlap error        : 193.953439
+06:08:36   Evaluation on test data results: 
+06:08:36            Evaluation: mean function angle difference:   0.226123
+06:08:36            Evaluation: max  function angle difference:   0.653386
+06:08:36            Evaluation: RMS  function angle error     :   0.257467
+06:08:36  
+06:08:36   Evaluation yaw orientation (overlap>0.7) on test data:
+06:08:36            Evaluation: mean difference:   39.207475
+06:08:36            Evaluation: max  difference:   180.000000
+06:08:36            Evaluation: RMS error        : 65.499221
+06:08:37 iteration 16, batch/epoch loss: 3.146462440  /  2.918966577
+06:13:09                   saving model weights ...
+06:13:09   Evaluation on test data ...
+06:13:27   Evaluation on test data results: 
+06:13:27            Evaluation: mean overlap difference:   188.457593
+06:13:27            Evaluation: max  overlap difference:   358.723651
+06:13:27            Evaluation: RMS  overlap error        : 193.940874
+06:13:27   Evaluation on test data results: 
+06:13:27            Evaluation: mean function angle difference:   0.233859
+06:13:27            Evaluation: max  function angle difference:   0.643839
+06:13:27            Evaluation: RMS  function angle error     :   0.263915
+06:13:27  
+06:13:27   Evaluation yaw orientation (overlap>0.7) on test data:
+06:13:27            Evaluation: mean difference:   38.847565
+06:13:27            Evaluation: max  difference:   180.000000
+06:13:27            Evaluation: RMS error        : 64.897693
+06:13:28 iteration 17, batch/epoch loss: 2.614287853  /  2.918491813
+06:18:00                   saving model weights ...
+06:18:00   Evaluation on test data ...
+06:18:18   Evaluation on test data results: 
+06:18:18            Evaluation: mean overlap difference:   188.469039
+06:18:18            Evaluation: max  overlap difference:   358.741641
+06:18:18            Evaluation: RMS  overlap error        : 193.952025
+06:18:18   Evaluation on test data results: 
+06:18:18            Evaluation: mean function angle difference:   0.226274
+06:18:18            Evaluation: max  function angle difference:   0.652841
+06:18:18            Evaluation: RMS  function angle error     :   0.256856
+06:18:18  
+06:18:18   Evaluation yaw orientation (overlap>0.7) on test data:
+06:18:18            Evaluation: mean difference:   38.790034
+06:18:18            Evaluation: max  difference:   180.000000
+06:18:18            Evaluation: RMS error        : 64.724939
+06:18:19 iteration 18, batch/epoch loss: 3.070257187  /  2.917908327
+06:22:51                   saving model weights ...
+06:22:51   Evaluation on test data ...
+06:23:09   Evaluation on test data results: 
+06:23:09            Evaluation: mean overlap difference:   188.462208
+06:23:09            Evaluation: max  overlap difference:   358.724320
+06:23:09            Evaluation: RMS  overlap error        : 193.945296
+06:23:09   Evaluation on test data results: 
+06:23:09            Evaluation: mean function angle difference:   0.231585
+06:23:09            Evaluation: max  function angle difference:   0.646329
+06:23:09            Evaluation: RMS  function angle error     :   0.262169
+06:23:09  
+06:23:09   Evaluation yaw orientation (overlap>0.7) on test data:
+06:23:09            Evaluation: mean difference:   40.073839
+06:23:09            Evaluation: max  difference:   180.000000
+06:23:09            Evaluation: RMS error        : 66.007831
+06:23:09 iteration 19, batch/epoch loss: 2.646520138  /  2.917492858
+06:27:42                   saving model weights ...
+06:27:42   Evaluation on test data ...
+06:28:00   Evaluation on test data results: 
+06:28:00            Evaluation: mean overlap difference:   188.458068
+06:28:00            Evaluation: max  overlap difference:   358.712671
+06:28:00            Evaluation: RMS  overlap error        : 193.941376
+06:28:00   Evaluation on test data results: 
+06:28:00            Evaluation: mean function angle difference:   0.232516
+06:28:00            Evaluation: max  function angle difference:   0.634103
+06:28:00            Evaluation: RMS  function angle error     :   0.262840
+06:28:00  
+06:28:00   Evaluation yaw orientation (overlap>0.7) on test data:
+06:28:00            Evaluation: mean difference:   38.132956
+06:28:00            Evaluation: max  difference:   180.000000
+06:28:00            Evaluation: RMS error        : 64.301253
+06:28:00 iteration 20, batch/epoch loss: 2.755520344  /  2.916933899
+06:32:33                   saving model weights ...
+06:32:33   Evaluation on test data ...
+06:32:51   Evaluation on test data results: 
+06:32:51            Evaluation: mean overlap difference:   188.468830
+06:32:51            Evaluation: max  overlap difference:   358.752912
+06:32:51            Evaluation: RMS  overlap error        : 193.951798
+06:32:51   Evaluation on test data results: 
+06:32:51            Evaluation: mean function angle difference:   0.225692
+06:32:51            Evaluation: max  function angle difference:   0.649970
+06:32:51            Evaluation: RMS  function angle error     :   0.256302
+06:32:51  
+06:32:51   Evaluation yaw orientation (overlap>0.7) on test data:
+06:32:51            Evaluation: mean difference:   39.674745
+06:32:51            Evaluation: max  difference:   180.000000
+06:32:51            Evaluation: RMS error        : 66.003119
+06:32:51 iteration 21, batch/epoch loss: 2.959230661  /  2.916549205
+06:37:24                   saving model weights ...
+06:37:24   Evaluation on test data ...
+06:37:42   Evaluation on test data results: 
+06:37:42            Evaluation: mean overlap difference:   188.460672
+06:37:42            Evaluation: max  overlap difference:   358.736111
+06:37:42            Evaluation: RMS  overlap error        : 193.943984
+06:37:42   Evaluation on test data results: 
+06:37:42            Evaluation: mean function angle difference:   0.232280
+06:37:42            Evaluation: max  function angle difference:   0.646369
+06:37:42            Evaluation: RMS  function angle error     :   0.262535
+06:37:42  
+06:37:42   Evaluation yaw orientation (overlap>0.7) on test data:
+06:37:42            Evaluation: mean difference:   38.659343
+06:37:42            Evaluation: max  difference:   180.000000
+06:37:42            Evaluation: RMS error        : 64.096266
+06:37:42 iteration 22, batch/epoch loss: 2.498938322  /  2.915574975
+06:42:14                   saving model weights ...
+06:42:14   Evaluation on test data ...
+06:42:32   Evaluation on test data results: 
+06:42:32            Evaluation: mean overlap difference:   188.469759
+06:42:32            Evaluation: max  overlap difference:   358.757072
+06:42:32            Evaluation: RMS  overlap error        : 193.952932
+06:42:32   Evaluation on test data results: 
+06:42:32            Evaluation: mean function angle difference:   0.223688
+06:42:32            Evaluation: max  function angle difference:   0.649766
+06:42:32            Evaluation: RMS  function angle error     :   0.254003
+06:42:32  
+06:42:32   Evaluation yaw orientation (overlap>0.7) on test data:
+06:42:32            Evaluation: mean difference:   39.387316
+06:42:32            Evaluation: max  difference:   180.000000
+06:42:32            Evaluation: RMS error        : 65.499276
+06:42:32 iteration 23, batch/epoch loss: 3.111898184  /  2.915368079
+06:47:05                   saving model weights ...
+06:47:05   Evaluation on test data ...
+06:47:23   Evaluation on test data results: 
+06:47:23            Evaluation: mean overlap difference:   188.466923
+06:47:23            Evaluation: max  overlap difference:   358.729399
+06:47:23            Evaluation: RMS  overlap error        : 193.950054
+06:47:23   Evaluation on test data results: 
+06:47:23            Evaluation: mean function angle difference:   0.228675
+06:47:23            Evaluation: max  function angle difference:   0.654096
+06:47:23            Evaluation: RMS  function angle error     :   0.259432
+06:47:23  
+06:47:23   Evaluation yaw orientation (overlap>0.7) on test data:
+06:47:23            Evaluation: mean difference:   38.502831
+06:47:23            Evaluation: max  difference:   180.000000
+06:47:23            Evaluation: RMS error        : 64.283062
+06:47:23 iteration 24, batch/epoch loss: 2.850466728  /  2.914933019
+06:51:56                   saving model weights ...
+06:51:56   Evaluation on test data ...
+06:52:14   Evaluation on test data results: 
+06:52:14            Evaluation: mean overlap difference:   188.470092
+06:52:14            Evaluation: max  overlap difference:   358.738705
+06:52:14            Evaluation: RMS  overlap error        : 193.953082
+06:52:14   Evaluation on test data results: 
+06:52:14            Evaluation: mean function angle difference:   0.226310
+06:52:14            Evaluation: max  function angle difference:   0.653965
+06:52:14            Evaluation: RMS  function angle error     :   0.257215
+06:52:14  
+06:52:14   Evaluation yaw orientation (overlap>0.7) on test data:
+06:52:14            Evaluation: mean difference:   39.055719
+06:52:14            Evaluation: max  difference:   180.000000
+06:52:14            Evaluation: RMS error        : 64.600827
+06:52:14 iteration 25, batch/epoch loss: 3.151125193  /  2.914154483
+06:56:47                   saving model weights ...
+06:56:47   Evaluation on test data ...
+06:57:05   Evaluation on test data results: 
+06:57:05            Evaluation: mean overlap difference:   188.463646
+06:57:05            Evaluation: max  overlap difference:   358.749411
+06:57:05            Evaluation: RMS  overlap error        : 193.946846
+06:57:05   Evaluation on test data results: 
+06:57:05            Evaluation: mean function angle difference:   0.229390
+06:57:05            Evaluation: max  function angle difference:   0.650443
+06:57:05            Evaluation: RMS  function angle error     :   0.259223
+06:57:05  
+06:57:05   Evaluation yaw orientation (overlap>0.7) on test data:
+06:57:05            Evaluation: mean difference:   39.081993
+06:57:05            Evaluation: max  difference:   180.000000
+06:57:05            Evaluation: RMS error        : 64.392228
+06:57:05 iteration 26, batch/epoch loss: 2.789503813  /  2.913547979
+07:01:37                   saving model weights ...
+07:01:37   Evaluation on test data ...
+07:01:55   Evaluation on test data results: 
+07:01:55            Evaluation: mean overlap difference:   188.466561
+07:01:55            Evaluation: max  overlap difference:   358.755895
+07:01:55            Evaluation: RMS  overlap error        : 193.949790
+07:01:55   Evaluation on test data results: 
+07:01:55            Evaluation: mean function angle difference:   0.227047
+07:01:55            Evaluation: max  function angle difference:   0.662220
+07:01:55            Evaluation: RMS  function angle error     :   0.256915
+07:01:55  
+07:01:55   Evaluation yaw orientation (overlap>0.7) on test data:
+07:01:55            Evaluation: mean difference:   38.341563
+07:01:55            Evaluation: max  difference:   180.000000
+07:01:55            Evaluation: RMS error        : 63.980387
+07:01:55 iteration 27, batch/epoch loss: 3.042248249  /  2.913479723
+07:06:17                   saving model weights ...
+07:06:17   Evaluation on test data ...
+07:06:34   Evaluation on test data results: 
+07:06:34            Evaluation: mean overlap difference:   188.473384
+07:06:34            Evaluation: max  overlap difference:   358.749351
+07:06:34            Evaluation: RMS  overlap error        : 193.956619
+07:06:34   Evaluation on test data results: 
+07:06:34            Evaluation: mean function angle difference:   0.223603
+07:06:34            Evaluation: max  function angle difference:   0.663880
+07:06:34            Evaluation: RMS  function angle error     :   0.254540
+07:06:34  
+07:06:34   Evaluation yaw orientation (overlap>0.7) on test data:
+07:06:34            Evaluation: mean difference:   38.917780
+07:06:34            Evaluation: max  difference:   180.000000
+07:06:34            Evaluation: RMS error        : 64.772752
+07:06:34 iteration 28, batch/epoch loss: 2.522829056  /  2.913103232
+07:11:07                   saving model weights ...
+07:11:07   Evaluation on test data ...
+07:11:24   Evaluation on test data results: 
+07:11:24            Evaluation: mean overlap difference:   188.495900
+07:11:24            Evaluation: max  overlap difference:   358.810567
+07:11:24            Evaluation: RMS  overlap error        : 193.979106
+07:11:24   Evaluation on test data results: 
+07:11:24            Evaluation: mean function angle difference:   0.200646
+07:11:24            Evaluation: max  function angle difference:   0.656495
+07:11:24            Evaluation: RMS  function angle error     :   0.231570
+07:11:24  
+07:11:24   Evaluation yaw orientation (overlap>0.7) on test data:
+07:11:24            Evaluation: mean difference:   38.923443
+07:11:24            Evaluation: max  difference:   180.000000
+07:11:24            Evaluation: RMS error        : 65.181637
+07:11:25 iteration 29, batch/epoch loss: 2.780139923  /  2.912312363
+07:15:57                   saving model weights ...
+07:15:57   Evaluation on test data ...
+07:16:15   Evaluation on test data results: 
+07:16:15            Evaluation: mean overlap difference:   188.466419
+07:16:15            Evaluation: max  overlap difference:   358.731940
+07:16:15            Evaluation: RMS  overlap error        : 193.949410
+07:16:15   Evaluation on test data results: 
+07:16:15            Evaluation: mean function angle difference:   0.229539
+07:16:15            Evaluation: max  function angle difference:   0.664123
+07:16:15            Evaluation: RMS  function angle error     :   0.259966
+07:16:15  
+07:16:15   Evaluation yaw orientation (overlap>0.7) on test data:
+07:16:15            Evaluation: mean difference:   38.877010
+07:16:15            Evaluation: max  difference:   180.000000
+07:16:15            Evaluation: RMS error        : 64.436690
+07:16:15 iteration 30, batch/epoch loss: 3.012821198  /  2.912064151
+07:20:48                   saving model weights ...
+07:20:48   Evaluation on test data ...
+07:21:06   Evaluation on test data results: 
+07:21:06            Evaluation: mean overlap difference:   188.471175
+07:21:06            Evaluation: max  overlap difference:   358.746203
+07:21:06            Evaluation: RMS  overlap error        : 193.954468
+07:21:06   Evaluation on test data results: 
+07:21:06            Evaluation: mean function angle difference:   0.223441
+07:21:06            Evaluation: max  function angle difference:   0.652386
+07:21:06            Evaluation: RMS  function angle error     :   0.253540
+07:21:06  
+07:21:06   Evaluation yaw orientation (overlap>0.7) on test data:
+07:21:06            Evaluation: mean difference:   38.534315
+07:21:06            Evaluation: max  difference:   180.000000
+07:21:06            Evaluation: RMS error        : 64.248659
+07:21:06 iteration 31, batch/epoch loss: 3.396682978  /  2.911486864
+07:25:39                   saving model weights ...
+07:25:39   Evaluation on test data ...
+07:25:56   Evaluation on test data results: 
+07:25:56            Evaluation: mean overlap difference:   188.463156
+07:25:56            Evaluation: max  overlap difference:   358.738738
+07:25:56            Evaluation: RMS  overlap error        : 193.946446
+07:25:56   Evaluation on test data results: 
+07:25:56            Evaluation: mean function angle difference:   0.228996
+07:25:56            Evaluation: max  function angle difference:   0.649836
+07:25:56            Evaluation: RMS  function angle error     :   0.258434
+07:25:56  
+07:25:56   Evaluation yaw orientation (overlap>0.7) on test data:
+07:25:56            Evaluation: mean difference:   38.609287
+07:25:56            Evaluation: max  difference:   180.000000
+07:25:56            Evaluation: RMS error        : 64.455823
+07:25:57 iteration 32, batch/epoch loss: 2.882428169  /  2.910611278
+07:30:29                   saving model weights ...
+07:30:29   Evaluation on test data ...
+07:30:47   Evaluation on test data results: 
+07:30:47            Evaluation: mean overlap difference:   188.478787
+07:30:47            Evaluation: max  overlap difference:   358.756470
+07:30:47            Evaluation: RMS  overlap error        : 193.961777
+07:30:47   Evaluation on test data results: 
+07:30:47            Evaluation: mean function angle difference:   0.221004
+07:30:47            Evaluation: max  function angle difference:   0.665743
+07:30:47            Evaluation: RMS  function angle error     :   0.252425
+07:30:47  
+07:30:47   Evaluation yaw orientation (overlap>0.7) on test data:
+07:30:47            Evaluation: mean difference:   39.619706
+07:30:47            Evaluation: max  difference:   180.000000
+07:30:47            Evaluation: RMS error        : 65.224583
+07:30:48 iteration 33, batch/epoch loss: 2.871361732  /  2.910285239
+07:35:20                   saving model weights ...
+07:35:20   Evaluation on test data ...
+07:35:38   Evaluation on test data results: 
+07:35:38            Evaluation: mean overlap difference:   188.470072
+07:35:38            Evaluation: max  overlap difference:   358.740877
+07:35:38            Evaluation: RMS  overlap error        : 193.953412
+07:35:38   Evaluation on test data results: 
+07:35:38            Evaluation: mean function angle difference:   0.224138
+07:35:38            Evaluation: max  function angle difference:   0.653420
+07:35:38            Evaluation: RMS  function angle error     :   0.254190
+07:35:38  
+07:35:38   Evaluation yaw orientation (overlap>0.7) on test data:
+07:35:38            Evaluation: mean difference:   39.689015
+07:35:38            Evaluation: max  difference:   180.000000
+07:35:38            Evaluation: RMS error        : 65.618664
+07:35:38 iteration 34, batch/epoch loss: 2.867146969  /  2.909880160
+07:40:11                   saving model weights ...
+07:40:11   Evaluation on test data ...
+07:40:28   Evaluation on test data results: 
+07:40:28            Evaluation: mean overlap difference:   188.465697
+07:40:28            Evaluation: max  overlap difference:   358.752531
+07:40:28            Evaluation: RMS  overlap error        : 193.948971
+07:40:28   Evaluation on test data results: 
+07:40:28            Evaluation: mean function angle difference:   0.226827
+07:40:28            Evaluation: max  function angle difference:   0.655623
+07:40:28            Evaluation: RMS  function angle error     :   0.256338
+07:40:28  
+07:40:28   Evaluation yaw orientation (overlap>0.7) on test data:
+07:40:28            Evaluation: mean difference:   38.979615
+07:40:28            Evaluation: max  difference:   180.000000
+07:40:28            Evaluation: RMS error        : 64.524003
+07:40:29 iteration 35, batch/epoch loss: 3.507982254  /  2.909305127
+07:45:01                   saving model weights ...
+07:45:01   Evaluation on test data ...
+07:45:19   Evaluation on test data results: 
+07:45:19            Evaluation: mean overlap difference:   188.475644
+07:45:19            Evaluation: max  overlap difference:   358.757813
+07:45:19            Evaluation: RMS  overlap error        : 193.958901
+07:45:19   Evaluation on test data results: 
+07:45:19            Evaluation: mean function angle difference:   0.221746
+07:45:19            Evaluation: max  function angle difference:   0.665205
+07:45:19            Evaluation: RMS  function angle error     :   0.252428
+07:45:19  
+07:45:19   Evaluation yaw orientation (overlap>0.7) on test data:
+07:45:19            Evaluation: mean difference:   39.361948
+07:45:19            Evaluation: max  difference:   180.000000
+07:45:19            Evaluation: RMS error        : 65.037560
+07:45:19 iteration 36, batch/epoch loss: 2.516075611  /  2.908664851
+07:49:52                   saving model weights ...
+07:49:52   Evaluation on test data ...
+07:50:10   Evaluation on test data results: 
+07:50:10            Evaluation: mean overlap difference:   188.463221
+07:50:10            Evaluation: max  overlap difference:   358.740670
+07:50:10            Evaluation: RMS  overlap error        : 193.946591
+07:50:10   Evaluation on test data results: 
+07:50:10            Evaluation: mean function angle difference:   0.229128
+07:50:10            Evaluation: max  function angle difference:   0.655211
+07:50:10            Evaluation: RMS  function angle error     :   0.258691
+07:50:10  
+07:50:10   Evaluation yaw orientation (overlap>0.7) on test data:
+07:50:10            Evaluation: mean difference:   39.498075
+07:50:10            Evaluation: max  difference:   180.000000
+07:50:10            Evaluation: RMS error        : 65.230113
+07:50:10 iteration 37, batch/epoch loss: 2.891094923  /  2.908114663
+07:54:43                   saving model weights ...
+07:54:43   Evaluation on test data ...
+07:55:01   Evaluation on test data results: 
+07:55:01            Evaluation: mean overlap difference:   188.471721
+07:55:01            Evaluation: max  overlap difference:   358.753684
+07:55:01            Evaluation: RMS  overlap error        : 193.955137
+07:55:01   Evaluation on test data results: 
+07:55:01            Evaluation: mean function angle difference:   0.221574
+07:55:01            Evaluation: max  function angle difference:   0.652885
+07:55:01            Evaluation: RMS  function angle error     :   0.251370
+07:55:01  
+07:55:01   Evaluation yaw orientation (overlap>0.7) on test data:
+07:55:01            Evaluation: mean difference:   39.205889
+07:55:01            Evaluation: max  difference:   180.000000
+07:55:01            Evaluation: RMS error        : 64.862231
+07:55:01 iteration 38, batch/epoch loss: 2.976989746  /  2.907662671
+07:59:22                   saving model weights ...
+07:59:22   Evaluation on test data ...
+07:59:39   Evaluation on test data results: 
+07:59:39            Evaluation: mean overlap difference:   188.473458
+07:59:39            Evaluation: max  overlap difference:   358.753610
+07:59:39            Evaluation: RMS  overlap error        : 193.956842
+07:59:39   Evaluation on test data results: 
+07:59:39            Evaluation: mean function angle difference:   0.220839
+07:59:39            Evaluation: max  function angle difference:   0.658744
+07:59:39            Evaluation: RMS  function angle error     :   0.250791
+07:59:39  
+07:59:39   Evaluation yaw orientation (overlap>0.7) on test data:
+07:59:39            Evaluation: mean difference:   39.806116
+07:59:39            Evaluation: max  difference:   180.000000
+07:59:39            Evaluation: RMS error        : 65.484309
+07:59:39 iteration 39, batch/epoch loss: 3.195407391  /  2.907268286
+08:04:12                   saving model weights ...
+08:04:12   Evaluation on test data ...
+08:04:30   Evaluation on test data results: 
+08:04:30            Evaluation: mean overlap difference:   188.469485
+08:04:30            Evaluation: max  overlap difference:   358.732676
+08:04:30            Evaluation: RMS  overlap error        : 193.952719
+08:04:30   Evaluation on test data results: 
+08:04:30            Evaluation: mean function angle difference:   0.226212
+08:04:30            Evaluation: max  function angle difference:   0.662673
+08:04:30            Evaluation: RMS  function angle error     :   0.256643
+08:04:30  
+08:04:30   Evaluation yaw orientation (overlap>0.7) on test data:
+08:04:30            Evaluation: mean difference:   39.020385
+08:04:30            Evaluation: max  difference:   180.000000
+08:04:30            Evaluation: RMS error        : 64.714995
+08:04:30 iteration 40, batch/epoch loss: 2.845360041  /  2.906481563
+08:09:03                   saving model weights ...
+08:09:03   Evaluation on test data ...
+08:09:20   Evaluation on test data results: 
+08:09:20            Evaluation: mean overlap difference:   188.460713
+08:09:20            Evaluation: max  overlap difference:   358.739677
+08:09:20            Evaluation: RMS  overlap error        : 193.944535
+08:09:20   Evaluation on test data results: 
+08:09:20            Evaluation: mean function angle difference:   0.228627
+08:09:20            Evaluation: max  function angle difference:   0.649121
+08:09:20            Evaluation: RMS  function angle error     :   0.257822
+08:09:20  
+08:09:20   Evaluation yaw orientation (overlap>0.7) on test data:
+08:09:20            Evaluation: mean difference:   39.857984
+08:09:20            Evaluation: max  difference:   180.000000
+08:09:20            Evaluation: RMS error        : 65.564027
+08:09:21 iteration 41, batch/epoch loss: 2.833605528  /  2.906084971
+08:13:42                   saving model weights ...
+08:13:42   Evaluation on test data ...
+08:13:59   Evaluation on test data results: 
+08:13:59            Evaluation: mean overlap difference:   188.469763
+08:13:59            Evaluation: max  overlap difference:   358.736500
+08:13:59            Evaluation: RMS  overlap error        : 193.952907
+08:13:59   Evaluation on test data results: 
+08:13:59            Evaluation: mean function angle difference:   0.225933
+08:13:59            Evaluation: max  function angle difference:   0.662741
+08:13:59            Evaluation: RMS  function angle error     :   0.256546
+08:13:59  
+08:13:59   Evaluation yaw orientation (overlap>0.7) on test data:
+08:13:59            Evaluation: mean difference:   38.564213
+08:13:59            Evaluation: max  difference:   180.000000
+08:13:59            Evaluation: RMS error        : 64.082688
+08:13:59 iteration 42, batch/epoch loss: 2.655474901  /  2.905342595
+08:18:31                   saving model weights ...
+08:18:31   Evaluation on test data ...
+08:18:49   Evaluation on test data results: 
+08:18:49            Evaluation: mean overlap difference:   188.458247
+08:18:49            Evaluation: max  overlap difference:   358.721474
+08:18:49            Evaluation: RMS  overlap error        : 193.941705
+08:18:49   Evaluation on test data results: 
+08:18:49            Evaluation: mean function angle difference:   0.232681
+08:18:49            Evaluation: max  function angle difference:   0.651549
+08:18:49            Evaluation: RMS  function angle error     :   0.262153
+08:18:49  
+08:18:49   Evaluation yaw orientation (overlap>0.7) on test data:
+08:18:49            Evaluation: mean difference:   38.465232
+08:18:49            Evaluation: max  difference:   180.000000
+08:18:49            Evaluation: RMS error        : 63.899457
+08:18:50 iteration 43, batch/epoch loss: 3.026319742  /  2.904892493
+08:23:22                   saving model weights ...
+08:23:22   Evaluation on test data ...
+08:23:40   Evaluation on test data results: 
+08:23:40            Evaluation: mean overlap difference:   188.468851
+08:23:40            Evaluation: max  overlap difference:   358.728081
+08:23:40            Evaluation: RMS  overlap error        : 193.952061
+08:23:40   Evaluation on test data results: 
+08:23:40            Evaluation: mean function angle difference:   0.226451
+08:23:40            Evaluation: max  function angle difference:   0.660046
+08:23:40            Evaluation: RMS  function angle error     :   0.256821
+08:23:40  
+08:23:40   Evaluation yaw orientation (overlap>0.7) on test data:
+08:23:40            Evaluation: mean difference:   38.411778
+08:23:40            Evaluation: max  difference:   180.000000
+08:23:40            Evaluation: RMS error        : 63.994610
+08:23:40 iteration 44, batch/epoch loss: 2.279021263  /  2.904467485
+08:28:13                   saving model weights ...
+08:28:13   Evaluation on test data ...
+08:28:31   Evaluation on test data results: 
+08:28:31            Evaluation: mean overlap difference:   188.475796
+08:28:31            Evaluation: max  overlap difference:   358.749989
+08:28:31            Evaluation: RMS  overlap error        : 193.958956
+08:28:31   Evaluation on test data results: 
+08:28:31            Evaluation: mean function angle difference:   0.220099
+08:28:31            Evaluation: max  function angle difference:   0.656956
+08:28:31            Evaluation: RMS  function angle error     :   0.250489
+08:28:31  
+08:28:31   Evaluation yaw orientation (overlap>0.7) on test data:
+08:28:31            Evaluation: mean difference:   38.577123
+08:28:31            Evaluation: max  difference:   180.000000
+08:28:31            Evaluation: RMS error        : 64.118509
+08:28:31 iteration 45, batch/epoch loss: 2.883065224  /  2.903630585
+08:33:03                   saving model weights ...
+08:33:03   Evaluation on test data ...
+08:33:21   Evaluation on test data results: 
+08:33:21            Evaluation: mean overlap difference:   188.462110
+08:33:21            Evaluation: max  overlap difference:   358.729026
+08:33:21            Evaluation: RMS  overlap error        : 193.945485
+08:33:21   Evaluation on test data results: 
+08:33:21            Evaluation: mean function angle difference:   0.229320
+08:33:21            Evaluation: max  function angle difference:   0.658665
+08:33:21            Evaluation: RMS  function angle error     :   0.258735
+08:33:21  
+08:33:21   Evaluation yaw orientation (overlap>0.7) on test data:
+08:33:21            Evaluation: mean difference:   38.837146
+08:33:21            Evaluation: max  difference:   180.000000
+08:33:21            Evaluation: RMS error        : 64.181912
+08:33:21 iteration 46, batch/epoch loss: 2.224957943  /  2.903549248
+08:37:54                   saving model weights ...
+08:37:54   Evaluation on test data ...
+08:38:11   Evaluation on test data results: 
+08:38:11            Evaluation: mean overlap difference:   188.477396
+08:38:11            Evaluation: max  overlap difference:   358.739886
+08:38:11            Evaluation: RMS  overlap error        : 193.960608
+08:38:11   Evaluation on test data results: 
+08:38:11            Evaluation: mean function angle difference:   0.219948
+08:38:11            Evaluation: max  function angle difference:   0.669165
+08:38:11            Evaluation: RMS  function angle error     :   0.250662
+08:38:11  
+08:38:11   Evaluation yaw orientation (overlap>0.7) on test data:
+08:38:11            Evaluation: mean difference:   39.185730
+08:38:11            Evaluation: max  difference:   180.000000
+08:38:11            Evaluation: RMS error        : 64.812986
+08:38:12 iteration 47, batch/epoch loss: 3.139376163  /  2.902571984
+08:42:44                   saving model weights ...
+08:42:44   Evaluation on test data ...
+08:43:02   Evaluation on test data results: 
+08:43:02            Evaluation: mean overlap difference:   188.466119
+08:43:02            Evaluation: max  overlap difference:   358.733789
+08:43:02            Evaluation: RMS  overlap error        : 193.949466
+08:43:02   Evaluation on test data results: 
+08:43:02            Evaluation: mean function angle difference:   0.227113
+08:43:02            Evaluation: max  function angle difference:   0.666193
+08:43:02            Evaluation: RMS  function angle error     :   0.257050
+08:43:02  
+08:43:02   Evaluation yaw orientation (overlap>0.7) on test data:
+08:43:02            Evaluation: mean difference:   39.835561
+08:43:02            Evaluation: max  difference:   180.000000
+08:43:02            Evaluation: RMS error        : 65.326326
+08:43:02 iteration 48, batch/epoch loss: 2.495697021  /  2.901782454
+08:47:35                   saving model weights ...
+08:47:35   Evaluation on test data ...
+08:47:52   Evaluation on test data results: 
+08:47:52            Evaluation: mean overlap difference:   188.475382
+08:47:52            Evaluation: max  overlap difference:   358.759254
+08:47:52            Evaluation: RMS  overlap error        : 193.958503
+08:47:52   Evaluation on test data results: 
+08:47:52            Evaluation: mean function angle difference:   0.220904
+08:47:52            Evaluation: max  function angle difference:   0.666017
+08:47:52            Evaluation: RMS  function angle error     :   0.251523
+08:47:52  
+08:47:52   Evaluation yaw orientation (overlap>0.7) on test data:
+08:47:52            Evaluation: mean difference:   39.326161
+08:47:52            Evaluation: max  difference:   180.000000
+08:47:52            Evaluation: RMS error        : 64.841696
+08:47:53 iteration 49, batch/epoch loss: 3.038168907  /  2.901619781
+08:52:25                   saving model weights ...
+08:52:25   Evaluation on test data ...
+08:52:43   Evaluation on test data results: 
+08:52:43            Evaluation: mean overlap difference:   188.489315
+08:52:43            Evaluation: max  overlap difference:   358.769425
+08:52:43            Evaluation: RMS  overlap error        : 193.972061
+08:52:43   Evaluation on test data results: 
+08:52:43            Evaluation: mean function angle difference:   0.213681
+08:52:43            Evaluation: max  function angle difference:   0.691737
+08:52:43            Evaluation: RMS  function angle error     :   0.245983
+08:52:43  
+08:52:43   Evaluation yaw orientation (overlap>0.7) on test data:
+08:52:43            Evaluation: mean difference:   39.515968
+08:52:43            Evaluation: max  difference:   180.000000
+08:52:43            Evaluation: RMS error        : 65.071483
+08:52:43 iteration 50, batch/epoch loss: 3.157757282  /  2.900770813
+08:57:16                   saving model weights ...
+08:57:16   Evaluation on test data ...
+08:57:34   Evaluation on test data results: 
+08:57:34            Evaluation: mean overlap difference:   188.468391
+08:57:34            Evaluation: max  overlap difference:   358.733230
+08:57:34            Evaluation: RMS  overlap error        : 193.951656
+08:57:34   Evaluation on test data results: 
+08:57:34            Evaluation: mean function angle difference:   0.224275
+08:57:34            Evaluation: max  function angle difference:   0.666879
+08:57:34            Evaluation: RMS  function angle error     :   0.254017
+08:57:34  
+08:57:34   Evaluation yaw orientation (overlap>0.7) on test data:
+08:57:34            Evaluation: mean difference:   39.130464
+08:57:34            Evaluation: max  difference:   180.000000
+08:57:34            Evaluation: RMS error        : 64.491528
+08:57:34 iteration 51, batch/epoch loss: 2.943603039  /  2.900804628
+09:02:07                   saving model weights ...
+09:02:07   Evaluation on test data ...
+09:02:25   Evaluation on test data results: 
+09:02:25            Evaluation: mean overlap difference:   188.463720
+09:02:25            Evaluation: max  overlap difference:   358.735438
+09:02:25            Evaluation: RMS  overlap error        : 193.947052
+09:02:25   Evaluation on test data results: 
+09:02:25            Evaluation: mean function angle difference:   0.229073
+09:02:25            Evaluation: max  function angle difference:   0.673372
+09:02:25            Evaluation: RMS  function angle error     :   0.258607
+09:02:25  
+09:02:25   Evaluation yaw orientation (overlap>0.7) on test data:
+09:02:25            Evaluation: mean difference:   39.694677
+09:02:25            Evaluation: max  difference:   180.000000
+09:02:25            Evaluation: RMS error        : 64.979146
+09:02:25 iteration 52, batch/epoch loss: 2.390005589  /  2.900259077
+09:06:58                   saving model weights ...
+09:06:58   Evaluation on test data ...
+09:07:16   Evaluation on test data results: 
+09:07:16            Evaluation: mean overlap difference:   188.462852
+09:07:16            Evaluation: max  overlap difference:   358.722753
+09:07:16            Evaluation: RMS  overlap error        : 193.946055
+09:07:16   Evaluation on test data results: 
+09:07:16            Evaluation: mean function angle difference:   0.231047
+09:07:16            Evaluation: max  function angle difference:   0.684178
+09:07:16            Evaluation: RMS  function angle error     :   0.260812
+09:07:16  
+09:07:16   Evaluation yaw orientation (overlap>0.7) on test data:
+09:07:16            Evaluation: mean difference:   38.930238
+09:07:16            Evaluation: max  difference:   180.000000
+09:07:16            Evaluation: RMS error        : 64.073406
+09:07:16 iteration 53, batch/epoch loss: 2.495482206  /  2.899558952
+09:11:48                   saving model weights ...
+09:11:48   Evaluation on test data ...
+09:12:06   Evaluation on test data results: 
+09:12:06            Evaluation: mean overlap difference:   188.462993
+09:12:06            Evaluation: max  overlap difference:   358.725839
+09:12:06            Evaluation: RMS  overlap error        : 193.946097
+09:12:06   Evaluation on test data results: 
+09:12:06            Evaluation: mean function angle difference:   0.230546
+09:12:06            Evaluation: max  function angle difference:   0.672449
+09:12:06            Evaluation: RMS  function angle error     :   0.260507
+09:12:06  
+09:12:06   Evaluation yaw orientation (overlap>0.7) on test data:
+09:12:06            Evaluation: mean difference:   40.049151
+09:12:06            Evaluation: max  difference:   180.000000
+09:12:06            Evaluation: RMS error        : 65.406524
+09:12:06 iteration 54, batch/epoch loss: 2.315603971  /  2.899171494
+09:16:39                   saving model weights ...
+09:16:39   Evaluation on test data ...
+09:16:57   Evaluation on test data results: 
+09:16:57            Evaluation: mean overlap difference:   188.469957
+09:16:57            Evaluation: max  overlap difference:   358.749104
+09:16:57            Evaluation: RMS  overlap error        : 193.953273
+09:16:57   Evaluation on test data results: 
+09:16:57            Evaluation: mean function angle difference:   0.225315
+09:16:57            Evaluation: max  function angle difference:   0.673050
+09:16:57            Evaluation: RMS  function angle error     :   0.255609
+09:16:57  
+09:16:57   Evaluation yaw orientation (overlap>0.7) on test data:
+09:16:57            Evaluation: mean difference:   40.083352
+09:16:57            Evaluation: max  difference:   180.000000
+09:16:57            Evaluation: RMS error        : 65.499994
+09:16:57 iteration 55, batch/epoch loss: 2.672950268  /  2.898361265
+09:21:18                   saving model weights ...
+09:21:18   Evaluation on test data ...
+09:21:36   Evaluation on test data results: 
+09:21:36            Evaluation: mean overlap difference:   188.470995
+09:21:36            Evaluation: max  overlap difference:   358.745226
+09:21:36            Evaluation: RMS  overlap error        : 193.954123
+09:21:36   Evaluation on test data results: 
+09:21:36            Evaluation: mean function angle difference:   0.225934
+09:21:36            Evaluation: max  function angle difference:   0.686010
+09:21:36            Evaluation: RMS  function angle error     :   0.256501
+09:21:36  
+09:21:36   Evaluation yaw orientation (overlap>0.7) on test data:
+09:21:36            Evaluation: mean difference:   39.735447
+09:21:36            Evaluation: max  difference:   180.000000
+09:21:36            Evaluation: RMS error        : 65.083391
+09:21:36 iteration 56, batch/epoch loss: 2.550844193  /  2.898102140
+09:26:08                   saving model weights ...
+09:26:08   Evaluation on test data ...
+09:26:26   Evaluation on test data results: 
+09:26:26            Evaluation: mean overlap difference:   188.460595
+09:26:26            Evaluation: max  overlap difference:   358.737825
+09:26:26            Evaluation: RMS  overlap error        : 193.943824
+09:26:26   Evaluation on test data results: 
+09:26:26            Evaluation: mean function angle difference:   0.232013
+09:26:26            Evaluation: max  function angle difference:   0.668053
+09:26:26            Evaluation: RMS  function angle error     :   0.261463
+09:26:26  
+09:26:26   Evaluation yaw orientation (overlap>0.7) on test data:
+09:26:26            Evaluation: mean difference:   38.512797
+09:26:26            Evaluation: max  difference:   180.000000
+09:26:26            Evaluation: RMS error        : 63.534145
+09:26:27 iteration 57, batch/epoch loss: 2.432712317  /  2.897195604
+09:30:59                   saving model weights ...
+09:30:59   Evaluation on test data ...
+09:31:17   Evaluation on test data results: 
+09:31:17            Evaluation: mean overlap difference:   188.476977
+09:31:17            Evaluation: max  overlap difference:   358.772753
+09:31:17            Evaluation: RMS  overlap error        : 193.960004
+09:31:17   Evaluation on test data results: 
+09:31:17            Evaluation: mean function angle difference:   0.221442
+09:31:17            Evaluation: max  function angle difference:   0.688405
+09:31:17            Evaluation: RMS  function angle error     :   0.252332
+09:31:17  
+09:31:17   Evaluation yaw orientation (overlap>0.7) on test data:
+09:31:17            Evaluation: mean difference:   40.228539
+09:31:17            Evaluation: max  difference:   180.000000
+09:31:17            Evaluation: RMS error        : 65.849575
+09:31:17 iteration 58, batch/epoch loss: 3.133576870  /  2.896929366
+09:35:50                   saving model weights ...
+09:35:50   Evaluation on test data ...
+09:36:08   Evaluation on test data results: 
+09:36:08            Evaluation: mean overlap difference:   188.470347
+09:36:08            Evaluation: max  overlap difference:   358.766154
+09:36:08            Evaluation: RMS  overlap error        : 193.953653
+09:36:08   Evaluation on test data results: 
+09:36:08            Evaluation: mean function angle difference:   0.225252
+09:36:08            Evaluation: max  function angle difference:   0.676232
+09:36:08            Evaluation: RMS  function angle error     :   0.255325
+09:36:08  
+09:36:08   Evaluation yaw orientation (overlap>0.7) on test data:
+09:36:08            Evaluation: mean difference:   39.546546
+09:36:08            Evaluation: max  difference:   180.000000
+09:36:08            Evaluation: RMS error        : 64.911080
+09:36:08 iteration 59, batch/epoch loss: 2.930838108  /  2.896280004
+09:40:29                   saving model weights ...
+09:40:29   Evaluation on test data ...
+09:40:46   Evaluation on test data results: 
+09:40:46            Evaluation: mean overlap difference:   188.471067
+09:40:46            Evaluation: max  overlap difference:   358.764156
+09:40:46            Evaluation: RMS  overlap error        : 193.954228
+09:40:46   Evaluation on test data results: 
+09:40:46            Evaluation: mean function angle difference:   0.225674
+09:40:46            Evaluation: max  function angle difference:   0.676382
+09:40:46            Evaluation: RMS  function angle error     :   0.256171
+09:40:46  
+09:40:46   Evaluation yaw orientation (overlap>0.7) on test data:
+09:40:46            Evaluation: mean difference:   39.045753
+09:40:46            Evaluation: max  difference:   180.000000
+09:40:46            Evaluation: RMS error        : 64.112057
+09:40:47 iteration 60, batch/epoch loss: 2.756202698  /  2.895813577
+09:45:19                   saving model weights ...
+09:45:19   Evaluation on test data ...
+09:45:37   Evaluation on test data results: 
+09:45:37            Evaluation: mean overlap difference:   188.458456
+09:45:37            Evaluation: max  overlap difference:   358.744043
+09:45:37            Evaluation: RMS  overlap error        : 193.941889
+09:45:37   Evaluation on test data results: 
+09:45:37            Evaluation: mean function angle difference:   0.231951
+09:45:37            Evaluation: max  function angle difference:   0.665859
+09:45:37            Evaluation: RMS  function angle error     :   0.261014
+09:45:37  
+09:45:37   Evaluation yaw orientation (overlap>0.7) on test data:
+09:45:37            Evaluation: mean difference:   39.840544
+09:45:37            Evaluation: max  difference:   180.000000
+09:45:37            Evaluation: RMS error        : 65.138146
+09:45:37 iteration 61, batch/epoch loss: 3.087491989  /  2.895230455
+09:50:10                   saving model weights ...
+09:50:10   Evaluation on test data ...
+09:50:28   Evaluation on test data results: 
+09:50:28            Evaluation: mean overlap difference:   188.458852
+09:50:28            Evaluation: max  overlap difference:   358.745959
+09:50:28            Evaluation: RMS  overlap error        : 193.942393
+09:50:28   Evaluation on test data results: 
+09:50:28            Evaluation: mean function angle difference:   0.231068
+09:50:28            Evaluation: max  function angle difference:   0.673196
+09:50:28            Evaluation: RMS  function angle error     :   0.260114
+09:50:28  
+09:50:28   Evaluation yaw orientation (overlap>0.7) on test data:
+09:50:28            Evaluation: mean difference:   39.949037
+09:50:28            Evaluation: max  difference:   180.000000
+09:50:28            Evaluation: RMS error        : 65.315287
+09:50:28 iteration 62, batch/epoch loss: 3.431189060  /  2.894929958
+09:54:49                   saving model weights ...
+09:54:49   Evaluation on test data ...
+09:55:06   Evaluation on test data results: 
+09:55:06            Evaluation: mean overlap difference:   188.463411
+09:55:06            Evaluation: max  overlap difference:   358.757780
+09:55:06            Evaluation: RMS  overlap error        : 193.946585
+09:55:06   Evaluation on test data results: 
+09:55:06            Evaluation: mean function angle difference:   0.229921
+09:55:06            Evaluation: max  function angle difference:   0.685263
+09:55:06            Evaluation: RMS  function angle error     :   0.259879
+09:55:06  
+09:55:06   Evaluation yaw orientation (overlap>0.7) on test data:
+09:55:06            Evaluation: mean difference:   39.916874
+09:55:06            Evaluation: max  difference:   180.000000
+09:55:06            Evaluation: RMS error        : 65.263433
+09:55:06 iteration 63, batch/epoch loss: 2.575117588  /  2.894251581
+09:59:27                   saving model weights ...
+09:59:27   Evaluation on test data ...
+09:59:45   Evaluation on test data results: 
+09:59:45            Evaluation: mean overlap difference:   188.468506
+09:59:45            Evaluation: max  overlap difference:   358.754161
+09:59:45            Evaluation: RMS  overlap error        : 193.951712
+09:59:45   Evaluation on test data results: 
+09:59:45            Evaluation: mean function angle difference:   0.228066
+09:59:45            Evaluation: max  function angle difference:   0.689199
+09:59:45            Evaluation: RMS  function angle error     :   0.258552
+09:59:45  
+09:59:45   Evaluation yaw orientation (overlap>0.7) on test data:
+09:59:45            Evaluation: mean difference:   40.320725
+09:59:45            Evaluation: max  difference:   180.000000
+09:59:45            Evaluation: RMS error        : 65.732758
+09:59:45 iteration 64, batch/epoch loss: 2.619406700  /  2.893563181
+10:04:18                   saving model weights ...
+10:04:18   Evaluation on test data ...
+10:04:35   Evaluation on test data results: 
+10:04:35            Evaluation: mean overlap difference:   188.476656
+10:04:35            Evaluation: max  overlap difference:   358.764041
+10:04:35            Evaluation: RMS  overlap error        : 193.959450
+10:04:35   Evaluation on test data results: 
+10:04:35            Evaluation: mean function angle difference:   0.223651
+10:04:35            Evaluation: max  function angle difference:   0.693333
+10:04:35            Evaluation: RMS  function angle error     :   0.254895
+10:04:35  
+10:04:35   Evaluation yaw orientation (overlap>0.7) on test data:
+10:04:35            Evaluation: mean difference:   40.178709
+10:04:35            Evaluation: max  difference:   180.000000
+10:04:35            Evaluation: RMS error        : 65.396636
+10:04:36 iteration 65, batch/epoch loss: 2.558687449  /  2.893067083
+10:08:56                   saving model weights ...
+10:08:57   Evaluation on test data ...
+10:09:14   Evaluation on test data results: 
+10:09:14            Evaluation: mean overlap difference:   188.464981
+10:09:14            Evaluation: max  overlap difference:   358.764133
+10:09:14            Evaluation: RMS  overlap error        : 193.948475
+10:09:14   Evaluation on test data results: 
+10:09:14            Evaluation: mean function angle difference:   0.228301
+10:09:14            Evaluation: max  function angle difference:   0.680262
+10:09:14            Evaluation: RMS  function angle error     :   0.258178
+10:09:14  
+10:09:14   Evaluation yaw orientation (overlap>0.7) on test data:
+10:09:14            Evaluation: mean difference:   39.981427
+10:09:14            Evaluation: max  difference:   180.000000
+10:09:14            Evaluation: RMS error        : 64.945064
+10:09:15 iteration 66, batch/epoch loss: 2.634629250  /  2.892738555
+10:13:47                   saving model weights ...
+10:13:47   Evaluation on test data ...
+10:14:05   Evaluation on test data results: 
+10:14:05            Evaluation: mean overlap difference:   188.467685
+10:14:05            Evaluation: max  overlap difference:   358.776725
+10:14:05            Evaluation: RMS  overlap error        : 193.950965
+10:14:05   Evaluation on test data results: 
+10:14:05            Evaluation: mean function angle difference:   0.227606
+10:14:05            Evaluation: max  function angle difference:   0.691400
+10:14:05            Evaluation: RMS  function angle error     :   0.257735
+10:14:05  
+10:14:05   Evaluation yaw orientation (overlap>0.7) on test data:
+10:14:05            Evaluation: mean difference:   39.593205
+10:14:05            Evaluation: max  difference:   180.000000
+10:14:05            Evaluation: RMS error        : 64.780850
+10:14:05 iteration 67, batch/epoch loss: 3.095532894  /  2.892044233
+10:18:38                   saving model weights ...
+10:18:38   Evaluation on test data ...
+10:18:56   Evaluation on test data results: 
+10:18:56            Evaluation: mean overlap difference:   188.477801
+10:18:56            Evaluation: max  overlap difference:   358.785748
+10:18:56            Evaluation: RMS  overlap error        : 193.960812
+10:18:56   Evaluation on test data results: 
+10:18:56            Evaluation: mean function angle difference:   0.220892
+10:18:56            Evaluation: max  function angle difference:   0.690295
+10:18:56            Evaluation: RMS  function angle error     :   0.251939
+10:18:56  
+10:18:56   Evaluation yaw orientation (overlap>0.7) on test data:
+10:18:56            Evaluation: mean difference:   40.432616
+10:18:56            Evaluation: max  difference:   180.000000
+10:18:56            Evaluation: RMS error        : 65.562043
+10:18:56 iteration 68, batch/epoch loss: 2.904402494  /  2.891431300
+10:23:29                   saving model weights ...
+10:23:29   Evaluation on test data ...
+10:23:47   Evaluation on test data results: 
+10:23:47            Evaluation: mean overlap difference:   188.470285
+10:23:47            Evaluation: max  overlap difference:   358.773376
+10:23:47            Evaluation: RMS  overlap error        : 193.953473
+10:23:47   Evaluation on test data results: 
+10:23:47            Evaluation: mean function angle difference:   0.225631
+10:23:47            Evaluation: max  function angle difference:   0.694489
+10:23:47            Evaluation: RMS  function angle error     :   0.256118
+10:23:47  
+10:23:47   Evaluation yaw orientation (overlap>0.7) on test data:
+10:23:47            Evaluation: mean difference:   39.764666
+10:23:47            Evaluation: max  difference:   180.000000
+10:23:47            Evaluation: RMS error        : 64.966281
+10:23:47 iteration 69, batch/epoch loss: 2.693531036  /  2.891240741
+10:28:08                   saving model weights ...
+10:28:08   Evaluation on test data ...
+10:28:25   Evaluation on test data results: 
+10:28:25            Evaluation: mean overlap difference:   188.476120
+10:28:25            Evaluation: max  overlap difference:   358.768839
+10:28:25            Evaluation: RMS  overlap error        : 193.959216
+10:28:25   Evaluation on test data results: 
+10:28:25            Evaluation: mean function angle difference:   0.224694
+10:28:25            Evaluation: max  function angle difference:   0.710403
+10:28:25            Evaluation: RMS  function angle error     :   0.256014
+10:28:25  
+10:28:25   Evaluation yaw orientation (overlap>0.7) on test data:
+10:28:25            Evaluation: mean difference:   40.671574
+10:28:25            Evaluation: max  difference:   180.000000
+10:28:25            Evaluation: RMS error        : 65.800390
+10:28:26 iteration 70, batch/epoch loss: 2.548477173  /  2.890414776
+10:32:51                   saving model weights ...
+10:32:51   Evaluation on test data ...
+10:33:08   Evaluation on test data results: 
+10:33:08            Evaluation: mean overlap difference:   188.473092
+10:33:08            Evaluation: max  overlap difference:   358.759796
+10:33:08            Evaluation: RMS  overlap error        : 193.956186
+10:33:08   Evaluation on test data results: 
+10:33:08            Evaluation: mean function angle difference:   0.225071
+10:33:08            Evaluation: max  function angle difference:   0.704185
+10:33:08            Evaluation: RMS  function angle error     :   0.255650
+10:33:08  
+10:33:08   Evaluation yaw orientation (overlap>0.7) on test data:
+10:33:08            Evaluation: mean difference:   40.454134
+10:33:08            Evaluation: max  difference:   180.000000
+10:33:08            Evaluation: RMS error        : 65.744939
+10:33:08 iteration 71, batch/epoch loss: 3.161064863  /  2.889964968
+10:37:41                   saving model weights ...
+10:37:41   Evaluation on test data ...
+10:37:59   Evaluation on test data results: 
+10:37:59            Evaluation: mean overlap difference:   188.470725
+10:37:59            Evaluation: max  overlap difference:   358.758358
+10:37:59            Evaluation: RMS  overlap error        : 193.953744
+10:37:59   Evaluation on test data results: 
+10:37:59            Evaluation: mean function angle difference:   0.226322
+10:37:59            Evaluation: max  function angle difference:   0.700856
+10:37:59            Evaluation: RMS  function angle error     :   0.256984
+10:37:59  
+10:37:59   Evaluation yaw orientation (overlap>0.7) on test data:
+10:37:59            Evaluation: mean difference:   40.722310
+10:37:59            Evaluation: max  difference:   180.000000
+10:37:59            Evaluation: RMS error        : 65.903968
+10:37:59 iteration 72, batch/epoch loss: 3.120729446  /  2.889488132
+10:42:32                   saving model weights ...
+10:42:32   Evaluation on test data ...
+10:42:49   Evaluation on test data results: 
+10:42:49            Evaluation: mean overlap difference:   188.475436
+10:42:49            Evaluation: max  overlap difference:   358.782259
+10:42:49            Evaluation: RMS  overlap error        : 193.958346
+10:42:49   Evaluation on test data results: 
+10:42:49            Evaluation: mean function angle difference:   0.223944
+10:42:49            Evaluation: max  function angle difference:   0.711289
+10:42:49            Evaluation: RMS  function angle error     :   0.255449
+10:42:49  
+10:42:49   Evaluation yaw orientation (overlap>0.7) on test data:
+10:42:49            Evaluation: mean difference:   40.235561
+10:42:49            Evaluation: max  difference:   180.000000
+10:42:49            Evaluation: RMS error        : 65.390632
+10:42:50 iteration 73, batch/epoch loss: 3.067321301  /  2.889063765
+10:47:23                   saving model weights ...
+10:47:23   Evaluation on test data ...
+10:47:41   Evaluation on test data results: 
+10:47:41            Evaluation: mean overlap difference:   188.466982
+10:47:41            Evaluation: max  overlap difference:   358.777486
+10:47:41            Evaluation: RMS  overlap error        : 193.949999
+10:47:41   Evaluation on test data results: 
+10:47:41            Evaluation: mean function angle difference:   0.229584
+10:47:41            Evaluation: max  function angle difference:   0.705674
+10:47:41            Evaluation: RMS  function angle error     :   0.260042
+10:47:41  
+10:47:41   Evaluation yaw orientation (overlap>0.7) on test data:
+10:47:41            Evaluation: mean difference:   40.777803
+10:47:41            Evaluation: max  difference:   180.000000
+10:47:41            Evaluation: RMS error        : 65.988712
+10:47:41 iteration 74, batch/epoch loss: 3.497051716  /  2.888518850
+10:52:14                   saving model weights ...
+10:52:14   Evaluation on test data ...
+10:52:31   Evaluation on test data results: 
+10:52:31            Evaluation: mean overlap difference:   188.474472
+10:52:31            Evaluation: max  overlap difference:   358.770617
+10:52:31            Evaluation: RMS  overlap error        : 193.957373
+10:52:31   Evaluation on test data results: 
+10:52:31            Evaluation: mean function angle difference:   0.224841
+10:52:31            Evaluation: max  function angle difference:   0.704652
+10:52:31            Evaluation: RMS  function angle error     :   0.255881
+10:52:31  
+10:52:31   Evaluation yaw orientation (overlap>0.7) on test data:
+10:52:31            Evaluation: mean difference:   40.327067
+10:52:31            Evaluation: max  difference:   180.000000
+10:52:31            Evaluation: RMS error        : 65.671253
+10:52:32 iteration 75, batch/epoch loss: 2.784998417  /  2.888079328
+10:57:04                   saving model weights ...
+10:57:04   Evaluation on test data ...
+10:57:22   Evaluation on test data results: 
+10:57:22            Evaluation: mean overlap difference:   188.469582
+10:57:22            Evaluation: max  overlap difference:   358.786097
+10:57:22            Evaluation: RMS  overlap error        : 193.952722
+10:57:22   Evaluation on test data results: 
+10:57:22            Evaluation: mean function angle difference:   0.225997
+10:57:22            Evaluation: max  function angle difference:   0.704673
+10:57:22            Evaluation: RMS  function angle error     :   0.256613
+10:57:22  
+10:57:22   Evaluation yaw orientation (overlap>0.7) on test data:
+10:57:22            Evaluation: mean difference:   40.777803
+10:57:22            Evaluation: max  difference:   180.000000
+10:57:22            Evaluation: RMS error        : 65.791079
+10:57:23 iteration 76, batch/epoch loss: 2.218422174  /  2.887517671
+11:01:55                   saving model weights ...
+11:01:55   Evaluation on test data ...
+11:02:13   Evaluation on test data results: 
+11:02:13            Evaluation: mean overlap difference:   188.468300
+11:02:13            Evaluation: max  overlap difference:   358.777210
+11:02:13            Evaluation: RMS  overlap error        : 193.951432
+11:02:13   Evaluation on test data results: 
+11:02:13            Evaluation: mean function angle difference:   0.227527
+11:02:13            Evaluation: max  function angle difference:   0.698994
+11:02:13            Evaluation: RMS  function angle error     :   0.258086
+11:02:13  
+11:02:13   Evaluation yaw orientation (overlap>0.7) on test data:
+11:02:13            Evaluation: mean difference:   40.609060
+11:02:13            Evaluation: max  difference:   180.000000
+11:02:13            Evaluation: RMS error        : 66.051483
+11:02:13 iteration 77, batch/epoch loss: 2.836399317  /  2.887119368
+11:06:46                   saving model weights ...
+11:06:46   Evaluation on test data ...
+11:07:04   Evaluation on test data results: 
+11:07:04            Evaluation: mean overlap difference:   188.469226
+11:07:04            Evaluation: max  overlap difference:   358.776177
+11:07:04            Evaluation: RMS  overlap error        : 193.952361
+11:07:04   Evaluation on test data results: 
+11:07:04            Evaluation: mean function angle difference:   0.227781
+11:07:04            Evaluation: max  function angle difference:   0.706401
+11:07:04            Evaluation: RMS  function angle error     :   0.258366
+11:07:04  
+11:07:04   Evaluation yaw orientation (overlap>0.7) on test data:
+11:07:04            Evaluation: mean difference:   40.609513
+11:07:04            Evaluation: max  difference:   180.000000
+11:07:04            Evaluation: RMS error        : 65.489707
+11:07:04 iteration 78, batch/epoch loss: 2.992733002  /  2.886506598
+11:11:37                   saving model weights ...
+11:11:37   Evaluation on test data ...
+11:11:55   Evaluation on test data results: 
+11:11:55            Evaluation: mean overlap difference:   188.470488
+11:11:55            Evaluation: max  overlap difference:   358.789194
+11:11:55            Evaluation: RMS  overlap error        : 193.953644
+11:11:55   Evaluation on test data results: 
+11:11:55            Evaluation: mean function angle difference:   0.225976
+11:11:55            Evaluation: max  function angle difference:   0.696472
+11:11:55            Evaluation: RMS  function angle error     :   0.256614
+11:11:55  
+11:11:55   Evaluation yaw orientation (overlap>0.7) on test data:
+11:11:55            Evaluation: mean difference:   40.730691
+11:11:55            Evaluation: max  difference:   180.000000
+11:11:55            Evaluation: RMS error        : 65.858787
+11:11:55 iteration 79, batch/epoch loss: 3.059515715  /  2.886132003
+11:16:28                   saving model weights ...
+11:16:28   Evaluation on test data ...
+11:16:45   Evaluation on test data results: 
+11:16:45            Evaluation: mean overlap difference:   188.459276
+11:16:45            Evaluation: max  overlap difference:   358.765617
+11:16:45            Evaluation: RMS  overlap error        : 193.942641
+11:16:45   Evaluation on test data results: 
+11:16:45            Evaluation: mean function angle difference:   0.232573
+11:16:45            Evaluation: max  function angle difference:   0.701835
+11:16:45            Evaluation: RMS  function angle error     :   0.262483
+11:16:45  
+11:16:45   Evaluation yaw orientation (overlap>0.7) on test data:
+11:16:45            Evaluation: mean difference:   40.997055
+11:16:45            Evaluation: max  difference:   180.000000
+11:16:45            Evaluation: RMS error        : 66.111320
+11:16:46 iteration 80, batch/epoch loss: 2.647018433  /  2.885268710
+11:21:19                   saving model weights ...
+11:21:19   Evaluation on test data ...
+11:21:36   Evaluation on test data results: 
+11:21:36            Evaluation: mean overlap difference:   188.474776
+11:21:36            Evaluation: max  overlap difference:   358.784499
+11:21:36            Evaluation: RMS  overlap error        : 193.957743
+11:21:36   Evaluation on test data results: 
+11:21:36            Evaluation: mean function angle difference:   0.224840
+11:21:36            Evaluation: max  function angle difference:   0.719667
+11:21:36            Evaluation: RMS  function angle error     :   0.255914
+11:21:36  
+11:21:36   Evaluation yaw orientation (overlap>0.7) on test data:
+11:21:36            Evaluation: mean difference:   40.563080
+11:21:36            Evaluation: max  difference:   180.000000
+11:21:36            Evaluation: RMS error        : 65.737086
+11:21:37 iteration 81, batch/epoch loss: 3.216153383  /  2.884916080
+11:26:09                   saving model weights ...
+11:26:10   Evaluation on test data ...
+11:26:27   Evaluation on test data results: 
+11:26:27            Evaluation: mean overlap difference:   188.467714
+11:26:27            Evaluation: max  overlap difference:   358.784580
+11:26:27            Evaluation: RMS  overlap error        : 193.950936
+11:26:27   Evaluation on test data results: 
+11:26:27            Evaluation: mean function angle difference:   0.228482
+11:26:27            Evaluation: max  function angle difference:   0.708672
+11:26:27            Evaluation: RMS  function angle error     :   0.259084
+11:26:27  
+11:26:27   Evaluation yaw orientation (overlap>0.7) on test data:
+11:26:27            Evaluation: mean difference:   41.153794
+11:26:27            Evaluation: max  difference:   180.000000
+11:26:27            Evaluation: RMS error        : 66.334374
+11:26:28 iteration 82, batch/epoch loss: 2.863921642  /  2.884777711
+11:31:01                   saving model weights ...
+11:31:01   Evaluation on test data ...
+11:31:19   Evaluation on test data results: 
+11:31:19            Evaluation: mean overlap difference:   188.448841
+11:31:19            Evaluation: max  overlap difference:   358.765322
+11:31:19            Evaluation: RMS  overlap error        : 193.932409
+11:31:19   Evaluation on test data results: 
+11:31:19            Evaluation: mean function angle difference:   0.237521
+11:31:19            Evaluation: max  function angle difference:   0.692095
+11:31:19            Evaluation: RMS  function angle error     :   0.266491
+11:31:19  
+11:31:19   Evaluation yaw orientation (overlap>0.7) on test data:
+11:31:19            Evaluation: mean difference:   41.216988
+11:31:19            Evaluation: max  difference:   180.000000
+11:31:19            Evaluation: RMS error        : 66.297663
+11:31:19 iteration 83, batch/epoch loss: 3.297698975  /  2.883753322
+11:35:40                   saving model weights ...
+11:35:40   Evaluation on test data ...
+11:35:58   Evaluation on test data results: 
+11:35:58            Evaluation: mean overlap difference:   188.475326
+11:35:58            Evaluation: max  overlap difference:   358.782916
+11:35:58            Evaluation: RMS  overlap error        : 193.958372
+11:35:58   Evaluation on test data results: 
+11:35:58            Evaluation: mean function angle difference:   0.224135
+11:35:58            Evaluation: max  function angle difference:   0.716008
+11:35:58            Evaluation: RMS  function angle error     :   0.255317
+11:35:58  
+11:35:58   Evaluation yaw orientation (overlap>0.7) on test data:
+11:35:58            Evaluation: mean difference:   41.920498
+11:35:58            Evaluation: max  difference:   180.000000
+11:35:58            Evaluation: RMS error        : 67.062759
+11:35:58 iteration 84, batch/epoch loss: 3.361463070  /  2.883985731
+11:40:31                   saving model weights ...
+11:40:31   Evaluation on test data ...
+11:40:49   Evaluation on test data results: 
+11:40:49            Evaluation: mean overlap difference:   188.461132
+11:40:49            Evaluation: max  overlap difference:   358.769520
+11:40:49            Evaluation: RMS  overlap error        : 193.944473
+11:40:49   Evaluation on test data results: 
+11:40:49            Evaluation: mean function angle difference:   0.231337
+11:40:49            Evaluation: max  function angle difference:   0.691637
+11:40:49            Evaluation: RMS  function angle error     :   0.261252
+11:40:49  
+11:40:49   Evaluation yaw orientation (overlap>0.7) on test data:
+11:40:49            Evaluation: mean difference:   41.021291
+11:40:49            Evaluation: max  difference:   180.000000
+11:40:49            Evaluation: RMS error        : 66.343635
+11:40:50 iteration 85, batch/epoch loss: 2.377450466  /  2.883327852
+11:45:23                   saving model weights ...
+11:45:23   Evaluation on test data ...
+11:45:41   Evaluation on test data results: 
+11:45:41            Evaluation: mean overlap difference:   188.469859
+11:45:41            Evaluation: max  overlap difference:   358.787449
+11:45:41            Evaluation: RMS  overlap error        : 193.952872
+11:45:41   Evaluation on test data results: 
+11:45:41            Evaluation: mean function angle difference:   0.228729
+11:45:41            Evaluation: max  function angle difference:   0.720749
+11:45:41            Evaluation: RMS  function angle error     :   0.259793
+11:45:41  
+11:45:41   Evaluation yaw orientation (overlap>0.7) on test data:
+11:45:41            Evaluation: mean difference:   41.106455
+11:45:41            Evaluation: max  difference:   180.000000
+11:45:41            Evaluation: RMS error        : 66.068640
+11:45:41 iteration 86, batch/epoch loss: 2.908786774  /  2.882881586
+11:50:02                   saving model weights ...
+11:50:02   Evaluation on test data ...
+11:50:20   Evaluation on test data results: 
+11:50:20            Evaluation: mean overlap difference:   188.473439
+11:50:20            Evaluation: max  overlap difference:   358.785583
+11:50:20            Evaluation: RMS  overlap error        : 193.956496
+11:50:20   Evaluation on test data results: 
+11:50:20            Evaluation: mean function angle difference:   0.224377
+11:50:20            Evaluation: max  function angle difference:   0.713211
+11:50:20            Evaluation: RMS  function angle error     :   0.255451
+11:50:20  
+11:50:20   Evaluation yaw orientation (overlap>0.7) on test data:
+11:50:20            Evaluation: mean difference:   40.795470
+11:50:20            Evaluation: max  difference:   180.000000
+11:50:20            Evaluation: RMS error        : 65.798453
+11:50:20 iteration 87, batch/epoch loss: 2.931552410  /  2.882493079
+11:54:53                   saving model weights ...
+11:54:53   Evaluation on test data ...
+11:55:11   Evaluation on test data results: 
+11:55:11            Evaluation: mean overlap difference:   188.465239
+11:55:11            Evaluation: max  overlap difference:   358.788931
+11:55:11            Evaluation: RMS  overlap error        : 193.948462
+11:55:11   Evaluation on test data results: 
+11:55:11            Evaluation: mean function angle difference:   0.229543
+11:55:11            Evaluation: max  function angle difference:   0.714550
+11:55:11            Evaluation: RMS  function angle error     :   0.260004
+11:55:11  
+11:55:11   Evaluation yaw orientation (overlap>0.7) on test data:
+11:55:11            Evaluation: mean difference:   41.590713
+11:55:11            Evaluation: max  difference:   180.000000
+11:55:11            Evaluation: RMS error        : 66.612568
+11:55:11 iteration 88, batch/epoch loss: 2.517006397  /  2.881890028
+11:59:44                   saving model weights ...
+11:59:44   Evaluation on test data ...
+12:00:02   Evaluation on test data results: 
+12:00:02            Evaluation: mean overlap difference:   188.466771
+12:00:02            Evaluation: max  overlap difference:   358.775100
+12:00:02            Evaluation: RMS  overlap error        : 193.949971
+12:00:02   Evaluation on test data results: 
+12:00:02            Evaluation: mean function angle difference:   0.229507
+12:00:02            Evaluation: max  function angle difference:   0.712534
+12:00:02            Evaluation: RMS  function angle error     :   0.260276
+12:00:02  
+12:00:02   Evaluation yaw orientation (overlap>0.7) on test data:
+12:00:02            Evaluation: mean difference:   41.492412
+12:00:02            Evaluation: max  difference:   180.000000
+12:00:02            Evaluation: RMS error        : 66.611796
+12:00:02 iteration 89, batch/epoch loss: 3.235398293  /  2.881525485
+12:04:35                   saving model weights ...
+12:04:35   Evaluation on test data ...
+12:04:53   Evaluation on test data results: 
+12:04:53            Evaluation: mean overlap difference:   188.468455
+12:04:53            Evaluation: max  overlap difference:   358.786165
+12:04:53            Evaluation: RMS  overlap error        : 193.951925
+12:04:53   Evaluation on test data results: 
+12:04:53            Evaluation: mean function angle difference:   0.228533
+12:04:53            Evaluation: max  function angle difference:   0.705468
+12:04:53            Evaluation: RMS  function angle error     :   0.259296
+12:04:53  
+12:04:53   Evaluation yaw orientation (overlap>0.7) on test data:
+12:04:53            Evaluation: mean difference:   41.231937
+12:04:53            Evaluation: max  difference:   180.000000
+12:04:53            Evaluation: RMS error        : 66.401724
+12:04:53 iteration 90, batch/epoch loss: 2.806509018  /  2.881147963
+12:09:26                   saving model weights ...
+12:09:26   Evaluation on test data ...
+12:09:44   Evaluation on test data results: 
+12:09:44            Evaluation: mean overlap difference:   188.463806
+12:09:44            Evaluation: max  overlap difference:   358.768944
+12:09:44            Evaluation: RMS  overlap error        : 193.947197
+12:09:44   Evaluation on test data results: 
+12:09:44            Evaluation: mean function angle difference:   0.229988
+12:09:44            Evaluation: max  function angle difference:   0.705370
+12:09:44            Evaluation: RMS  function angle error     :   0.260176
+12:09:44  
+12:09:44   Evaluation yaw orientation (overlap>0.7) on test data:
+12:09:44            Evaluation: mean difference:   41.203398
+12:09:44            Evaluation: max  difference:   180.000000
+12:09:44            Evaluation: RMS error        : 66.181680
+12:09:44 iteration 91, batch/epoch loss: 3.177323580  /  2.880568055
+12:14:17                   saving model weights ...
+12:14:17   Evaluation on test data ...
+12:14:35   Evaluation on test data results: 
+12:14:35            Evaluation: mean overlap difference:   188.471306
+12:14:35            Evaluation: max  overlap difference:   358.784942
+12:14:35            Evaluation: RMS  overlap error        : 193.954419
+12:14:35   Evaluation on test data results: 
+12:14:35            Evaluation: mean function angle difference:   0.226518
+12:14:35            Evaluation: max  function angle difference:   0.722215
+12:14:35            Evaluation: RMS  function angle error     :   0.257724
+12:14:35  
+12:14:35   Evaluation yaw orientation (overlap>0.7) on test data:
+12:14:35            Evaluation: mean difference:   41.651416
+12:14:35            Evaluation: max  difference:   180.000000
+12:14:35            Evaluation: RMS error        : 66.679537
+12:14:35 iteration 92, batch/epoch loss: 3.152841568  /  2.880264497
+12:19:08                   saving model weights ...
+12:19:08   Evaluation on test data ...
+12:19:26   Evaluation on test data results: 
+12:19:26            Evaluation: mean overlap difference:   188.460681
+12:19:26            Evaluation: max  overlap difference:   358.769000
+12:19:26            Evaluation: RMS  overlap error        : 193.944041
+12:19:26   Evaluation on test data results: 
+12:19:26            Evaluation: mean function angle difference:   0.232648
+12:19:26            Evaluation: max  function angle difference:   0.711689
+12:19:26            Evaluation: RMS  function angle error     :   0.262975
+12:19:26  
+12:19:26   Evaluation yaw orientation (overlap>0.7) on test data:
+12:19:26            Evaluation: mean difference:   41.448018
+12:19:26            Evaluation: max  difference:   180.000000
+12:19:26            Evaluation: RMS error        : 66.447815
+12:19:26 iteration 93, batch/epoch loss: 2.810061455  /  2.879791059
+12:23:59                   saving model weights ...
+12:23:59   Evaluation on test data ...
+12:24:17   Evaluation on test data results: 
+12:24:17            Evaluation: mean overlap difference:   188.471160
+12:24:17            Evaluation: max  overlap difference:   358.778497
+12:24:17            Evaluation: RMS  overlap error        : 193.954288
+12:24:17   Evaluation on test data results: 
+12:24:17            Evaluation: mean function angle difference:   0.226277
+12:24:17            Evaluation: max  function angle difference:   0.724001
+12:24:17            Evaluation: RMS  function angle error     :   0.257286
+12:24:17  
+12:24:17   Evaluation yaw orientation (overlap>0.7) on test data:
+12:24:17            Evaluation: mean difference:   41.030578
+12:24:17            Evaluation: max  difference:   180.000000
+12:24:17            Evaluation: RMS error        : 65.881712
+12:24:18 iteration 94, batch/epoch loss: 3.417206287  /  2.879442023
+12:28:50                   saving model weights ...
+12:28:50   Evaluation on test data ...
+12:29:08   Evaluation on test data results: 
+12:29:08            Evaluation: mean overlap difference:   188.464300
+12:29:08            Evaluation: max  overlap difference:   358.775018
+12:29:08            Evaluation: RMS  overlap error        : 193.947412
+12:29:08   Evaluation on test data results: 
+12:29:08            Evaluation: mean function angle difference:   0.230867
+12:29:08            Evaluation: max  function angle difference:   0.714262
+12:29:08            Evaluation: RMS  function angle error     :   0.261426
+12:29:08  
+12:29:08   Evaluation yaw orientation (overlap>0.7) on test data:
+12:29:08            Evaluation: mean difference:   41.269309
+12:29:08            Evaluation: max  difference:   180.000000
+12:29:08            Evaluation: RMS error        : 66.232727
+12:29:08 iteration 95, batch/epoch loss: 2.924879551  /  2.878963518
+12:33:41                   saving model weights ...
+12:33:41   Evaluation on test data ...
+12:33:59   Evaluation on test data results: 
+12:33:59            Evaluation: mean overlap difference:   188.468801
+12:33:59            Evaluation: max  overlap difference:   358.788458
+12:33:59            Evaluation: RMS  overlap error        : 193.952029
+12:33:59   Evaluation on test data results: 
+12:33:59            Evaluation: mean function angle difference:   0.227428
+12:33:59            Evaluation: max  function angle difference:   0.718457
+12:33:59            Evaluation: RMS  function angle error     :   0.258144
+12:33:59  
+12:33:59   Evaluation yaw orientation (overlap>0.7) on test data:
+12:33:59            Evaluation: mean difference:   41.266591
+12:33:59            Evaluation: max  difference:   180.000000
+12:33:59            Evaluation: RMS error        : 66.222539
+12:33:59 iteration 96, batch/epoch loss: 2.635014772  /  2.878696073
+12:38:32                   saving model weights ...
+12:38:32   Evaluation on test data ...
+12:38:50   Evaluation on test data results: 
+12:38:50            Evaluation: mean overlap difference:   188.471445
+12:38:50            Evaluation: max  overlap difference:   358.788724
+12:38:50            Evaluation: RMS  overlap error        : 193.954543
+12:38:50   Evaluation on test data results: 
+12:38:50            Evaluation: mean function angle difference:   0.227555
+12:38:50            Evaluation: max  function angle difference:   0.726309
+12:38:50            Evaluation: RMS  function angle error     :   0.258720
+12:38:50  
+12:38:50   Evaluation yaw orientation (overlap>0.7) on test data:
+12:38:50            Evaluation: mean difference:   40.986410
+12:38:50            Evaluation: max  difference:   180.000000
+12:38:50            Evaluation: RMS error        : 66.124439
+12:38:50 iteration 97, batch/epoch loss: 2.669709921  /  2.878229766
+12:43:23                   saving model weights ...
+12:43:23   Evaluation on test data ...
+12:43:41   Evaluation on test data results: 
+12:43:41            Evaluation: mean overlap difference:   188.466002
+12:43:41            Evaluation: max  overlap difference:   358.784263
+12:43:41            Evaluation: RMS  overlap error        : 193.949149
+12:43:41   Evaluation on test data results: 
+12:43:41            Evaluation: mean function angle difference:   0.230836
+12:43:41            Evaluation: max  function angle difference:   0.718089
+12:43:41            Evaluation: RMS  function angle error     :   0.261670
+12:43:41  
+12:43:41   Evaluation yaw orientation (overlap>0.7) on test data:
+12:43:41            Evaluation: mean difference:   40.743601
+12:43:41            Evaluation: max  difference:   180.000000
+12:43:41            Evaluation: RMS error        : 65.839355
+12:43:41 iteration 98, batch/epoch loss: 2.669018030  /  2.877706802
+12:48:14                   saving model weights ...
+12:48:14   Evaluation on test data ...
+12:48:31   Evaluation on test data results: 
+12:48:31            Evaluation: mean overlap difference:   188.468002
+12:48:31            Evaluation: max  overlap difference:   358.791573
+12:48:31            Evaluation: RMS  overlap error        : 193.951230
+12:48:31   Evaluation on test data results: 
+12:48:31            Evaluation: mean function angle difference:   0.229550
+12:48:31            Evaluation: max  function angle difference:   0.728905
+12:48:31            Evaluation: RMS  function angle error     :   0.260528
+12:48:31  
+12:48:31   Evaluation yaw orientation (overlap>0.7) on test data:
+12:48:31            Evaluation: mean difference:   41.342016
+12:48:31            Evaluation: max  difference:   180.000000
+12:48:31            Evaluation: RMS error        : 66.353709
+12:48:32 iteration 99, batch/epoch loss: 2.919024467  /  2.877433460
+12:53:05                   saving model weights ...
+12:53:05   Evaluation on test data ...
+12:53:22   Evaluation on test data results: 
+12:53:22            Evaluation: mean overlap difference:   188.472333
+12:53:22            Evaluation: max  overlap difference:   358.799253
+12:53:22            Evaluation: RMS  overlap error        : 193.955587
+12:53:22   Evaluation on test data results: 
+12:53:22            Evaluation: mean function angle difference:   0.225716
+12:53:22            Evaluation: max  function angle difference:   0.732078
+12:53:22            Evaluation: RMS  function angle error     :   0.256974
+12:53:22  
+12:53:22   Evaluation yaw orientation (overlap>0.7) on test data:
+12:53:22            Evaluation: mean difference:   41.069309
+12:53:22            Evaluation: max  difference:   180.000000
+12:53:22            Evaluation: RMS error        : 66.005860
+12:53:23 iteration 100, batch/epoch loss: 2.862659454  /  2.877150776

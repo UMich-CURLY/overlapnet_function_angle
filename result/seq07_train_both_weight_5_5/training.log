@@ -1,0 +1,12 @@
+14:17:16 Created neural net SiameseNetworkTemplate with 1769137 parameters.
+14:17:16   Used net for legs: 360OutputkLegs
+14:17:16 compiled model with learning_rate=0.001000, lr_alpha=0.990000, momentum=0.500000
+14:17:16 Load old weights from data/model_geo.weight
+14:17:17 load training data ...
+14:17:17 load validation data ...
+14:17:17 Training loop, saving weights to result/seq07_train_both_weight_5_5/SiameseNetworkTemplate_seq07_train_both_weight_5_5.weight
+14:17:17   batch size is           : 32
+14:17:17   number of training pairs: 39834
+14:17:17   number of test pairs    : 4426
+14:17:17   NO rotation of training data
+14:22:17                   saving model weights ...

@@ -1,0 +1,2 @@
+model_checkpoint_path: "SiameseNetworkTemplate_seq07_train_both_weight_2_8.weight"
+all_model_checkpoint_paths: "SiameseNetworkTemplate_seq07_train_both_weight_2_8.weight"

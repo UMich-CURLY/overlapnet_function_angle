@@ -1,11 +1,35 @@
-01:58:50 Created neural net SiameseNetworkTemplate with 1769137 parameters.
-01:58:50   Used net for legs: 360OutputkLegs
-01:58:50 compiled model with learning_rate=0.001000, lr_alpha=0.990000, momentum=0.500000
-01:58:50 Load old weights from data/model_geo.weight
-01:58:50 load training data ...
-01:58:50 load validation data ...
-01:58:50 Training loop, saving weights to /home/cel/code/OverlapNet/result/test/SiameseNetworkTemplate_test.weight
-01:58:50   batch size is           : 16
-01:58:50   number of training pairs: 38844
-01:58:50   number of test pairs    : 4315
-01:58:50   NO rotation of training data
+00:57:52 Created neural net SiameseNetworkTemplate with 1769137 parameters.
+00:57:52   Used net for legs: 360OutputkLegs
+00:57:52 compiled model with learning_rate=0.001000, lr_alpha=0.990000, momentum=0.500000
+00:57:52 Load old weights from data/model_geo.weight
+00:57:53 load training data ...
+00:57:53 load validation data ...
+00:57:53 Training loop, saving weights to result/test/SiameseNetworkTemplate_test.weight
+00:57:53   batch size is           : 16
+00:57:53   number of training pairs: 16869
+00:57:53   number of test pairs    : 1874
+00:57:53   NO rotation of training data
+00:59:54                   saving model weights ...
+00:59:54   Evaluation on test data ...
+01:00:01   Evaluation on test data results: 
+01:00:01            Evaluation: mean overlap difference:   0.029022
+01:00:01            Evaluation: max  overlap difference:   0.171813
+01:00:01            Evaluation: RMS  overlap error        : 0.037479
+01:00:01  
+01:00:01   Evaluation yaw orientation (overlap>0.7) on test data:
+01:00:01            Evaluation: mean difference:   17.781701
+01:00:01            Evaluation: max  difference:   180.000000
+01:00:01            Evaluation: RMS error        : 42.695382
+01:00:02 iteration 1, batch/epoch loss: 0.773766041  /  0.840217399
+01:01:58                   saving model weights ...
+01:01:58   Evaluation on test data ...
+01:02:06   Evaluation on test data results: 
+01:02:06            Evaluation: mean overlap difference:   0.022176
+01:02:06            Evaluation: max  overlap difference:   0.207680
+01:02:06            Evaluation: RMS  overlap error        : 0.030736
+01:02:06  
+01:02:06   Evaluation yaw orientation (overlap>0.7) on test data:
+01:02:06            Evaluation: mean difference:   17.963617
+01:02:06            Evaluation: max  difference:   180.000000
+01:02:06            Evaluation: RMS error        : 42.462825
+01:02:06 iteration 2, batch/epoch loss: 0.801608801  /  0.823746441

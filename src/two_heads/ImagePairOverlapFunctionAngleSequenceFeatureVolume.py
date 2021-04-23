@@ -49,7 +49,7 @@ class ImagePairOverlapFunctionAngleSequenceFeatureVolume(Sequence):
       y_overlap  = self.overlap[idx * self.batch_size : maxidx]
       y_function_angle  = self.function_angle[idx * self.batch_size : maxidx]
       
-      return ( [x1,x2], [np.hstack((y_overlap.reshape(-1,1), y_function_angle.reshape(-1,1))), y] )
+      return ( [x1,x2], [np.hstack((y_overlap.reshape(-1,1), y_function_angle.reshape(-1,1)))] )
 
     def get_config(self):
       config = super().get_config().copy()

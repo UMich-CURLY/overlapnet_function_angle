@@ -45,18 +45,29 @@ Demo3:
 Demo4:
   # sepecify paths
   # path of poses
-  seq: "04"
-  poses_file: "/home/cel/data/kitti/sequences/04/poses.txt"
+  seq: "08"
+  poses_file: "/home/cel/data/kitti/sequences/08/poses.txt"
   # poses_file: "/home/cel/CURLY/code/DockerFolder/data/kitti/sequences/00/poses.txt"
   # path of calibration file of the dataset
-  calib_file: "/home/cel/data/kitti/sequences/04/calib.txt"
+  calib_file: "/home/cel/data/kitti/sequences/08/calib.txt"
   # calib_file: "/home/cel/CURLY/code/DockerFolder/data/kitti/sequences/00/calib.txt"
   # path of raw LiDAR scan folder
-  scan_folder: "/home/cel/data/kitti/sequences/04/velodyne"
+  scan_folder: "/home/cel/data/kitti/sequences/08/velodyne"
   # scan_folder: "/home/cel/CURLY/code/DockerFolder/data/kitti/sequences/00/velodyne"
   # the folder to store the generated data
   # dst_folder: "data/preprocess_data_demo"
-  dst_folder: "/home/cel/data/kitti/sequences/04"
-  function_angle_file: "/home/cel/data/kitti/sequences/04/function_angle/04_all.csv"
+  dst_folder: "/home/cel/data/kitti/sequences/08"
+  function_angle_file: ["/home/cel/data/kitti/sequences/08/function_angle/08_0_1399.csv", 
+                        "/home/cel/data/kitti/sequences/08/function_angle/08_1400_2000.csv", 
+                        "/home/cel/data/kitti/sequences/08/function_angle/08_2001_2468.csv", 
+                        "/home/cel/data/kitti/sequences/08/function_angle/08_2469_2849.csv", 
+                        "/home/cel/data/kitti/sequences/08/function_angle/08_2850_3149.csv", 
+                        "/home/cel/data/kitti/sequences/08/function_angle/08_3150_3399.csv", 
+                        "/home/cel/data/kitti/sequences/08/function_angle/08_3400_3599.csv", 
+                        "/home/cel/data/kitti/sequences/08/function_angle/08_3600_3699.csv", 
+                        "/home/cel/data/kitti/sequences/08/function_angle/08_3700_3799.csv", 
+                        "/home/cel/data/kitti/sequences/08/function_angle/08_3800_3899.csv", 
+                        "/home/cel/data/kitti/sequences/08/function_angle/08_3900_4070.csv"]
+  # precomputed_file: "/home/cel/data/kitti/sequences/06/ground_truth_both/ground_truth_mapping.npy"
 
 

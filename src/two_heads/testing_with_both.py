@@ -29,8 +29,8 @@ import matplotlib.pyplot as plt
 import yaml
 # import keras
 # to run in Tensorflow 2 environment
-# import tensorflow.compat.v1 as tf
-# tf.disable_v2_behavior()
+import tensorflow.compat.v1 as tf
+tf.disable_v2_behavior()
 from tensorflow import keras
 
 # To get a log file

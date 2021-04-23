@@ -260,7 +260,7 @@ optimizer = keras.optimizers.Adagrad(lr=initial_lr)
 
 losses = {"overlap_output": my_sigmoid_loss, "orientation_output": my_entropy}
 
-lossWeights = {"overlap_output": 1.0, "orientation_output": 1.0}
+lossWeights = {"overlap_output": 5.0, "orientation_output": 1.0}
 
 model.compile(loss=losses, loss_weights=lossWeights, optimizer=optimizer)
 
@@ -270,6 +270,8 @@ logger.info("compiled model with learning_rate=%f, lr_alpha=%f, momentum=%f" %
 if len(pretrained_weightsfilename) > 0:
   logger.info("Load old weights from %s" % pretrained_weightsfilename)
   model.load_weights(pretrained_weightsfilename)
+else:
+  logger.info("training from scratch")
   
 print(model.summary())
 

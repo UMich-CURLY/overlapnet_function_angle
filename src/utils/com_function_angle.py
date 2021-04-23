@@ -139,14 +139,23 @@ def read_function_angle_com_yaw(scan_paths, poses, funcangle_file, leg_output_wi
   yaw_resolution = leg_output_width
   
   # read function_angle from saved csv file
-  with open(funcangle_file, newline='') as csvfile:
-    spamreader = csv.reader(csvfile, delimiter='\t', quotechar='|')
-    for row in spamreader:
-      # print('row', row)
-      idx_1, idx_2, function_angle = row
-      frame_idx_1.append(int(idx_1))
-      frmae_idx_2.append(int(idx_2))
-      function_angles.append(float(function_angle))
+  for input_file in funcangle_file:
+    with open(input_file, newline='') as csvfile:
+      spamreader = csv.reader(csvfile, delimiter='\t', quotechar='|')
+      for row in spamreader:
+        if len(row) == 1:
+          spamreader = csv.reader(csvfile, delimiter=' ', quotechar='|')
+        break
+      for row in spamreader:
+        if len(row) == 1:
+          spamreader = csv.reader(csvfile, delimiter=',', quotechar='|')
+        break
+      for row in spamreader:
+        print('row', row)
+        idx_1, idx_2, function_angle = row
+        frame_idx_1.append(int(idx_1))
+        frmae_idx_2.append(int(idx_2))
+        function_angles.append(float(function_angle))
 
   for idx in tqdm(range(len(function_angles))):
     frame_idx = frame_idx_1[idx]
@@ -201,6 +210,7 @@ def read_function_angle_com_overlap_yaw(scan_paths, poses, funcangle_file, leg_o
   # read function_angle from saved csv file
   with open(funcangle_file, newline='') as csvfile:
     spamreader = csv.reader(csvfile, delimiter='\t', quotechar='|')
+    # spamreader = csv.reader(csvfile, delimiter=' ', quotechar='|')
     for row in spamreader:
       # print('row', row)
       idx_1, idx_2, function_angle = row

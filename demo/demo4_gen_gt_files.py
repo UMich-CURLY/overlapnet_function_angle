@@ -53,37 +53,10 @@ if __name__ == '__main__':
   calib_file = config['Demo4']['calib_file']
   scan_folder = config['Demo4']['scan_folder']
   dst_folder = config['Demo4']['dst_folder']
-  
-  # load scan paths
-  scan_paths = load_files(scan_folder)
 
-  # load calibrations
-  T_cam_velo = load_calib(calib_file)
-  T_cam_velo = np.asarray(T_cam_velo).reshape((4, 4))
-  T_velo_cam = np.linalg.inv(T_cam_velo)
-
-  # load poses
-  poses = load_poses(poses_file)
-  pose0_inv = np.linalg.inv(poses[0])
-
-  # for KITTI dataset, we need to convert the provided poses 
-  # from the camera coordinate system into the LiDAR coordinate system  
-  poses_new = []
-  for pose in poses:
-    poses_new.append(T_velo_cam.dot(pose0_inv).dot(pose).dot(T_cam_velo))
-  poses = np.array(poses_new)
-
-  # generate overlap and yaw ground truth array
-  ground_truth_mapping = com_overlap_yaw(scan_paths, poses, frame_idx=0)
-  
-  # normalize the distribution of ground truth data
-  dist_norm_data = normalize_data(ground_truth_mapping)
-  
-  # split ground truth for training and validation
-  train_data, validation_data = split_train_val(dist_norm_data)
-  
   # add sequence label to the data and save them as npz files
   seq_idx = config['Demo4']['seq']
+
   # specify the goal folder
   dst_folder = os.path.join(dst_folder, 'ground_truth_overlap')
   try:
@@ -92,7 +65,43 @@ if __name__ == '__main__':
   except:
     print('creating new depth folder: ', dst_folder)
     os.mkdir(dst_folder)
+
+  if 'precomputed_file' in config['Demo4']:
+    ground_truth_mapping = np.load(config['Demo4']['precomputed_file'])
+  else:
+  
+    # load scan paths
+    scan_paths = load_files(scan_folder)
+
+    # load calibrations
+    T_cam_velo = load_calib(calib_file)
+    T_cam_velo = np.asarray(T_cam_velo).reshape((4, 4))
+    T_velo_cam = np.linalg.inv(T_cam_velo)
+
+    # load poses
+    poses = load_poses(poses_file)
+    pose0_inv = np.linalg.inv(poses[0])
+
+    # for KITTI dataset, we need to convert the provided poses 
+    # from the camera coordinate system into the LiDAR coordinate system  
+    poses_new = []
+    for pose in poses:
+      poses_new.append(T_velo_cam.dot(pose0_inv).dot(pose).dot(T_cam_velo))
+    poses = np.array(poses_new)
+
+    # generate overlap and yaw ground truth array
+    ground_truth_mapping = com_overlap_yaw(scan_paths, poses, frame_idx=0)
     
+    # save this before normalization
+    numpy_output_path = os.path.join(dst_folder, 'ground_truth_mapping_overlap.npy')
+    np.save(numpy_output_path, ground_truth_mapping)
+  
+  # normalize the distribution of ground truth data
+  dist_norm_data = normalize_data(ground_truth_mapping)
+  
+  # split ground truth for training and validation
+  train_data, validation_data = split_train_val(dist_norm_data)
+      
   # training data
   train_seq = np.empty((train_data.shape[0], 2), dtype=object)
   train_seq[:] = seq_idx

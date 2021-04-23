@@ -27,6 +27,11 @@ import os
 import numpy as np
 import matplotlib.pyplot as plt
 import yaml
+
+# to run in Tensorflow 2 environment
+import tensorflow.compat.v1 as tf
+tf.disable_v2_behavior()
+
 # import keras
 from tensorflow import keras
 
@@ -79,8 +84,9 @@ else:
 if 'testing_seqs' in config:
     logger.info('Using complete ground truth for multiple sequences as test data ...')
     testdata_npzfiles = [config['testing_seqs']]
-    testdata_npzfiles = [os.path.join(data_root_folder, seq,
-                                      'ground_truth/ground_truth_overlap_yaw.npz') for seq in testdata_npzfiles]
+    ground_truth_folder = config['ground_truth_folder']
+    testdata_npzfiles = [os.path.join(data_root_folder, seq, ground_truth_folder,
+                                      'ground_truth_overlap_yaw.npz') for seq in testdata_npzfiles]
 elif 'training_seqs' in config:
     logger.info('Using multiple validation npz files for test data ...')
     training_seqs = config['training_seqs']

@@ -100,22 +100,33 @@ def sigmoid_loss_for_both(y_true, y_pred):
 
    In Matlab:   1./(1+exp(-((diff+0.25)*24-12))), diff is absolute difference
   """
-  print('y_pred shape: ', y_pred.shape, y_pred)
-  print('y_true shape: ', y_true.shape, y_true)
-  y_true_overlap = y_true[:,0]
-  y_true_function_angle = y_true[:,1]
+#  y_true = K.print_tensor(y_true, message='\n y_true = ')
+#  y_pred = K.print_tensor(y_pred, message='\n y_pred = ')
+
+  y_true_overlap = tf.reshape(y_true[:,0], [-1,1])
+  y_true_function_angle = tf.reshape(y_true[:,1], [-1,1])
+
+#  y_true_overlap = K.print_tensor(y_true_overlap, message='\n y_true_overlap = ')
+#  y_true_function_angle = K.print_tensor(y_true_function_angle, message='\n y_true_function_angle = ')
 
   # overlap loss
   diff_overlap = K.abs(y_pred - y_true_overlap)
+#  diff_overlap = K.print_tensor(diff_overlap, message='\n diff_overlap = ')
   sigmoidx_overlap = (diff_overlap + 0.25) * 24 - 12
   loss_overlap = K.mean(1 / (1 + K.exp(-sigmoidx_overlap)))
+#  loss_overlap = K.print_tensor(loss_overlap, message='\n loss_overlap = ')
 
   # function angle loss
   diff_function_angle = K.abs(y_pred - y_true_function_angle)
+#  diff_function_angle = K.print_tensor(diff_function_angle, message='\n diff_function_angle = ')
   sigmoidx_function_angle = (diff_function_angle + 0.25) * 24 - 12
   loss_function_angle = K.mean(1 / (1 + K.exp(-sigmoidx_function_angle)))
+#  loss_function_angle = K.print_tensor(loss_function_angle, message='\n loss_function_angle = ')
+
+  combine_loss = 1.0*loss_overlap + 0.0*loss_function_angle
+#  combine_loss = K.print_tensor(combine_loss, message='\n combine_loss = ')
   
-  return 0.0*loss_overlap + 1.0*loss_function_angle
+  return combine_loss
 
   
 def my_entropy(y_true, y_pred):

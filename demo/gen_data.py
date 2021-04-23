@@ -57,4 +57,4 @@ if __name__ == '__main__':
   dst_folder = config["dst_folder"]
 
   # start the demo1 to generate different types of data from LiDAR scan
-  gen_data(scan_folder, dst_folder)
+  gen_data(scan_folder, dst_folder, False)

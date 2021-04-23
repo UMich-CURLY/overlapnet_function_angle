@@ -9,7 +9,7 @@
 experiments_path: "result/"
 
 # String which defines experiment
-testname: "seq07_overlap_retrain_weight_1"
+testname: "seq03_10_train_function_angle"
 
 # weights from older training. Not used if empty
 pretrained_weightsfilename: "data/model_geo.weight"
@@ -28,17 +28,17 @@ use_intensity: False               # default: False if parameter not there
 #
 # the folder of dataset
 data_root_folder: "/home/cel/data/kitti/sequences/"
-ground_truth_folder: "ground_truth_overlap" #function_angle"
+ground_truth_folder: "ground_truth_function_angle"
 # use multiple seqs for training, for testing phase please disable it
-training_seqs: "07"   
+training_seqs: "03 04 05 06 07 08 09 10"   
 
 # use multiple seqs for testing, for training phase please disable it
 # testing_seqs: "07"
 
 # seq label for inferring
-infer_seqs: "07"
+infer_seqs: "03 04 05 06 07 08 09 10"  
 
-batch_size :  16
+batch_size :  32
 # No of batches per epoch, thus the actual used train data is 
 # batch_size*no_batches_in_epoch. 
 # If bigger than train/test data, all train/test data will be used.

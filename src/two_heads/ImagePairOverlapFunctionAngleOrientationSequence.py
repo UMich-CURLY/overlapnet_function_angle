@@ -121,7 +121,7 @@ class ImagePairOverlapFunctionAngleOrientationSequence(Sequence):
     
     for idx in range(len(y_overlap)):
       y_item = np.zeros(self.network_output_size)
-      y_item[int(y_orientation[idx])] = y_function_angle[idx] # y_overlap[idx]
+      y_item[int(y_orientation[idx])] = y_overlap[idx] # y_overlap[idx], y_function_angle[idx]
       y.append(y_item)
     
     y = np.asarray(y)

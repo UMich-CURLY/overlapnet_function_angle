@@ -1,0 +1,27 @@
+19:23:07 Created neural net SiameseNetworkTemplate with 1769137 parameters.
+19:23:07   Used net for legs: 360OutputkLegs
+19:23:07 compiled model with learning_rate=0.001000, lr_alpha=0.990000, momentum=0.500000
+19:23:07 Load old weights from data/model_geo.weight
+19:23:07 load training data ...
+19:23:07 load validation data ...
+19:23:07 Training loop, saving weights to result/debug/SiameseNetworkTemplate_debug.weight
+19:23:07   batch size is           : 2
+19:23:07   number of training pairs: 2
+19:23:07   number of test pairs    : 4426
+19:23:07   NO rotation of training data
+19:23:10                   saving model weights ...
+19:23:10   Evaluation on test data ...
+19:23:34   Evaluation on test data results: 
+19:23:34            Evaluation: mean overlap difference:   0.036961
+19:23:34            Evaluation: max  overlap difference:   0.301506
+19:23:34            Evaluation: RMS  overlap error        : 0.047780
+19:23:34   Evaluation on test data results: 
+19:23:34            Evaluation: mean function angle difference:   0.237828
+19:23:34            Evaluation: max  function angle difference:   0.484984
+19:23:34            Evaluation: RMS  function angle error     :   0.261299
+19:23:34  
+19:23:34   Evaluation yaw orientation (overlap>0.7) on test data:
+19:23:34            Evaluation: mean difference:   26.160136
+19:23:34            Evaluation: max  difference:   180.000000
+19:23:34            Evaluation: RMS error        : 50.625646
+19:23:34 iteration 1, batch/epoch loss: 0.711579859  /  0.711579859

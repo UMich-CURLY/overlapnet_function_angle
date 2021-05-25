@@ -9,11 +9,11 @@
 experiments_path: "result/"
 
 # String which defines experiment
-testname: "seq07_test_function_angle_yaw_distribution"
+testname: "seq00_test_function_angle_scratch_900k_1000k"
 
 # weights from older training. Not used if empty
 # pretrained_weightsfilename: "data/model_geo.weight"
-pretrained_weightsfilename: "result/seq07_train_function_angle_yaw_distribution/SiameseNetworkTemplate_seq07_train_function_angle_yaw_distribution.weight"
+pretrained_weightsfilename: "result/seq03_10_train_function_anglei_scratch/SiameseNetworkTemplate_seq03_10_train_function_anglei_scratch.weight"
 
 
 # What input to use ?
@@ -36,10 +36,10 @@ ground_truth_folder: "ground_truth_function_angle"
 # training_seqs: "07"   
 
 # use multiple seqs for testing, for training phase please disable it
-testing_seqs: "07"
+testing_seqs: "00"
 
 # seq label for inferring
-infer_seqs: "07"
+infer_seqs: "00"
 
 batch_size :  32
 # No of batches per epoch, thus the actual used train data is 
@@ -48,7 +48,8 @@ batch_size :  32
 no_batches_in_epoch : 100000000000
 no_epochs :  100
 # No of samples for validation. If bigger than testdata, all testdata is used.
-no_test_pairs :  100000000000
+start_test_idx : 900000 #400000
+no_test_pairs :  100000
 
 
 

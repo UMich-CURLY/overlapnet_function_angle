@@ -38,7 +38,7 @@ def com_overlap_yaw(scan_paths, poses, frame_idx, leg_output_width=360):
     valid_num = len(visible_points)
     current_pose = poses[frame_idx]
 
-    for reference_idx in range(frame_idx):
+    for reference_idx in range(frame_idx+1):
       frame_idx_1.append(frame_idx)
       frmae_idx_2.append(reference_idx)
       # generate range projection for the reference frame

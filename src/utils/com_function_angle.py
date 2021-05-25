@@ -119,6 +119,49 @@ def com_function_angle(scan_paths, poses, frame_idx, leg_output_width=360):
   
   return ground_truth_mapping
 
+def read_function_angle(funcangle_file):
+  """read function angle from csv file 
+     Returns:
+       ground_truth_mapping: the ground truth overlap and yaw used for training OverlapNet,
+                             where each row contains [current_frame_idx, reference_frame_idx, overlap, yaw]
+  """
+  # init ground truth overlap and yaw
+  print('Start to compute ground truth overlap and yaw ...')
+  frame_idx_1 = []
+  frmae_idx_2 = []
+  function_angles = []
+  
+  # read function_angle from saved csv file
+  for input_file in funcangle_file:
+    with open(input_file, newline='') as csvfile:
+      spamreader = csv.reader(csvfile, delimiter='\t', quotechar='|')
+      for row in spamreader:
+        if len(row) == 1:
+          spamreader = csv.reader(csvfile, delimiter=' ', quotechar='|')
+        break
+      for row in spamreader:
+        if len(row) == 1:
+          spamreader = csv.reader(csvfile, delimiter=',', quotechar='|')
+        break
+      for row in spamreader:
+        print('row', row)
+        idx_1, idx_2, function_angle = row
+        frame_idx_1.append(int(idx_1))
+        frmae_idx_2.append(int(idx_2))
+        function_angles.append(float(function_angle))
+
+  
+  # ground truth format: each row contains [current_frame_idx, reference_frame_idx, function_angles]
+  ground_truth_mapping = np.zeros((len(function_angles), 3))
+  ground_truth_mapping[:, 0] = frame_idx_1
+  ground_truth_mapping[:, 1] = frmae_idx_2
+  ground_truth_mapping[:, 2] = function_angles
+  
+  print('Finish generating ground_truth_mapping!')
+  
+  return ground_truth_mapping
+
+
 def read_function_angle_com_yaw(scan_paths, poses, funcangle_file, leg_output_width=360):
   """compute the function angle and yaw ground truth from the ground truth poses,
      which is used for OverlapNet training and testing.
@@ -208,15 +251,23 @@ def read_function_angle_com_overlap_yaw(scan_paths, poses, funcangle_file, leg_o
   yaw_resolution = leg_output_width
   
   # read function_angle from saved csv file
-  with open(funcangle_file, newline='') as csvfile:
-    spamreader = csv.reader(csvfile, delimiter='\t', quotechar='|')
-    # spamreader = csv.reader(csvfile, delimiter=' ', quotechar='|')
-    for row in spamreader:
-      # print('row', row)
-      idx_1, idx_2, function_angle = row
-      frame_idx_1.append(int(idx_1))
-      frmae_idx_2.append(int(idx_2))
-      function_angles.append(float(function_angle))
+  for input_file in funcangle_file:
+    with open(input_file, newline='') as csvfile:
+      spamreader = csv.reader(csvfile, delimiter='\t', quotechar='|')
+      for row in spamreader:
+        if len(row) == 1:
+          spamreader = csv.reader(csvfile, delimiter=' ', quotechar='|')
+        break
+      for row in spamreader:
+        if len(row) == 1:
+          spamreader = csv.reader(csvfile, delimiter=',', quotechar='|')
+        break
+      for row in spamreader:
+        print('row', row)
+        idx_1, idx_2, function_angle = row
+        frame_idx_1.append(int(idx_1))
+        frmae_idx_2.append(int(idx_2))
+        function_angles.append(float(function_angle))
 
   for idx in tqdm(range(len(function_angles))):
     frame_idx = frame_idx_1[idx]

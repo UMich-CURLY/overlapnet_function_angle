@@ -1,0 +1,26 @@
+03:01:03 Created neural net SiameseNetworkTemplate for leg   with 1104112 parameters.
+03:01:03 Created neural net SiameseNetworkTemplate for heads with 665025 parameters.
+03:01:03 Load old weights from result/seq07_function_angle_no/SiameseNetworkTemplate_seq07_function_angle_no.weight
+03:01:04 load test data from ['/home/cel/data/kitti/sequences/07/ground_truth_function_angle_no/ground_truth_overlap_yaw.npz'] ...
+03:01:05 Test the model:
+03:01:05   batch size is       : 16
+03:01:05   number of test pairs: 606651
+03:01:05  
+03:01:05 Compute all feature volumes ...
+03:01:05   Number of feature volumes: 1101
+03:01:08  
+03:01:08 Compute head for all 606651 test pairs ...
+03:29:55  
+03:29:55 Evaluation overlap on test data:
+03:29:55   Evaluation: mean difference:   0.025743
+03:29:55   Evaluation: max  difference:   0.470326
+03:29:55   Evaluation: RMS error        : 0.069464
+03:29:55 plot overlap histogram ...
+03:29:55  
+03:29:55 Evaluation yaw orientation (overlap>0.7) on test data:
+03:29:55   Evaluation: mean difference:   175.755919
+03:29:55   Evaluation: max  difference:   179.883482
+03:29:55   Evaluation: RMS error        : 175.913013
+03:29:55 plot yaw orientation histogram ...
+03:29:55 Save results in npz file ...
+21:49:55 ... done.

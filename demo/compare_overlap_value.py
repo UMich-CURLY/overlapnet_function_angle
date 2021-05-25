@@ -42,7 +42,9 @@ def compute_overlap_with_different_angles(scan_path, angles, yaw_resolution=360)
 
   for angle in tqdm(angles): 
     # construct rotation matrix based on the yaw angle
-    relative_rotation = R.from_euler('z', angle, degrees=True)
+    # relative_rotation = R.from_euler('x', angle, degrees=True)
+    relative_rotation = R.from_euler('y', angle, degrees=True)
+    # relative_rotation = R.from_euler('z', angle, degrees=True)
     relative_transform[:3, :3] = relative_rotation.as_matrix()
     
     # transform the points based on the yaw angle
@@ -131,18 +133,11 @@ if __name__ == '__main__':
     os.mkdir(dst_folder)
 
   # save csv file
-  output_path = os.path.join(dst_folder, 'overlap_value_yaw_angle.csv')
+  output_path = os.path.join(dst_folder, 'pitch_angle_overlap_value_seq_09.csv')
   np.savetxt(output_path, overlap_values, delimiter=",")
   
   print('Finish saving the overlap values for different yaw angles at: ', dst_folder)
   
   # visualize the overlap value versus yaw angles
-  plot_path = os.path.join(dst_folder, 'overlap_value_versus_yaw_angle_detail.png')
-  vis_overlap_angle(overlap_values, plot_path)
-  
-  
-
-
-
-
-
+  # plot_path = os.path.join(dst_folder, 'overlap_value_versus_yaw_angle.png')
+  # vis_overlap_angle(overlap_values, plot_path)

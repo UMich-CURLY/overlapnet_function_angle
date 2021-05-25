@@ -1,0 +1,2 @@
+model_checkpoint_path: "SiameseNetworkTemplate_test.weight"
+all_model_checkpoint_paths: "SiameseNetworkTemplate_test.weight"

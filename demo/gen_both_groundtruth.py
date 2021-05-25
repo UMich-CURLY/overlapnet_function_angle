@@ -7,9 +7,9 @@ import yaml
 import sys, os
 sys.path.append(os.path.join(os.path.dirname(__file__), '../src/utils'))
 from utils import *
-from com_function_angle import com_function_angle, read_function_angle_com_yaw, read_function_angle_com_overlap_yaw
+from com_function_angle import read_function_angle, read_function_angle_com_yaw, read_function_angle_com_overlap_yaw
 from normalize_data import normalize_data
-from normalize_balance import normalize_balance
+# from normalize_balance import normalize_balance
 from split_train_val import split_train_val
 import matplotlib.pyplot as plt
 import matplotlib
@@ -56,7 +56,7 @@ if __name__ == '__main__':
   scan_folder = config['Demo4']['scan_folder']
   dst_folder = config['Demo4']['dst_folder']
   funcangle_file = config['Demo4']['function_angle_file']
-  dst_folder = os.path.join(dst_folder, 'ground_truth_both_balance') # ground_truth_both_nfa, ground_truth_function_angle_no, ground_truth_overlap_nfa
+  dst_folder = os.path.join(dst_folder, 'ground_truth_both') # ground_truth_both_nfa, ground_truth_function_angle_no, ground_truth_overlap_nfa
 
   # specify the goal folder
   try:
@@ -66,8 +66,20 @@ if __name__ == '__main__':
     print('creating new depth folder: ', dst_folder)
     os.mkdir(dst_folder)
 
-  if config['Demo4']['precomputed_file'] is not None:
+  if 'precomputed_file' in config['Demo4']:
     ground_truth_mapping = np.load(config['Demo4']['precomputed_file'])
+  
+    ground_truth_mapping_2 = read_function_angle(funcangle_file)
+
+    print('ground_truth_mapping', ground_truth_mapping.shape)
+    print('ground_truth_mapping_2', ground_truth_mapping_2.shape)
+
+    ground_truth_mapping = np.hstack((ground_truth_mapping[:,:3], ground_truth_mapping_2[:,2].reshape(-1,1), ground_truth_mapping[:,3].reshape(-1,1)))
+    
+    # save this before normalization
+    numpy_output_path = os.path.join(dst_folder, 'ground_truth_mapping.npy')
+    np.save(numpy_output_path, ground_truth_mapping)
+  
   else:
   
     # load scan paths

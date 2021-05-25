@@ -1,0 +1,12 @@
+22:31:36 Created neural net SiameseNetworkTemplate for leg   with 1104112 parameters.
+22:31:36 Created neural net SiameseNetworkTemplate for heads with 665025 parameters.
+22:31:36 Load old weights from result/seq03_10_train_function_anglei_scratch/SiameseNetworkTemplate_seq03_10_train_function_anglei_scratch.weight
+22:31:38 load test data from ['/home/cel/data/kitti/sequences/00/ground_truth_function_angle/ground_truth_overlap_yaw.npz'] ...
+22:32:08 Test the model:
+22:32:08   batch size is       : 32
+22:32:08   number of test pairs: 100000
+22:32:08  
+22:32:08 Compute all feature volumes ...
+22:32:08   Number of feature volumes: 1414
+22:32:13  
+22:32:13 Compute head for all 100000 test pairs ...

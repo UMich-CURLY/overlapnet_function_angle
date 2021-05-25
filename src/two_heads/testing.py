@@ -44,6 +44,7 @@ import generateNet
 from ImagePairOverlapSequenceFeatureVolume import ImagePairOverlapSequenceFeatureVolume
 from ImagePairOverlapOrientationSequence import ImagePairOverlapOrientationSequence
 from overlap_orientation_npz_file2string_string_nparray import overlap_orientation_npz_file2string_string_nparray
+import time
 
 # ==================== main script ============================================
 
@@ -169,6 +170,7 @@ logger.addHandler(fileHandler)
 
 batch_size = config['batch_size']
 no_test_pairs = config['no_test_pairs']
+start_test_idx = config['start_test_idx']
 
 # Create two nets: leg and head
 # -----------------------------
@@ -224,10 +226,10 @@ if no_test_pairs>test_overlap.size:
   no_test_pairs=test_overlap.size
 
 # Make test set smaller like defined in config file
-test_imgf1=test_imgf1[0:no_test_pairs]
-test_imgf2=test_imgf2[0:no_test_pairs]
-test_overlap=test_overlap[0:no_test_pairs]
-test_orientation =test_orientation[0:no_test_pairs]
+test_imgf1=test_imgf1[start_test_idx:start_test_idx+no_test_pairs]
+test_imgf2=test_imgf2[start_test_idx:start_test_idx+no_test_pairs]
+test_overlap=test_overlap[start_test_idx:+no_test_pairs]
+test_orientation =test_orientation[start_test_idx:+no_test_pairs]
 
 # Do the validation
 # -----------------
@@ -238,6 +240,8 @@ logger.info("  number of test pairs: %d" % no_test_pairs)
 # First all feature volumes
 logger.info(" ")
 logger.info("Compute all feature volumes ...")
+
+start_time = time.time()
 
 # combine pairs: 
 # *** This currently assumes we have always the same directory ***
@@ -299,14 +303,14 @@ logger.info("  Evaluation: RMS error        : %f" % rms_error)
 #     if no_of_elements_smaller==diffs_overlap.size:
 #         break
 
-logger.info("plot overlap histogram ...")
-n_bins=10
-plt.figure(1);
-plt.clf();
-plt.hist(diffs_overlap, bins=n_bins)
-plt.xlabel('error in overlap percentage')
-plt.ylabel('number of examples')
-plt.savefig(os.path.join(experiments_path,testname,'overlap_error_histogram.png'))
+# logger.info("plot overlap histogram ...")
+# n_bins=10
+# plt.figure()
+# plt.clf()
+# plt.hist(diffs_overlap, bins=n_bins)
+# plt.xlabel('error in overlap percentage')
+# plt.ylabel('number of examples')
+# plt.savefig(os.path.join(experiments_path,testname,'overlap_error_histogram.png'))
 
 network_orientation_output=np.squeeze(np.argmax(model_outputs[1], axis=1))
 # The following takes the circular behaviour of angles into account !
@@ -333,14 +337,15 @@ logger.info("  Evaluation: RMS error        : %f" % rms_error)
 #         break
 
 
-logger.info("plot yaw orientation histogram ...")
-n_bins=90
-plt.figure(2);
-plt.clf();
-plt.hist(diffs_orientation, bins=n_bins)
-plt.xlabel('error in yaw angle estimation in degrees')
-plt.ylabel('number of examples')
-plt.savefig(os.path.join(experiments_path,testname,'orientation_error_histogram.png'))
+# logger.info("plot yaw orientation histogram ...")
+# n_bins=90
+# plt.figure()
+# plt.clf()
+# plt.hist(diffs_orientation, bins=n_bins)
+# plt.xlabel('error in yaw angle estimation in degrees')
+# plt.ylabel('number of examples')
+# plt.savefig(os.path.join(experiments_path,testname,'orientation_error_histogram.png'))
+logger.info("\n Total use time: %f seconds pairs of data\n" % (time.time() - start_time))
 
 # Save results
 # ------------
@@ -359,9 +364,9 @@ overlapmatrix[:,3]=np.squeeze(np.argmax(model_outputs[1], axis=1))
 np.savez(os.path.join(experiments_path,testname,"validation_results.npz"), overlapmatrix)
 
 ## Show plots
-if config['show_plots']:
-  print('show plots ...')
-  plt.show();
-  plt.pause(0.1)
+# if config['show_plots']:
+#   print('show plots ...')
+#   plt.show()
+#   plt.pause(0.1)
 
 logger.info("... done.")

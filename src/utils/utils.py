@@ -229,6 +229,21 @@ def load_vertex(scan_path):
   current_vertex[:, :-1] = current_points
   return current_vertex
 
+def load_oxford_vertex(scan_path):
+  """ Load 3D points of a scan. The fileformat is the .bin format used in
+      the KITTI dataset.
+      Args: 
+        scan_path: the (full) filename of the scan file
+      Returns: 
+        A nx4 numpy array of homogeneous points (x, y, z, 1).
+  """
+  current_vertex = np.fromfile(scan_path, dtype=np.float64)
+  current_vertex = current_vertex.reshape((-1, 3))
+  current_points = current_vertex[:, 0:3]
+  current_vertex = np.ones((current_points.shape[0], current_points.shape[1] + 1))
+  current_vertex[:, :-1] = current_points
+  return current_vertex
+
 
 def load_files(folder):
   """ Load all files in a folder and sort.

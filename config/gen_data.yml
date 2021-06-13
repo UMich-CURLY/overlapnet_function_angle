@@ -1,11 +1,16 @@
 # the folder of raw LiDAR scans
-seq: "07"
-scan_folder: "/home/cel/data/kitti/sequences/07/velodyne"
+# seq: "07"
+# scan_folder: "/home/cel/data/kitti/sequences/07/velodyne"
 # scan_folder: "/home/cel/media/data/kitti/sequences/03/velodyne"
 
 # the folder of raw semantic predictions
 # semantic_folder: "data/semantic_probs"
 
 # the folder to store the generated data
-dst_folder: "/home/cel/data/kitti/sequences/07"
+# dst_folder: "/home/cel/data/kitti/sequences/07"
 # dst_folder: "/home/cel/media/data/kitti/sequences/03"
+
+## Oxford
+seq: "2014-11-14-16-34-33"
+scan_folder: "/home/cel/data/oxford_test/oxford/2014-11-14-16-34-33/pointcloud_20m"
+dst_folder: "/home/cel/data/oxford_test/oxford/2014-11-14-16-34-33"

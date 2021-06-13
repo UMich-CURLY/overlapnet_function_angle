@@ -9,7 +9,7 @@ This repository use the cosine similarity of two functions that represent two po
 * This repository is tested on Ubuntu 20.04 with Tensorflow-2.4.1
 
 ## Cosine Similarity
-* The cosine similarity of two point clouds are calculated using the code in the [cosine_similarity](cosine_similarity/) folder.
+* The cosine similarity of two point clouds are calculated using the code in the [cosine_similarity](cosine_similarity/) folder which is a simplified code of [UMich-CURLY/unified_cvo](https://github.com/UMich-CURLY/unified_cvo) for generating the cosine similarities over two point clouds.
 
 ## Run OverlapNet
 * To generate groundtruth, training and testing data, run `python3 demo/gen_continuous_groundtruth.py config/demo.yml` 

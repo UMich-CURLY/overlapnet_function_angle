@@ -49,12 +49,24 @@ if __name__ == '__main__':
   if len(sys.argv) > 1:
     config_filename = sys.argv[1]
   
-  config = yaml.load(open(config_filename))
+#   config = yaml.load(open(config_filename))
   
-  # set the related parameters
-  scan_folder = config["scan_folder"]
-#   semantic_folder = config["semantic_folder"]
-  dst_folder = config["dst_folder"]
+#   # set the related parameters
+#   scan_folder = config["scan_folder"]
+# #   semantic_folder = config["semantic_folder"]
+#   dst_folder = config["dst_folder"]
 
-  # start the demo1 to generate different types of data from LiDAR scan
-  gen_data(scan_folder, dst_folder, False)
+  for seq in ["2014-11-14-16-34-33", "2014-12-09-13-21-02", "2014-12-16-09-14-09",
+              "2015-02-10-11-58-05", "2015-03-10-14-18-10", "2015-06-09-15-06-29", 
+              "2015-08-14-14-54-57", "2015-11-12-11-22-05", "2014-11-18-13-20-12", 
+              "2014-12-10-18-10-50", "2014-12-16-18-44-24", "2015-02-13-09-16-26", 
+              "2015-03-17-11-08-44", "2015-08-12-15-04-18", "2015-08-28-09-50-22", 
+              "2015-11-13-10-28-08", "2014-12-02-15-30-08", "2014-12-12-10-45-15",
+              "2015-02-03-08-45-10", "2015-02-17-14-42-12", "2015-05-19-14-06-38", 
+              "2015-08-13-16-02-58", "2015-10-30-13-52-14"]:
+
+    scan_folder = "/home/cel/data/oxford_test/"+seq+"/pointcloud_20m"
+    dst_folder = "/home/cel/data/oxford_test/"+seq
+
+    # start the demo1 to generate different types of data from LiDAR scan
+    gen_data(scan_folder, dst_folder, False)

@@ -9,10 +9,10 @@
 experiments_path: "result/"
 
 # String which defines experiment
-testname: "seq03_10_train_function_angle"
+testname: "seq03_10_train_function_angle_ell_1"
 
 # weights from older training. Not used if empty
-pretrained_weightsfilename: "data/model_geo.weight"
+pretrained_weightsfilename: "" #"data/model_geo.weight"
 
 # What input to use ?
 # Be aware that the networks will have different number of weights, thus
@@ -28,7 +28,7 @@ use_intensity: False               # default: False if parameter not there
 #
 # the folder of dataset
 data_root_folder: "/home/cel/data/kitti/sequences/"
-ground_truth_folder: "ground_truth_function_angle"
+ground_truth_folder: "ground_truth_function_angle_ell_1"
 # use multiple seqs for training, for testing phase please disable it
 training_seqs: "03 04 05 06 07 08 09 10"   
 

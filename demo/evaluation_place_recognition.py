@@ -2,245 +2,167 @@ import numpy as np
 from sklearn import metrics
 from sklearn.metrics import precision_recall_curve
 from sklearn.metrics import plot_precision_recall_curve
+from sklearn.metrics import f1_score 
 import matplotlib.pyplot as plt
 import sys, os
 sys.path.append(os.path.join(os.path.dirname(__file__), '../src/utils'))
 from utils import *
+import json
 
-prediction_function_angle = np.empty((0,4))
-test_result_filenames = ["/home/cel/DockerFolder/code/overlapnet_function_angle/result/seq00_test_all/seq00_test_function_angle_scratch_900k/validation_results.npz",
-                        "/home/cel/DockerFolder/code/overlapnet_function_angle/result/seq00_test_all/seq00_test_function_angle_scratch_900k_1800k/validation_results.npz",
-                        "/home/cel/DockerFolder/code/overlapnet_function_angle/result/seq00_test_all/seq00_test_function_angle_scratch_1800k_2700k/validation_results.npz",
-                        "/home/cel/DockerFolder/code/overlapnet_function_angle/result/seq00_test_all/seq00_test_function_angle_scratch_2700k_3600k/validation_results.npz",
-                        "/home/cel/DockerFolder/code/overlapnet_function_angle/result/seq00_test_all/seq00_test_function_angle_scratch_3600k_4500k/validation_results.npz",
-                        "/home/cel/DockerFolder/code/overlapnet_function_angle/result/seq00_test_all/seq00_test_function_angle_scratch_4500k_5500k/validation_results.npz",
-                        "/home/cel/DockerFolder/code/overlapnet_function_angle/result/seq00_test_all/seq00_test_function_angle_scratch_5500k_6500k/validation_results.npz",
-                        "/home/cel/DockerFolder/code/overlapnet_function_angle/result/seq00_test_all/seq00_test_function_angle_scratch_6500k_7500k/validation_results.npz",
-                        "/home/cel/DockerFolder/code/overlapnet_function_angle/result/seq00_test_all/seq00_test_function_angle_scratch_7500k_8500k/validation_results.npz",
-                        "/home/cel/DockerFolder/code/overlapnet_function_angle/result/seq00_test_all/seq00_test_function_angle_scratch_8500k_end/validation_results.npz"                           
-                        ]
-for test_result_filename in test_result_filenames:
-    with np.load(test_result_filename) as data:
-        prediction_function_angle = np.vstack((prediction_function_angle, data['arr_0.npy']))
+# 
+seq = "06"
+d_thres = "4"
 
-prediction_overlap = np.empty((0,4))
-test_result_filenames = ["/home/cel/DockerFolder/code/overlapnet_function_angle/result/seq00_test_all/seq00_test_overlap_2000k/validation_results.npz",
-                        "/home/cel/DockerFolder/code/overlapnet_function_angle/result/seq00_test_all/seq00_test_overlap_2000k_4000k/validation_results.npz",
-                        "/home/cel/DockerFolder/code/overlapnet_function_angle/result/seq00_test_all/seq00_test_overlap_4000k_6000k/validation_results.npz",
-                        "/home/cel/DockerFolder/code/overlapnet_function_angle/result/seq00_test_all/seq00_test_overlap_6000k_8000k/validation_results.npz",
-                        "/home/cel/DockerFolder/code/overlapnet_function_angle/result/seq00_test_all/seq00_test_overlap_8000k_end/validation_results.npz"           
-                        ]
-for test_result_filename in test_result_filenames:
-    with np.load(test_result_filename) as data:
-        prediction_overlap = np.vstack((prediction_overlap, data['arr_0.npy']))
+# load function angle result
+# prediction_function_angle = np.empty((0,4))
+# test_result_filenames = ["/home/cel/DockerFolder/code/overlapnet_function_angle/result/seq00_test_function_angle_ell_1_4000k/validation_results.npz",
+#                         "/home/cel/DockerFolder/code/overlapnet_function_angle/result/seq00_test_function_angle_ell_1_4000k_end/validation_results.npz",
+#                         ]
 
+# for test_result_filename in test_result_filenames:
+#     with np.load(test_result_filename) as data:
+#         prediction_function_angle = np.vstack((prediction_function_angle, data['arr_0.npy']))
+
+
+# fa_data_ell_03 = np.load("/home/cel/DockerFolder/data/kitti/sequences/00/ground_truth_function_angle/ground_truth_overlap_yaw.npz")
+# prediction_function_angle2 = fa_data_ell_03['overlaps']
+
+# load overlapnet result
+# prediction_overlap = np.empty((0,4))
+# test_result_filenames = ["/home/cel/DockerFolder/code/overlapnet_function_angle/result/seq00_test_overlap_5000k/validation_results.npz",
+#                         "/home/cel/DockerFolder/code/overlapnet_function_angle/result/seq00_test_overlap_5000k_end/validation_results.npz",
+#                         ]
+# # test_result_filenames = ["/home/cel/DockerFolder/code/overlapnet_function_angle/result/seq00_test_all/seq00_test_overlap_2000k/validation_results.npz",
+# #                         "/home/cel/DockerFolder/code/overlapnet_function_angle/result/seq00_test_all/seq00_test_overlap_2000k_4000k/validation_results.npz",
+# #                         "/home/cel/DockerFolder/code/overlapnet_function_angle/result/seq00_test_all/seq00_test_overlap_4000k_6000k/validation_results.npz",
+# #                         "/home/cel/DockerFolder/code/overlapnet_function_angle/result/seq00_test_all/seq00_test_overlap_6000k_8000k/validation_results.npz",
+# #                         "/home/cel/DockerFolder/code/overlapnet_function_angle/result/seq00_test_all/seq00_test_overlap_8000k_end/validation_results.npz"           
+# #                         ]
+# for test_result_filename in test_result_filenames:
+#     with np.load(test_result_filename) as data:
+#         prediction_overlap = np.vstack((prediction_overlap, data['arr_0.npy']))
+
+# Load ground truth
+
+fa_data_ell_1 = np.load("/home/cel/DockerFolder/data/kitti/sequences/"+seq+"/ground_truth_function_angle/ground_truth_overlap_yaw.npz")
+prediction_function_angle = fa_data_ell_1['overlaps']
+
+overlap_data_oxford = np.load("/home/cel/DockerFolder/data/oxford_test/2014-12-09-13-21-02/ground_truth_overlap/ground_truth_overlap_yaw.npz")
+prediction_overlap_oxford = overlap_data_oxford['overlaps']
+print('prediction_overlap_oxford datasize:', prediction_overlap_oxford.shape[0])
+
+overlap_data = np.load("/home/cel/DockerFolder/data/kitti/sequences/"+seq+"/ground_truth_overlap/ground_truth_overlap_yaw.npz")
+prediction_overlap = overlap_data['overlaps']
+
+print('function angle datasize:', prediction_function_angle.shape[0])
+print('overlap datasize:', prediction_overlap.shape[0])
+# print('function angle ell 1 datasize', prediction_function_angle.shape[0], 'overlap datasize', prediction_overlap.shape[0])
+# print('\nfunction angle data (ell=1.0)\n', prediction_function_angle[:10, :], prediction_function_angle[-10:, :])
+# print('\nfunction angle data (ell=0.3)\n', prediction_function_angle2[:20, :])
+# print('\noverlap data\n', prediction_overlap[:10, :], prediction_overlap[-10:, :])
 overlap_test_imgf1 = prediction_overlap[:,0]
 overlap_test_imgf2 = prediction_overlap[:,1]
 model_outputs_overlap = prediction_overlap[:,2]
-model_outputs_yaw_orientation_o = prediction_overlap[:,3]
 
 function_angle_test_imgf1 = prediction_function_angle[:,0]
 function_angle_test_imgf2 = prediction_function_angle[:,1]
 model_outputs_function_angle = prediction_function_angle[:,2]
-model_outputs_yaw_orientation_fa = prediction_function_angle[:,3]
-
-# overlap_test_filename = "/home/cel/DockerFolder/code/overlapnet_function_angle/result/seq00_test_function_angle_900k/validation_results.npz"
-# fa_test_filename = "/home/cel/DockerFolder/code/overlapnet_function_angle/result/seq00_test_function_angle_900k/validation_results.npz"
-# fa_gt_filename = "/home/cel/DockerFolder/data/kitti/sequences/00/ground_truth_function_angle/ground_truth_overlap_yaw.npz"
-# overlap_gt_filename = "/home/cel/DockerFolder/data/kitti/sequences/00/ground_truth_overlap/ground_truth_overlap_yaw.npz"
-# fa_test_filename2 = "/home/cel/DockerFolder/code/overlapnet_function_angle/result/seq00_test_function_angle_scratch_900k/validation_results.npz"
-
-# with np.load(fa_test_filename) as data:
-#     functionanglematrix = data['arr_0.npy']
-
-# with np.load(fa_test_filename2) as data:
-#     functionanglematrix2 = data['arr_0.npy']
-
-# with np.load(overlap_test_filename) as data:
-#     overlapmatrix = data['arr_0.npy']
-
-# with np.load(fa_gt_filename) as data2:
-#     gt_fa = data2['overlaps.npy']
-
-# with np.load(overlap_gt_filename) as data2:
-#     gt_overlap = data2['overlaps.npy']
-
-# overlap_test_imgf1 = overlapmatrix[:,0]
-# overlap_test_imgf2 = overlapmatrix[:,1]
-# model_outputs_overlap = overlapmatrix[:,2]
-# model_outputs_yaw_orientation_o = overlapmatrix[:,3]
-
-# test_imgf1 = functionanglematrix[:,0]
-# test_imgf2 = functionanglematrix[:,1]
-# model_outputs_function_angle = functionanglematrix[:,2]
-# model_outputs_yaw_orientation_fa = functionanglematrix[:,3]
-# model_outputs_function_angle2 = functionanglematrix2[:,2]
-
-# idx_1 = gt_fa[:900000,0]
-# idx_2 = gt_fa[:900000,1]
-# gt_function_angle = gt_fa[:900000,2]
-# gt_orientation = gt_fa[:900000,3]
-
-# overlap_idx_1 = gt_overlap[:900000,0]
-# overlap_idx_2 = gt_overlap[:900000,1]
-# gt_overlap_ = gt_overlap[:900000,2]
-# gt_orientation_o = gt_overlap[:900000,3]
 
 
-poses_file = "/home/cel/DockerFolder/data/kitti/sequences/00/poses.txt"
-calib_file = "/home/cel/DockerFolder/data/kitti/sequences/00/calib.txt"
-# load calibrations
-T_cam_velo = load_calib(calib_file)
-T_cam_velo = np.asarray(T_cam_velo).reshape((4, 4))
-T_velo_cam = np.linalg.inv(T_cam_velo)
+# model_outputs_function_angle2 = prediction_function_angle2[:,2]
 
-# load poses
-poses = load_poses(poses_file)
-pose0_inv = np.linalg.inv(poses[0])
 
-# for KITTI dataset, we need to convert the provided poses 
-# from the camera coordinate system into the LiDAR coordinate system  
-poses_new = []
-for pose in poses:
-    poses_new.append(T_velo_cam.dot(pose0_inv).dot(pose).dot(T_cam_velo))
-poses = np.array(poses_new)
+# pointnetvlad
+pointnetvlad_global_features = np.load("/home/cel/DockerFolder/code/pointnetvlad_kxhit/exp_results/log_fold"+seq+"/feature_database/fov100/"+seq+"_PV_"+seq+".npy")
+# pointnetvlad_global_features = np.load("/home/cel/DockerFolder/code/pointnetvlad_kxhit/pretrained_results/feature_database/fov100/00_PV_ref.npy")
+print('pointnetvlad_global_features', pointnetvlad_global_features.shape)
 
-# check the indexes are the same
-if np.array_equal(overlap_test_imgf1, function_angle_test_imgf1) and \
-    np.array_equal(overlap_test_imgf2, function_angle_test_imgf2):
-    print('correct')
-else:
-    print('not correct!')
+# get ground truth place recognition
+f = open("/home/cel/DockerFolder/code/pointnetvlad_kxhit/kitti_results/"+seq+"_triplets/positive_sequence_D-"+d_thres+"_T-0.json",)
+positive_sequence = json.load(f)
+positive_sequence_seq = positive_sequence[seq]
+f.close()
 
-y_real_true = []
+y_true_all = []
 index_mask_not_near = []
-# go through all pairs, select mask for ignoring near scaans, select ground truth for pose closer than 4 meters
-for index in range(len(overlap_test_imgf1)):
-    idx1 = int(overlap_test_imgf1[index])
-    idx2 = int(overlap_test_imgf2[index])
-    # print(idx1, int(function_angle_test_imgf1[index]), idx2, int(function_angle_test_imgf2[index]))
-    if idx1 - idx2 > 50:
-        index_mask_not_near.append(index)
-        pose1 = poses[idx1]
-        pose2 = poses[idx2]
-        diff = np.linalg.norm(pose1[:3,3] - pose2[:3,3])
-        if diff < 0.3:
-            y_real_true.append(1)
-        else:
-            y_real_true.append(0)
+y_pointnetvlad = []
+for pair_index in range(len(function_angle_test_imgf1)):
+    query_frame_index = int(function_angle_test_imgf1[pair_index])
+    database_frame_index = int(function_angle_test_imgf2[pair_index])
 
-print('ground truth loop closure:', len(y_real_true))
+    if database_frame_index < (query_frame_index - 50):
+        index_mask_not_near.append(int(pair_index))
+
+    y_pointnetvlad.append(np.dot(pointnetvlad_global_features[query_frame_index, :], pointnetvlad_global_features[database_frame_index, :]))
+
+    # obtain true loops
+    true_neighbors = positive_sequence_seq[str(query_frame_index)]
+
+    # only take scans before current scan - 50
+    true_neighbors_mask = [i for i in true_neighbors if i < query_frame_index-50]
+
+    if database_frame_index in true_neighbors_mask:
+        y_true_all.append(1)
+    else:
+        y_true_all.append(0)
+
+
+print('total number of test pairs:', len(y_true_all))
+print('y_true_all non zeros:', np.count_nonzero(y_true_all))
 print('index_mask_not_near:', len(index_mask_not_near))
+y_true_all = np.array(y_true_all)
+y_true = y_true_all[index_mask_not_near]
+y_pointnetvlad = np.array(y_pointnetvlad)
+
+
+# save precompute files
+np.save("/home/cel/DockerFolder/data/kitti/sequences/"+seq+"/loop_clousre_gt_D"+d_thres+".npy", np.array(y_true_all))
+np.save("/home/cel/DockerFolder/data/kitti/sequences/"+seq+"/index_mask_not_near.npy", np.array(index_mask_not_near))
+np.save("/home/cel/DockerFolder/data/kitti/sequences/"+seq+"/pointnetvlad.npy", y_pointnetvlad)
+
+# load precompute files
+# y_true_all = np.load('/home/cel/DockerFolder/data/kitti/sequences/00/loop_clousre_gt.npy')
+# index_mask_not_near = np.load('/home/cel/DockerFolder/data/kitti/sequences/00/index_mask_not_near.npy')
+# y_true = y_true_all[index_mask_not_near]
+
 
 # mask results, only check not near frames
-overlap_test_imgf1 = overlap_test_imgf1[index_mask_not_near]
-overlap_test_imgf2 = overlap_test_imgf2[index_mask_not_near]
-model_outputs_overlap = model_outputs_overlap[index_mask_not_near]
-model_outputs_yaw_orientation_o = model_outputs_yaw_orientation_o[index_mask_not_near]
-
-function_angle_test_imgf1 = function_angle_test_imgf1[index_mask_not_near]
-function_angle_test_imgf2 = function_angle_test_imgf2[index_mask_not_near]
-model_outputs_function_angle = model_outputs_function_angle[index_mask_not_near]
-model_outputs_yaw_orientation_fa = model_outputs_yaw_orientation_fa[index_mask_not_near]
+y_overlapnet = model_outputs_overlap[index_mask_not_near]
+y_functionangle = model_outputs_function_angle[index_mask_not_near]
+# y_functionangle2 = model_outputs_function_angle2[index_mask_not_near]
+y_pointnetvlad = y_pointnetvlad[index_mask_not_near]
 
 
-# initialize for plotting
-roc_x_FPR_fa = []
-roc_y_TPR_fa = []
-roc_x_FPR_fa2 = []
-roc_y_TPR_fa2 = []
-roc_x_FPR_o = []
-roc_y_TPR_o = []
+# Calculate precision and recall using scipy library function precision_recall_curve()
+precision_overlapnet, recall_overlapnet, thresholds_overlapnet = precision_recall_curve(y_true, y_overlapnet)
+precision_functionangle, recall_functionangle, thresholds_functionangle = precision_recall_curve(y_true, y_functionangle)
+# precision_functionangle2, recall_functionangle2, thresholds_functionangle2 = precision_recall_curve(y_true, y_functionangle2)
+precision_pointnetvlad, recall_pointnetvlad, thresholds_pointnetvlad = precision_recall_curve(y_true, y_pointnetvlad)
 
-pr_x_fa = []
-pr_y_fa = []
-pr_x_fa2 = []
-pr_y_fa2 = []
-pr_x_o = []
-pr_y_o = []
 
-# y_true = gt_function_angle > 0.7
-# y_true3 = gt_overlap_ > 0.3
-# y_true = y_true3
-
-# print('y_true', np.count_nonzero(y_true))
-print('y_real_true', np.count_nonzero(y_real_true))
-y_true = y_real_true
-
-thres_range = np.concatenate((np.arange(0,1,0.05).reshape(-1,1), np.arange(0.98, 1.001, 0.001).reshape(-1,1)), axis=0).reshape(-1,)
-for thres in thres_range:
-    # y_true = gt_function_angle > thres
-    y_test = model_outputs_function_angle > thres
-
-    TP = np.count_nonzero(y_true & y_test)
-    FP = np.count_nonzero(np.logical_not(y_true) & y_test)
-    TN = np.count_nonzero(np.logical_not(y_true) & np.logical_not(y_test))
-    FN = np.count_nonzero(y_true & np.logical_not(y_test))
-    
-    # TP2 = np.count_nonzero(y_true & y_test2)
-    # FP2 = np.count_nonzero(np.logical_not(y_true) & y_test2)
-    # TN2 = np.count_nonzero(np.logical_not(y_true) & np.logical_not(y_test2))
-    # FN2 = np.count_nonzero(y_true & np.logical_not(y_test2))
-    
-    if (TP+FP) > 0 and (TP+FN) > 0:
-        roc_x_FPR_fa.append(FP/(FP+TN)*100)
-        roc_y_TPR_fa.append(TP/(TP+FN)*100)
-
-        pr_x_fa.append(TP/(TP+FN)*100)
-        pr_y_fa.append(TP/(TP+FP)*100)
-    
-    # if (TP2+FP2) > 0 and (TP2+FN2) > 0:
-    #    roc_x_FPR_fa2.append(FP2/(FP2+TN2)*100)
-    #    roc_y_TPR_fa2.append(TP2/(TP2+FN2)*100)
-
-    #    pr_x_fa2.append(TP2/(TP2+FN2)*100)
-    #    pr_y_fa2.append(TP2/(TP2+FP2)*100)
-
-    # overlap
-    # y_true2 = gt_overlap_ > thres
-    y_test3 = model_outputs_overlap > thres
-
-    TP3 = np.count_nonzero(y_true & y_test3)
-    FP3 = np.count_nonzero(np.logical_not(y_true) & y_test3)
-    TN3 = np.count_nonzero(np.logical_not(y_true) & np.logical_not(y_test3))
-    FN3 = np.count_nonzero(y_true & np.logical_not(y_test3))
-    
-    if (TP3+FP3) > 0:
-        roc_x_FPR_o.append(FP3/(FP3+TN3)*100)
-        roc_y_TPR_o.append(TP3/(TP3+FN3)*100)
-
-        pr_x_o.append(TP3/(TP3+FN3)*100)
-        pr_y_o.append(TP3/(TP3+FP3)*100)
-    
-
-plt.rcParams.update({'font.size': 20})
-plt.rcParams["figure.figsize"] = (8,6)
-
-# ROC curve
+# Plot Precision-recall curve
 plt.figure()
-# plt.plot(roc_x_FPR_fa2, roc_y_TPR_fa2, marker='x', label='Proposed')
-plt.plot(roc_x_FPR_fa, roc_y_TPR_fa, marker='x', label='Proposed')
-plt.plot(roc_x_FPR_o, roc_y_TPR_o, marker='x', label='OverlapNet')
-plt.title('ROC Curve')
-plt.xlabel('False Positive Rate [%]')
-plt.ylabel('True Positive Rate [%]')
-plt.xlim(0,105)
-plt.ylim(0,105)
-plt.legend(loc='upper center', bbox_to_anchor=(0.5, 0.2), ncol=2)
-plt.tight_layout()
-plt.savefig("pics/evaluation/roc_real_03.png")
-
-
-# precision-recall curve# ROC curve
-plt.figure()
-# plt.plot(pr_x_fa2, pr_y_fa2, marker='x', label='Proposed')
-plt.plot(pr_x_fa, pr_y_fa, marker='x', label='Proposed')
-plt.plot(pr_x_o, pr_y_o, marker='x', label='OverlapNet')
-plt.title('Precision-recall Curve')
+plt.plot(recall_functionangle*100, precision_functionangle*100, '-', label='Proposed GT')
+# plt.plot(recall_functionangle2*100, precision_functionangle2*100, '-.', label='Proposed (ell=0.3) GT')
+plt.plot(recall_overlapnet*100, precision_overlapnet*100, '--', label='OverlapNet GT')
+plt.plot(recall_pointnetvlad*100, precision_pointnetvlad*100, ':', label='PointNetVLAD')
+plt.title("KITTI "+seq+" Precision-recall Curve (D"+d_thres+")")
 plt.xlabel('Recall [%]')
 plt.ylabel('Precision [%]')
 plt.xlim(0,105)
 plt.ylim(0,105)
-plt.legend(loc='upper center', bbox_to_anchor=(0.5, 0.8), ncol=2)
+plt.legend(loc='upper center', bbox_to_anchor=(0.5, 0.2), ncol=3)
 plt.tight_layout()
-plt.savefig("pics/evaluation/precision_recall_real_03.png")
+plt.savefig("pics/evaluation/precision_recall_seq"+seq+"_D"+d_thres+"_gt.png")
+print('Precision-recall curve is saved at:', "pics/evaluation/precision_recall_seq"+seq+"_D"+d_thres+"_gt.png")
+
+
+# # Calculate F1 Score using scipy library function f1_score()
+# f1_overlapnet = f1_score(y_true, y_overlapnet, average='binary')
+# f1_functionangle = f1_score(y_true, y_functionangle, average='binary')
+# f1_pointnetvlad = f1_score(y_true, y_pointnetvlad, average='binary')
+# # print results
+# print('Place Recognition Result - F1 Score:')
+# print('OverlapNet:', f1_overlapnet)
+# print('Function Angle:', f1_functionangle)
+# print('PointNetVLAD:', f1_pointnetvlad)

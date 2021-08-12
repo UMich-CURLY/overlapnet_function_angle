@@ -54,7 +54,7 @@ logging.basicConfig(format='%(message)s', level=logging.DEBUG)
 logger = logging.getLogger()
 logger.setLevel(logging.DEBUG)
 
-configfilename='network.yml'
+configfilename='config/test.yml'
 if len(sys.argv)>1:
     configfilename=sys.argv[1]
 

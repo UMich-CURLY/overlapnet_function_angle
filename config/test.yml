@@ -9,11 +9,13 @@
 experiments_path: "result/"
 
 # String which defines experiment
-testname: "seq00_test_function_angle_scratch_900k_1000k"
+testname: "seq00_test_funtion_angle_5000k"
+# testname: "seq00_test_overlap_5000k"
 
 # weights from older training. Not used if empty
 # pretrained_weightsfilename: "data/model_geo.weight"
-pretrained_weightsfilename: "result/seq03_10_train_function_anglei_scratch/SiameseNetworkTemplate_seq03_10_train_function_anglei_scratch.weight"
+pretrained_weightsfilename: "result/seq03_10_train_function_angle_scratch/SiameseNetworkTemplate_seq03_10_train_function_angle_scratch.weight"
+# pretrained_weightsfilename: "result/seq03_10_train_function_angle_ell_1/SiameseNetworkTemplate_seq03_10_train_function_angle_ell_1.weight"
 
 
 # What input to use ?
@@ -30,7 +32,8 @@ use_intensity: False               # default: False if parameter not there
 #
 # the folder of dataset
 data_root_folder: "/home/cel/data/kitti/sequences/"
-ground_truth_folder: "ground_truth_function_angle"
+# ground_truth_folder: "ground_truth_function_angle"
+ground_truth_folder: "ground_truth_overlap"
 
 # use multiple seqs for training, for testing phase please disable it
 # training_seqs: "07"   
@@ -48,8 +51,8 @@ batch_size :  32
 no_batches_in_epoch : 100000000000
 no_epochs :  100
 # No of samples for validation. If bigger than testdata, all testdata is used.
-start_test_idx : 900000 #400000
-no_test_pairs :  100000
+start_test_idx : 0 #5000000 #400000
+no_test_pairs :  5000000
 
 
 

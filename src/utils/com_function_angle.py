@@ -3,6 +3,7 @@ except: from utils import *
 from se_kernel_geo import se_kernel_geo
 import csv
 from tqdm import tqdm
+from numpy import genfromtxt
 
 def function_angle_range(reference_range, refrence_pose, current_range, current_pose, valid_num):
   """Compute function angle from range vertex
@@ -182,23 +183,48 @@ def read_function_angle_com_yaw(scan_paths, poses, funcangle_file, leg_output_wi
   yaw_resolution = leg_output_width
   
   # read function_angle from saved csv file
+
+  
+  # for input_file in funcangle_file:
+  #   with open(input_file, 'rb') as f:
+  #   # with open(input_file, newline='') as csvfile:
+  #     # changer other delimiter to the default one
+  #     clean_lines = (line.replace(b'\t',b',') for line in f)
+  #     data = np.genfromtxt(clean_lines, dtype=int, delimiter=',')
+
+  #     # TODO: use my_data = genfromtxt('my_file.csv', delimiter=',')
+  #     my_data = genfromtxt('my_file.csv', delimiter=',')
+  #     frame_idx_1.append(my_data[:,0].astype(int))
+  #     # not finished
+  #     frmae_idx_2.append(int(idx_2))
+  #     function_angles.append(float(function_angle))
+
+      
   for input_file in funcangle_file:
+    # This is causing problem, index starts from (1,1), not (0,0)
     with open(input_file, newline='') as csvfile:
-      spamreader = csv.reader(csvfile, delimiter='\t', quotechar='|')
+      spamreader = csv.reader(csvfile, delimiter=',', quotechar='|')        
+      # spamreader = csv.reader(csvfile, delimiter='\t', quotechar='|')
+      # for row in spamreader:
+      #   if len(row) == 1:
+      #     spamreader = csv.reader(csvfile, delimiter=' ', quotechar='|')
+      #   break
+      # for row in spamreader:
+      #   if len(row) == 1:
+      #     spamreader = csv.reader(csvfile, delimiter=',', quotechar='|')
+      #   break
       for row in spamreader:
         if len(row) == 1:
-          spamreader = csv.reader(csvfile, delimiter=' ', quotechar='|')
-        break
-      for row in spamreader:
+          row = row[0].split('\t')
         if len(row) == 1:
-          spamreader = csv.reader(csvfile, delimiter=',', quotechar='|')
-        break
-      for row in spamreader:
-        print('row', row)
+          row = row[0].split(' ')
+
+        # print('row', row)
         idx_1, idx_2, function_angle = row
         frame_idx_1.append(int(idx_1))
         frmae_idx_2.append(int(idx_2))
         function_angles.append(float(function_angle))
+  
 
   for idx in tqdm(range(len(function_angles))):
     frame_idx = frame_idx_1[idx]

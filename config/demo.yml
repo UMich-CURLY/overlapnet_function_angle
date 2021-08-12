@@ -45,64 +45,15 @@ Demo3:
 Demo4:
   # sepecify paths
   # path of poses
-  # seq: "08"
-  # poses_file: "/home/cel/data/kitti/sequences/08/poses.txt"
-  # poses_file: "/home/cel/CURLY/code/DockerFolder/data/kitti/sequences/08/poses.txt"
+  seq: "07"
+  poses_file: "/home/cel/data/kitti/sequences/07/poses.txt"
   # path of calibration file of the dataset
-  # calib_file: "/home/cel/data/kitti/sequences/08/calib.txt"
-  # calib_file: "/home/cel/CURLY/code/DockerFolder/data/kitti/sequences/08/calib.txt"
+  calib_file: "/home/cel/data/kitti/sequences/07/calib.txt"
   # path of raw LiDAR scan folder
-  # scan_folder: "/home/cel/data/kitti/sequences/08/velodyne"
-  # scan_folder: "/home/cel/CURLY/code/DockerFolder/data/kitti/sequences/08/velodyne"
+  scan_folder: "/home/cel/data/kitti/sequences/07/velodyne"
   # the folder to store the generated data
-  # dst_folder: "data/preprocess_data_demo"
-  # dst_folder: "/home/cel/data/kitti/sequences/08"
-  # function_angle_file: ["/home/cel/data/kitti/sequences/08/function_angle/08_0_1399.csv",
-  #                       "/home/cel/data/kitti/sequences/08/function_angle/08_1400_2000.csv",
-  #                       "/home/cel/data/kitti/sequences/08/function_angle/08_2001_2468.csv",
-  #                       "/home/cel/data/kitti/sequences/08/function_angle/08_2469_2849.csv",
-  #                       "/home/cel/data/kitti/sequences/08/function_angle/08_2469_2849.csv",
-  #                       "/home/cel/data/kitti/sequences/08/function_angle/08_2850_3149.csv",
-  #                       "/home/cel/data/kitti/sequences/08/function_angle/08_3150_3399.csv",
-  #                       "/home/cel/data/kitti/sequences/08/function_angle/08_3400_3599.csv",
-  #                       "/home/cel/data/kitti/sequences/08/function_angle/08_3600_3699.csv",
-  #                       "/home/cel/data/kitti/sequences/08/function_angle/08_3700_3799.csv",
-  #                       "/home/cel/data/kitti/sequences/08/function_angle/08_3800_3899.csv",
-  #                       "/home/cel/data/kitti/sequences/08/function_angle/08_3900_4070.csv"]
-  # function_angle_file: ["/home/cel/data/kitti/sequences/06/function_angle/06_all.csv"]
+  dst_folder: "/home/cel/data/kitti/sequences/07"
   # function_angle_file: ["/home/cel/data/kitti/sequences/05/function_angle/05_0_1399.csv",
   #                       "/home/cel/data/kitti/sequences/05/function_angle/05_1400_2010.csv",
   #                       "/home/cel/data/kitti/sequences/05/function_angle/05_2011_2456.csv",
   #                       "/home/cel/data/kitti/sequences/05/function_angle/05_2457_2760.csv"]
-  # function_angle_file: ["/home/cel/data/kitti/sequences/03/function_angle/03_all.csv"]
-  # function_angle_file: ["/home/cel/data/kitti/sequences/00/function_angle/00_0_1399.csv", 
-  #                       "/home/cel/data/kitti/sequences/00/function_angle/00_1400_1999.csv", 
-  #                       "/home/cel/data/kitti/sequences/00/function_angle/00_2000_2399.csv", 
-  #                       "/home/cel/data/kitti/sequences/00/function_angle/00_2400_2799.csv", 
-  #                       "/home/cel/data/kitti/sequences/00/function_angle/00_2800_3099.csv", 
-  #                       "/home/cel/data/kitti/sequences/00/function_angle/00_3100_3199.csv", 
-  #                       "/home/cel/data/kitti/sequences/00/function_angle/00_3200_3299.csv", 
-  #                       "/home/cel/data/kitti/sequences/00/function_angle/00_3300_3499.csv", 
-  #                       "/home/cel/data/kitti/sequences/00/function_angle/00_3500_3699.csv", 
-  #                       "/home/cel/data/kitti/sequences/00/function_angle/00_3700.csv", 
-  #                       "/home/cel/data/kitti/sequences/00/function_angle/00_3800.csv", 
-  #                       "/home/cel/data/kitti/sequences/00/function_angle/00_3900.csv", 
-  #                       "/home/cel/data/kitti/sequences/00/function_angle/00_4000.csv", 
-  #                       "/home/cel/data/kitti/sequences/00/function_angle/00_4100.csv", 
-  #                       "/home/cel/data/kitti/sequences/00/function_angle/00_4200.csv", 
-  #                       "/home/cel/data/kitti/sequences/00/function_angle/00_4300.csv", 
-  #                       "/home/cel/data/kitti/sequences/00/function_angle/00_4400.csv", 
-  #                       "/home/cel/data/kitti/sequences/00/function_angle/00_4500.csv"]
-  # precomputed_file: "/home/cel/data/kitti/sequences/00/ground_truth_overlap/ground_truth_mapping_overlap.npy"
-
-  # Oxford Dataset Test
-  seq: "2015-02-13-09-16-26"
-  poses_file: "/home/cel/data/oxford_test/2015-02-13-09-16-26/pointcloud_locations_20m.csv"
-  # path of calibration file of the dataset
-  # calib_file: "/home/cel/data/kitti/sequences/08/calib.txt"
-  # path of raw LiDAR scan folder
-  scan_folder: "/home/cel/data/oxford_test/2015-02-13-09-16-26/pointcloud_20m"
-  # the folder to store the generated data
-  dst_folder: "/home/cel/data/oxford_test/2015-02-13-09-16-26/"
-
-

@@ -46,7 +46,7 @@ if __name__ == '__main__':
     config_filename = sys.argv[1]
   
   # load the configuration file
-  config = yaml.load(open(config_filename))
+  config = yaml.load(open(config_filename), Loader=yaml.FullLoader)
   
   # set the related parameters
   seq_idx = config['Demo4']['seq']

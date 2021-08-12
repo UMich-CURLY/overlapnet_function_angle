@@ -1,0 +1,28 @@
+# Configuration for demos (specifying all the paths)
+
+# Oxford Dataset Test
+# database_seq: "2014-12-09-13-21-02"
+# database_poses_file: "/home/cel/data/oxford_test/2014-12-09-13-21-02/pointcloud_locations_20m.csv"
+# database_scan_folder: "/home/cel/data/oxford_test/2014-12-09-13-21-02/pointcloud_20m"
+
+# query_seq: "2015-05-19-14-06-38"  
+# query_poses_file: "/home/cel/data/oxford_test/2015-05-19-14-06-38/pointcloud_locations_20m.csv"
+# query_scan_folder: "/home/cel/data/oxford_test/2015-05-19-14-06-38/pointcloud_20m"
+
+# dst_folder: "/home/cel/data/oxford_test/2015-05-19-14-06-38/"
+
+
+database_seq: "2014-12-09-13-21-02"
+database_poses_file: "/home/cel/data/oxford/2014-12-09-13-21-02/gps/ins.csv"
+database_timestamp_file: "/home/cel/data/oxford/2014-12-09-13-21-02/ldmrs.timestamps"
+database_scan_folder: "/home/cel/data/oxford/2014-12-09-13-21-02/ldmrs"
+
+query_seq: "2015-05-19-14-06-38"  
+query_poses_file: "/home/cel/data/oxford/2015-05-19-14-06-38/gps/ins.csv"
+query_timestamp_file: "/home/cel/data/oxford/2015-05-19-14-06-38/ldmrs.timestamps"
+query_scan_folder: "/home/cel/data/oxford/2015-05-19-14-06-38/ldmrs"
+
+dst_folder: "/home/cel/data/oxford/2015-05-19-14-06-38/"
+
+
+

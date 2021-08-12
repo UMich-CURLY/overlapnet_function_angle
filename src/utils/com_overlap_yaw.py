@@ -32,6 +32,7 @@ def com_overlap_yaw(scan_paths, poses, frame_idx, leg_output_width=360):
   
     # we calculate the ground truth for one given frame only
     # generate range projection for the given frame
+    # current_points = load_oxford_vertex(scan_paths[frame_idx])
     current_points = load_vertex(scan_paths[frame_idx])
     current_range, project_points, _, _ = range_projection(current_points)
     visible_points = project_points[current_range > 0]
@@ -43,6 +44,7 @@ def com_overlap_yaw(scan_paths, poses, frame_idx, leg_output_width=360):
       frmae_idx_2.append(reference_idx)
       # generate range projection for the reference frame
       reference_pose = poses[reference_idx]
+      # reference_points = load_oxford_vertex(scan_paths[reference_idx])
       reference_points = load_vertex(scan_paths[reference_idx])
       reference_points_world = reference_pose.dot(reference_points.T).T
       reference_points_in_current = np.linalg.inv(current_pose).dot(reference_points_world.T).T

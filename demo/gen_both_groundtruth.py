@@ -55,7 +55,7 @@ if __name__ == '__main__':
   calib_file = config['Demo4']['calib_file']
   scan_folder = config['Demo4']['scan_folder']
   dst_folder = config['Demo4']['dst_folder']
-  funcangle_file = config['Demo4']['function_angle_file']
+  # funcangle_file = config['Demo4']['function_angle_file']
   dst_folder = os.path.join(dst_folder, 'ground_truth_both') # ground_truth_both_nfa, ground_truth_function_angle_no, ground_truth_overlap_nfa
 
   # specify the goal folder
@@ -67,18 +67,22 @@ if __name__ == '__main__':
     os.mkdir(dst_folder)
 
   if 'precomputed_file' in config['Demo4']:
-    ground_truth_mapping = np.load(config['Demo4']['precomputed_file'])
+    overlap = np.load(config['Demo4']['precomputed_file'])
+    overlap = overlap['overlaps']
+
+    function_angle = np.load(config['Demo4']['function_angle_file'])
+    function_angle = function_angle['overlaps']
   
-    ground_truth_mapping_2 = read_function_angle(funcangle_file)
+    # ground_truth_mapping_2 = read_function_angle(funcangle_file)
 
-    print('ground_truth_mapping', ground_truth_mapping.shape)
-    print('ground_truth_mapping_2', ground_truth_mapping_2.shape)
+    print('overlap', overlap.shape, overlap[:10,:])
+    print('function_angle', function_angle.shape, function_angle[:10,:])
 
-    ground_truth_mapping = np.hstack((ground_truth_mapping[:,:3], ground_truth_mapping_2[:,2].reshape(-1,1), ground_truth_mapping[:,3].reshape(-1,1)))
+    ground_truth_mapping = np.hstack((overlap[:,:3], function_angle[:,2].reshape(-1,1), overlap[:,3].reshape(-1,1)))
     
     # save this before normalization
-    numpy_output_path = os.path.join(dst_folder, 'ground_truth_mapping.npy')
-    np.save(numpy_output_path, ground_truth_mapping)
+    # numpy_output_path = os.path.join(dst_folder, 'ground_truth_mapping.npy')
+    # np.save(numpy_output_path, ground_truth_mapping)
   
   else:
   
@@ -109,6 +113,12 @@ if __name__ == '__main__':
     numpy_output_path = os.path.join(dst_folder, 'ground_truth_mapping.npy')
     np.save(numpy_output_path, ground_truth_mapping)
   
+  # check yaw
+  print('check yaw in ground_truth_mapping, max', np.max(ground_truth_mapping[:,4]), 'min', np.min(ground_truth_mapping[:,4]))
+  # ground_truth_mapping[:,4] = -ground_truth_mapping[:,4] + 180
+  # ground_truth_mapping[ground_truth_mapping[:,4] > 360,4] -= 360
+  # print('check yaw in ground_truth_mapping, max', np.max(ground_truth_mapping[:,4]), 'min', np.min(ground_truth_mapping[:,4]))
+
   # check yaw angle distribution before normalization
   normalize_idx = 4
   gt_map = ground_truth_mapping
@@ -131,10 +141,10 @@ if __name__ == '__main__':
   print('ground_truth_mapping\n', ground_truth_mapping.shape)
   # normalize the distribution of ground truth data -both
   # use overlap value to normalize = 2, use function angle value to normalize = 3
-  dist_norm_data_both = normalize_data(ground_truth_mapping, 2) 
+  dist_norm_data_both = normalize_data(ground_truth_mapping, 3) 
 
   # check result for another value
-  normalize_idx = 3
+  normalize_idx = 2
   gt_map = dist_norm_data_both
   bin_0_9 = gt_map[np.where(gt_map[:, normalize_idx] < 0.1)]
   bin_10_19 = gt_map[(gt_map[:, normalize_idx] < 0.2) & (gt_map[:, normalize_idx] >= 0.1)]

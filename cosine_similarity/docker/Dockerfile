@@ -4,7 +4,7 @@ FROM nvidia/cuda:11.2.1-devel-ubuntu20.04
 # author
 MAINTAINER Ray Zhang
 
-LABEL version="1.0"
+LABEL version="0.5"
 LABEL description="Docker file: for setting up CVO-GPU"
 
 # optional, if the default user is not "root", you might need to switch to root here and at the end of the script to the original user again.
